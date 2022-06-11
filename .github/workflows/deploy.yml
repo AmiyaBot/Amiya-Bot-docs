@@ -35,7 +35,7 @@ jobs:
 
             -   name: Update CNAME
                 run:
-                    echo 'www.amiyabot.com' > dist/CNAME
+                    echo 'www.amiyabot.com' > docs/.vuepress/dist/CNAME
 
             -   name: Deploy
                 uses: crazy-max/ghaction-github-pages@v2.5.0
@@ -43,4 +43,4 @@ jobs:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 with:
                     target_branch: gh-pages
-                    build_dir: dist
+                    build_dir: docs/.vuepress/dist
