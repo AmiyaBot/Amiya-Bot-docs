@@ -6,7 +6,7 @@ const zh = require('./config/zh')
 
 module.exports = {
     theme: defaultTheme({
-        repo: 'AmiyaBot/Amiya-Bot',
+        repo: 'AmiyaBot/Amiya-Bot-core',
         ...sidebar,
         ...navbar,
         ...zh

@@ -10,7 +10,11 @@ module.exports = {
         },
         {
             text: '开发指南',
-            link: '/develop/'
+            link: '/develop/basic/'
+        },
+        {
+            text: '进阶指南',
+            link: '/develop/advanced/'
         },
         {
             text: '官方频道',

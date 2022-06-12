@@ -2,7 +2,7 @@
 home: true
 actions:
 - text: 开始使用
-  link: /develop/
+  link: /develop/basic/
   type: primary
 - text: 项目简介
   link: /guide/
