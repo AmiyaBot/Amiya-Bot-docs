@@ -31,6 +31,15 @@ module.exports = {
                     '/develop/advanced/databaseSupport.md',
                 ]
             }
+        ],
+        '/blog/': [
+            {
+                text: '群聊版使用说明',
+                children: [
+                    '/blog/function.md',
+                    '/blog/guess.md'
+                ]
+            }
         ]
     }
 }
