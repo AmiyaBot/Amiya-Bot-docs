@@ -15,7 +15,7 @@ AmiyaBot 诞生于2019年，是一个[《明日方舟》](https://ak.hypergryph.
 “为所有人带来快乐”的初衷，跌跌撞撞到现在，依旧坚持开源、免费为用户提供服务。即便如此，仍然有人对我们怀有恶意。2022年5月13日重大变故后，AmiyaBot 决定终止原项目的维护并迁移至 QQ
 频道成为正式的机器人，后剥离出其核心部分成为框架，也就是本文档所指的 AmiyaBot。
 
-如果你有兴趣，不妨来看看过去我们所珍视的她 [Amiya-Bot](https://github.com/AmiyaBot/Amiya-Bot)。
+如果你有兴趣，不妨来看看过去我们所珍视的她 [Amiya-Bot](https://www.amiya.cn/)。
 
 ### 现在
 
