@@ -21,12 +21,18 @@ async def _(data: Message):
 
 #### 参数列表
 
-| 参数名          | 类型       | 释义                                 | 默认值  |
-|--------------|----------|------------------------------------|------|
+| 参数名          | 类型       | 释义                                 | 默认值   |
+|--------------|----------|------------------------------------|-------|
+| group_id     | String   | 功能组名称                              ||
 | keywords     | Union    | 触发关键字，支持字符串、正则、全等句（equal）或由它们构成的列表 ||
 | verify       | Callable | 自定义校验方法，当该参数被赋值时，keywords 将会失效     ||
-| check_prefix | Union    | 是否校验前缀或指定需要校验的前缀                   | True |
-| level        | Int      | 关键字校验成功后函数的候选默认等级                  | 0    |
+| check_prefix | Union    | 是否校验前缀或指定需要校验的前缀                   | True  |
+| allow_direct | Union    | 是否支持通过私信使用该功能                      | False |
+| level        | Int      | 关键字校验成功后函数的候选默认等级                  | 0     |
+
+## 功能组
+
+设置参数 `group_id` 为该功能分配[功能的组别](/develop/advanced/functionsGroup)。
 
 ## 私域模式的前缀校验
 
@@ -150,3 +156,7 @@ async def my_verify(data: Message):
 async def _(data: Message):
     return Chain(data).text(f'hello, {data.nickname}')
 ```
+
+## 使功能在私信里可用
+
+设置参数 `allow_direct=True`，可以允许功能在私信里用**同样的方式**触发。在私信里，用户将不需要使用 `@机器人` 或 `前缀校验` 唤起机器人。

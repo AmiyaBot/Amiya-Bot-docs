@@ -31,6 +31,10 @@ BotInstance 是内置的官方 SDK
 的实例。在发生异常的这个生命周期里，不能保证像前面的处理函数一样拥有完整的消息实例。如果你需要在发生异常时让机器人发送消息，你无法使用 [Message](/develop/messageObject)
 和 [Chain](/develop/chainObject) 对象，只能使用 BotInstance 的消息构建器。
 
+::: tip 延伸<br>
+在 Message 对象内，bot 属性就是 BotInstance 的实例。你也可以在消息内使用它的方法。
+:::
+
 #### BotInstance.send_message
 
 BotInstance.send_message 是一个上下文管理器，作用是在没有 Message 对象时，仍能构建出消息发送。注意，因为没有 Message 对象提供消息ID，通过此方法构建的消息属于主动消息。<br>

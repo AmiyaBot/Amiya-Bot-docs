@@ -9,7 +9,7 @@ actions:
   type: secondary
 features:
 - title: 简洁高效
-  details: 采用异步I/O，摆脱官方SDK繁杂的操作，以更加简洁和可读性更高的代码让你专注于你的业务逻辑。
+  details: 采用异步I/O，摆脱官方API繁杂的操作，以更加简洁和可读性更高的代码让你专注于你的业务逻辑。
 - title: 多账号支持
   details: 支持同时创建多个App实例，为所有App注册公共的功能，也能够分别为单独的App注册专属功能。
 - title: 丰富的消息类型

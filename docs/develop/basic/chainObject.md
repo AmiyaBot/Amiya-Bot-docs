@@ -45,6 +45,9 @@ Chain(data).text(...).image(...).text(...).html(...)
 
 ### **Chain.at**
 
+::: tip 私信回复里 at 无效
+:::
+
 添加 @ 一个用户
 
 | 参数名   | 类型   | 释义                        | 默认值   |
@@ -184,4 +187,4 @@ Chain(data).image(target)
 
 ### **Chain.html**
 
-添加一张[使用 html 页面生成的图片](/develop/htmlConvert)，此部分篇幅较长，我们移步下一节。
+添加一张[使用 html 页面生成的图片](/develop/basic/htmlConvert)，此部分篇幅较长，我们移步下一节。

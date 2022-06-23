@@ -6,8 +6,7 @@ sidebar: false
 
 ## 介绍
 
-AmiyaBot 是异步 Python QQ 频道机器人框架。基于 QQ 频道[官方SDK](https://bot.q.qq.com/wiki/develop/pythonsdk/)，但可以无需理解官方 SDK
-的操作直接上手。内置了丰富的消息构建方法，可以让你的机器人轻松实现你的创意。
+AmiyaBot 是异步 Python QQ 频道机器人框架。基于 QQ 频道[官方API](https://bot.q.qq.com/wiki/develop/api/)。内置了丰富的消息构建方法，可以让你的机器人轻松实现你的创意。
 
 ### 她的过去...
 

@@ -6,26 +6,30 @@
 
 ### 属性
 
-| 属性           | 类型            | 释义                        |
-|--------------|---------------|---------------------------|
-| bot          | AmiyaBot      | AmiyaBot 实例               |
-| message      | qqbot.Message | SDK原始消息对象                 |
-| message_id   | String        | 消息ID                      |
-| face         | List\[String] | 消息内表情列表                   |
-| image        | List\[String] | 消息内图片列表                   |
-| text         | String        | 消息文本（去字符处理、中间件处理）         |
-| text_digits  | String        | 消息文本（去字符处理、中间件处理、中文转数字处理） |
-| text_origin  | String        | 消息文本（中间件处理）               |
-| text_initial | String        | 消息文本（无处理）                 |
-| text_words   | List\[String] | 消息文本分词                    |
-| at_target    | List\[String] | 消息内 @ 的对象列表               |
-| is_at        | Bool          | 是否 @ 机器人                  |
-| is_admin     | Bool          | 是否为子频道管理员                 |
-| user_id      | String        | 用户ID                      |
-| guild_id     | String        | 频道ID                      |
-| channel_id   | String        | 子频道ID                     |
-| nickname     | String        | 用户昵称                      |
-| time         | Int           | 消息时间                      |
+| 属性           | 类型                | 释义                        |
+|--------------|-------------------|---------------------------|
+| bot          | BotInstance       | BotInstance 对象            |
+| message      | Dict              | 原始消息字典                    |
+| message_id   | String            | 消息ID                      |
+| face         | List\[String]     | 消息内表情列表                   |
+| image        | List\[String]     | 消息内图片列表                   |
+| text         | String            | 消息文本（去字符处理、中间件处理）         |
+| text_digits  | String            | 消息文本（去字符处理、中间件处理、中文转数字处理） |
+| text_origin  | String            | 消息文本（中间件处理）               |
+| text_initial | String            | 消息文本（无处理）                 |
+| text_words   | List\[String]     | 消息文本分词                    |
+| at_target    | List\[String]     | 消息内 @ 的对象列表               |
+| is_at        | Bool              | 是否 @ 机器人                  |
+| is_admin     | Bool              | 是否为子频道管理员                 |
+| is_direct    | Bool              | 是否是私信消息                   |
+| user_id      | String            | 用户ID                      |
+| guild_id     | String            | 频道ID                      |
+| src_guild_id | String            | 来源频道ID，私信下有效              |
+| channel_id   | String            | 子频道ID                     |
+| nickname     | String            | 用户昵称                      |
+| avatar       | String            | 用户头像的URL                  |
+| joined_at    | ISO8601 timestamp | 用户加入频道的时间                 |
+| time         | Int               | 消息时间                      |
 
 ### 方法
 
@@ -123,6 +127,10 @@ async def _(data: Message):
 - 在等待时间内使用其他功能，等待也会被注销。
 
 ## Message.wait_channel
+
+::: danger 注意<br>
+该方法不可用于支持私信的功能里
+:::
 
 **参数列表**
 
