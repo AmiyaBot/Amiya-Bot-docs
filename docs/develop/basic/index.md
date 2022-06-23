@@ -10,8 +10,8 @@ pip install amiyabot
 
 ## 创建你的第一个 Bot
 
-1. 在 [QQ开放平台](https://q.qq.com/) 申请并创建你的 QQ 机器人，得到 `appid` 和 `token`
-2. 创建一个 AmiyaBot 实例
+1. 在 [QQ开放平台](https://q.qq.com/) 申请并创建你的 QQ 机器人。创建沙箱频道，并把你的机器人添加进频道了。（此处不作详细说明）
+2. 使用机器人的 `appid` 和 `token` 创建一个 AmiyaBot 实例
 
 ```python
 import asyncio
@@ -29,7 +29,7 @@ async def _(data: Message):
 asyncio.run(bot.start())
 ```
 
-3. 运行代码，在 QQ 频道里输入 `@机器人 hello`，你预期会看到如下输出。
+3. 运行代码，在频道里输入 `@机器人 hello`，你预期会看到如下输出。
 
 <img style="width: 220px" :src="$withBase('/examples/hello.png')" alt="image">
 
@@ -39,7 +39,7 @@ asyncio.run(bot.start())
 
 ## 创建私域机器人
 
-如果你在平台创建的是**私域机器人**，那么你的机器人支持接收非 `@机器人` 的消息，你可以使机器人以更灵活的方式触发功能。<br>
+如果你在平台创建的是**私域机器人**，在 `AmiyaBot` 的参数里设置 `private=True` 来开启私域模式，私域机器人支持接收非 `@机器人` 的消息，你可以使机器人以更灵活的方式触发功能。<br>
 但我们不希望机器人的唤起出现非预期的效果，所以 AmiyaBot 私域模式默认需要添加前缀触发词。
 
 ```python
