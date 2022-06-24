@@ -60,7 +60,7 @@ async def _(data: Message):
 
 ## 校验符合正则检查的句式
 
-关键字传入 `re.compile` 对象，即可使用正则检查。
+关键字传入 `re.compile` 对象，可以检查对话文本是否符合正则表达式。
 
 ```python
 import re
@@ -73,7 +73,7 @@ async def _(data: Message):
 
 ## 校验完全匹配的句式
 
-完全匹配的句式指对话的内容**全等于** keyword 关键字（不包括 @ 部分），使用工具类 `Equal` 即可达到效果。
+完全匹配的句式指对话的文本内容**全等于** keyword 关键字（不包括 @ 部分），使用工具类 `Equal` 即可达到效果。
 
 ```python
 from amiyabot import Equal
@@ -159,4 +159,10 @@ async def _(data: Message):
 
 ## 使功能在私信里可用
 
-设置参数 `allow_direct=True`，可以允许功能在私信里用**同样的方式**触发。在私信里，用户将不需要使用 `@机器人` 或 `前缀校验` 唤起机器人。
+设置参数 `allow_direct=True`，可以允许功能在私信里用**同样的方式**触发。在私信里，用户将不需要使用 `@机器人` 或 `前缀校验` 唤起机器人。（包括公域机器人）
+
+```python
+@bot.on_message(keywords='hello', allow_direct=True)
+async def _(data: Message):
+    return Chain(data).text(f'hello, {data.nickname}')
+```

@@ -159,7 +159,7 @@ wait_channel 方法是 wait 概念的延伸，用于等待**子频道全体用�
 
 下面来看一个简单的例子
 
-```python {6,8,10}
+```python {6,8,10,11}
 @bot.on_message(keywords='hello')
 async def _(data: Message):
     await data.send(Chain(data).text('hello everyone, tell me your name please~'))

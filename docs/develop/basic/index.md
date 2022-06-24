@@ -10,7 +10,7 @@ pip install amiyabot
 
 ## 创建你的第一个 Bot
 
-1. 在 [QQ开放平台](https://q.qq.com/) 申请并创建你的 QQ 机器人。创建沙箱频道，并把你的机器人添加进频道了。（此处不作详细说明）
+1. 在 [QQ开放平台](https://q.qq.com/) 申请并创建你的 QQ 机器人。创建沙箱频道，并把你的机器人添加进频道里。（此处不作详细说明）
 2. 使用机器人的 `appid` 和 `token` 创建一个 AmiyaBot 实例
 
 ```python

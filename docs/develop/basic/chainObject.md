@@ -35,7 +35,7 @@ Chain 对象支持链式语法，用于构建复杂的消息结构。以下方�
 
 ### 消息链
 
-Chain 对象支持链式语法，你只需要按顺序以链式使用上述方法，拼接出内容丰富的消息。
+Chain 对象支持链式语法，你只需要按顺序以链式使用上述方法，拼接出内容丰富的消息。Chain 在最终构建消息的时候，会优化图片与文字的组成，减少消息的请求数量。
 
 ```python
 Chain(data).text(...).image(...).text(...).html(...)
@@ -179,6 +179,13 @@ async def _(data: Message):
 
 ```python
 Chain(data).image(target)
+```
+
+当传入的类型为字符串时，image 方法会认为值为本地图片的路径并尝试读取文件。也可以直接传入 bytes 类型。<br>
+如果是网络图片，可以使用 url 参数传入。
+
+```python
+Chain(data).image(url=target)
 ```
 
 ### **Chain.voice**
