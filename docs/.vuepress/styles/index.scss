@@ -13,3 +13,15 @@ html.dark {
     --c-brand-light: #ce93d8;
     --font-family: -apple-system, BlinkMacSystemFont, 'Harmony', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
+
+table {
+    font-size: 14px;
+}
+
+.err-tag {
+    color: #fff;
+    background: #f44336;
+    padding: 0 5px;
+    border-radius: 4px;
+    font-size: 12px;
+}

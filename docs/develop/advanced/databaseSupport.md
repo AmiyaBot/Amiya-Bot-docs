@@ -17,7 +17,7 @@ from amiyabot.database import *  # 引入数据库模块
 db = connect_database('database_name')  # 创建或连接一个 Sqlite 数据库文件
 
 
-# 创建数据库基础实例，继承 ModelClass 获得 AmiyaBot 的扩展查询方法
+# 创建数据库基础模型，继承 ModelClass 获得 AmiyaBot 的扩展查询方法
 class BotBaseModel(ModelClass):
     class Meta:
         database = db

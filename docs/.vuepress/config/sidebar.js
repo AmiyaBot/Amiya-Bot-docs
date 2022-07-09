@@ -18,7 +18,9 @@ module.exports = {
                     '/develop/basic/funcsRegister.md',
                     '/develop/basic/messageObject.md',
                     '/develop/basic/chainObject.md',
-                    '/develop/basic/htmlConvert.md'
+                    '/develop/basic/htmlConvert.md',
+                    '/develop/basic/activeMessage.md',
+                    '/develop/basic/eventsRegister.md',
                 ]
             }
         ],
