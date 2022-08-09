@@ -15,7 +15,7 @@ Chain(data).text('hello, world')
 
 | 参数名       | 类型      | 释义           | 默认值   |
 |-----------|---------|--------------|-------|
-| data      | Message | Message 对象   |       |
+| data      | Message | Message 对象   | None  |
 | at        | Bool    | 是否 @ 用户      | True  |
 | reference | Bool    | 是否回复用户（引用消息） | False |
 

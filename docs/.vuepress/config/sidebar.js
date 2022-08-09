@@ -14,6 +14,7 @@ module.exports = {
                 text: '开发指南',
                 children: [
                     '/develop/basic/index.md',
+                    '/develop/basic/selectAdapter.md',
                     '/develop/basic/multipleAccounts.md',
                     '/develop/basic/funcsRegister.md',
                     '/develop/basic/messageObject.md',

@@ -10,8 +10,8 @@ actions:
 features:
 - title: 简洁高效
   details: 采用异步I/O，摆脱官方API繁杂的操作，以更加简洁和可读性更高的代码让你专注于你的业务逻辑。
-- title: 多账号支持
-  details: 支持同时创建多个App实例，为所有App注册公共的功能，也能够分别为单独的App注册专属功能。
+- title: 多账号 & 适配器
+  details: 支持同时创建多个机器人实例，为所有实例注册共享的消息处理方法。可使用适配器更改机器人的服务来源。
 - title: 丰富的消息类型
   details: 内置的PIL图像合成模块以及HTML转换器，支持直接发送以多彩的文字或html文件合成的图片，实现你的绝佳创意。
 footer: MIT Licensed | Copyright © 2022-present vivien8261

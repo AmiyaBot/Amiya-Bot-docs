@@ -10,7 +10,7 @@ const theme = require('./theme')
 module.exports = {
     lang: 'zh-CN',
     title: 'AmiyaBot',
-    description: '简洁高效的异步 Python QQ 频道机器人框架',
+    description: '简洁高效的异步 Python QQ 机器人框架',
     plugins: [
         shikiPlugin(
             {

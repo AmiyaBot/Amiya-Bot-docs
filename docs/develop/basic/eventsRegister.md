@@ -7,21 +7,21 @@ Event 对象。可以使用 on_event 装饰器去获取事件。
 ## 注册事件响应
 
 ```python
-from amiyabot import Event, BotInstance
+from amiyabot import Event, BotAdapterProtocol
 
 ...
 
 @bot.on_event('GUILD_CREATE')
-async def _(event: Event, instance: BotInstance):
+async def _(event: Event, instance: BotAdapterProtocol):
     ...
 
 @bot.on_event(['CHANNEL_CREATE', 'CHANNEL_UPDATE'])
-async def _(event: Event, instance: BotInstance):
+async def _(event: Event, instance: BotAdapterProtocol):
     ...
 ```
 
 - `on_event` 接受一个**事件名或事件名列表**作为参数，在 [事件列表](#事件列表) 查看目前可接受的事件名。
-- 响应函数是一个协程，接受 Event 对象和 [BotInstance](/develop/basic/activeMessage) 对象两个参数。
+- 响应函数是一个协程，接受 Event 对象和 bot 实例两个参数。
 
 ### Event 对象
 
@@ -58,7 +58,7 @@ async def _(event: Event, instance: BotInstance):
 
 ```python
 @bot.on_event('GUILD_CREATE')
-async def _(event: Event, instance: BotInstance):
+async def _(event: Event, instance: BotAdapterProtocol):
 
     print(event.data['name'])        // 频道名称
     print(event.data['description']) // 频道介绍
