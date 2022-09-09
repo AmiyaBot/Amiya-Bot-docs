@@ -83,8 +83,10 @@ asyncio.run(bot.start())
 示例
 
 ```python
-bot = MultipleAccounts()  // 创建一个空多账号
-...
-bot.append(AmiyaBot(...)) // 插入一个实例
-del bot[appid]            // 删除实例，同时关闭实例的连接
+# 创建一个空多账号
+bot = MultipleAccounts()
+# 插入并启动一个实例
+bot.append(AmiyaBot(appid='12345', ...))
+# 删除实例，同时关闭实例的连接
+del bot['12345']
 ```

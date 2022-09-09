@@ -8,12 +8,12 @@ export default {
     themeConfig: {
         nav: navbar,
         sidebar: sidebar,
-        // editLink: {
-        //     pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
-        //     text: 'Edit this page on GitHub'
-        // },
+        editLink: {
+            pattern: 'https://github.com/AmiyaBot/Amiya-Bot-docs/edit/master/docs/:path',
+            text: '在 GitHub 上编辑此页'
+        },
         socialLinks: [
-            {icon: 'github', link: 'https://github.com/vuejs/vitepress'}
+            {icon: 'github', link: 'https://github.com/AmiyaBot/Amiya-Bot-core'}
         ],
         footer: {
             message: 'MIT Licensed',

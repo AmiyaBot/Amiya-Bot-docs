@@ -97,38 +97,45 @@ TableName.batch_insert(data)
 
 ## 查询转换工具
 
+### convert_model
+
+将查询结果转换为字典
+
+| 参数名          | 类型     | 释义          | 默认值 |
+|--------------|--------|-------------|-----|
+| model        |        | peewee 查询结果 |     |
+| select_model | Select | peewee 查询对象 |     |
+
+```python
+data = convert_model(TableName.get_or_none())
+```
+
 ### query_to_list
 
 将查询结果转换为字典列表
 
-| 参数名       | 类型           | 释义          | 默认值     |
-|-----------|--------------|-------------|---------|
-| model     | ModelClass   | 表模型         |         |
+| 参数名          | 类型     | 释义          | 默认值 |
+|--------------|--------|-------------|-----|
+| query        | List   | peewee 查询结果 |     |
+| select_model | Select | peewee 查询对象 |     |
 
 ```python
-data = TableName.select()
-data_dict = query_to_list(data)
+data = query_to_list(TableName.select())
 ```
 
 ### select_for_paginate
 
 分页查询工具
 
-| 参数名       | 类型           | 释义          | 默认值     |
-|-----------|--------------|-------------|---------|
-| model     | ModelClass   | 表模型         |         |
-| search    | SearchParams | 搜索查询对象      | None    |
-| fields    | Tuple        | 返回的字段列表     | tuple() |
-| join      | Dict         | join 查询语句字典 | None    |
-| order_by  | Tuple        | 排序字段及其排序方式  | None    |
-| page      | Int          | 当前页         | 1       |
-| page_size | Int          | 页行数         | 10      |
+| 参数名       | 类型          | 释义          | 默认值 |
+|-----------|-------------|-------------|-----|
+| model     | ModelSelect | peewee 查询对象 |     |
+| page      | Int         | 当前页         |     |
+| page_size | Int         | 页行数         |     |
 
-### exec_sql_file
+```python
+data = select_for_paginate(TableName.select(), 1, 10)
 
-执行 sql 文件
-
-| 参数名  | 类型                           | 释义    | 默认值 |
-|------|------------------------------|-------|-----|
-| path | str                          | 文件路径  |     |
-| db   | MySQLDatabase/SqliteDatabase | 数据库实例 |     |
+data['list']  # 查询结果
+data['total'] # 总条数
+```

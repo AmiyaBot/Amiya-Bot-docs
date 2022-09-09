@@ -4,7 +4,7 @@ layout: home
 hero:
     name: AmiyaBot
     text: Async QQ Bot Framework
-    tagline: 基于 Python asyncio 的简洁高效的 QQ 机器人框架
+    tagline: 🎉 基于 Python asyncio 的 QQ 机器人框架
     actions:
         -   theme: brand
             text: 开始使用
@@ -14,10 +14,10 @@ hero:
             link: /guide/
 
 features:
-    -   icon: 👌
-        title: 易上手
-        details: 采用异步I/O，摆脱官方API繁杂的操作，以更加简洁和可读性更高的代码让你专注于你的业务逻辑。
     -   icon: 🚀
+        title: 简洁高效
+        details: 采用异步I/O，摆脱官方API繁杂的操作，以更加简洁和可读性更高的代码让你专注于你的业务逻辑。
+    -   icon: 🎭
         title: 多账号 & 热插拔
         details: 支持同时创建多个机器人实例，为所有实例注册共享的消息处理方法。可以在多账号实例内动态增删机器人。
     -   icon: 🤖

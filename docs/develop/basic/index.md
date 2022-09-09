@@ -1,8 +1,8 @@
 # 起步
 
 在开始之前，我们希望你知道 AmiyaBot 是一款针对 QQ
-频道机器人的框架。如果你想使用第三方机器人服务（如 [mirai-api-http](https://github.com/project-mirai/mirai-api-http)），则需要更改实例的适配器。<br>
-更改适配器只会让 AmiyaBot 的部分方法参数名**产生歧义**，不会影响运作。接下来的文档将围绕 QQ 频道机器人展开。**如果需要 [更改适配器](/develop/basic/selectAdapter) 可跳过本节**。
+频道机器人的框架。如果你想使用第三方机器人服务（如 [mirai-api-http](https://github.com/project-mirai/mirai-api-http)），可更改实例的适配器。<br>
+接下来的文档将围绕 QQ 频道机器人展开。**如果需要 [更改适配器](/develop/basic/selectAdapter) 可直接阅读下一节**。
 
 我们建议你先在 [QQ开放平台](https://q.qq.com/) 了解 QQ 频道机器人的运营规则，这非常重要，因为在本文档里，关于这部分的内容将会非常少。如果你并不了解 QQ 频道机器人，后续的文档可能会对你造成疑惑。
 

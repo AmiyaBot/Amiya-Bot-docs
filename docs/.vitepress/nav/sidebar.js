@@ -32,6 +32,7 @@ export default {
     '/develop/advanced/': [
         {
             text: '设计',
+            collapsible: true,
             items: [
                 {text: '设计', link: '/develop/advanced/index.md'},
                 {text: '生命周期', link: '/develop/advanced/lifeCycle.md'},
@@ -39,8 +40,10 @@ export default {
         },
         {
             text: '额外支持',
+            collapsible: true,
             items: [
                 {text: '数据库', link: '/develop/advanced/databaseSupport.md'},
+                {text: 'HTTP服务器', link: '/develop/advanced/httpSupport.md'},
             ]
         }
     ]

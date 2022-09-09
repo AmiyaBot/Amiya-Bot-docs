@@ -1,4 +1,4 @@
-# 开发机器人的功能
+# 如何开发机器人的功能？
 
 AmiyaBot 功能开发的关键模块一共有三个，分别是 `AmiyaBot`、`Message`和`Chain`。
 
@@ -6,7 +6,7 @@ AmiyaBot 功能开发的关键模块一共有三个，分别是 `AmiyaBot`、`Me
 - `Message` 为接收的消息主体，内含预解析的消息内容，以及一些相关操作函数。Message 对象在此仅用于参数类型注解，供编辑器智能提示使用，任何时候，你都不需要实例化 Message 对象。
 - `Chain` 为机器人消息的创建工具。任何需要发送消息的时候，消息都必须由 Chain 类创建。核心会调用 Chain 类的 build 方法生成消息链。
 
-在起步里，你应该都见过它们了。
+首先需要知道的是，如何注册消息响应。
 
 ## 注册消息响应
 
@@ -27,16 +27,52 @@ async def _(data: Message):
 
 | 参数名          | 类型       | 释义                                 | 默认值   |
 |--------------|----------|------------------------------------|-------|
-| group_id     | String   | 功能组名称                              ||
-| keywords     | Union    | 触发关键字，支持字符串、正则、全等句（equal）或由它们构成的列表 ||
-| verify       | Callable | 自定义校验方法，当该参数被赋值时，keywords 将会失效     ||
-| check_prefix | Union    | 是否校验前缀或指定需要校验的前缀                   | True  |
-| allow_direct | Union    | 是否支持通过私信使用该功能                      | False |
+| group_id     | String   | 功能组ID                              |       |
+| keywords     | Union    | 触发关键字，支持字符串、正则、全等句（equal）或由它们构成的列表 |       |
+| verify       | Callable | 自定义校验方法，当该参数被赋值时，keywords 将会失效     |       |
+| check_prefix | Bool     | 是否校验前缀或指定需要校验的前缀                   | True  |
+| allow_direct | Bool     | 是否支持通过私信使用该功能                      | False |
+| direct_only  | Bool     | 是否仅支持私信                            | False |
 | level        | Int      | 关键字校验成功后函数的候选默认等级                  | 0     |
 
 ## 功能组
 
-设置参数 `group_id` 为该功能分配[功能的组别](/develop/advanced/functionsGroup)。此部分属于进阶用法，可在阅读完基础文档后再查看。
+参数 `group_id` 可以为该功能设置功能组。功能组可以批量为功能设置参数。
+
+实例化 **GroupConfig** 对象创建一个功能组，并将其设置到 bot 实例内。
+
+| 参数名          | 类型     | 释义               | 默认值   |
+|--------------|--------|------------------|-------|
+| group_id     | String | 功能组ID            |       |
+| check_prefix | Bool   | 是否校验前缀或指定需要校验的前缀 | True  |
+| allow_direct | Bool   | 是否支持通过私信使用该功能    | False |
+| direct_only  | Bool   | 是否仅支持私信          | False |
+
+```python
+from amiyabot import GroupConfig
+
+fn_group = GroupConfig('test', check_prefix=False)
+bot.set_group_config(fn_group)  # 注册功能组
+```
+
+为消息响应设置 `group_id` 参数
+
+```python
+# 传入功能组名称设置组别
+@bot.on_message(group_id='test', keywords='...')
+async def _(data: Message):
+    ...
+
+
+# 传入功能组对象设置组别（效果相同）
+@bot.on_message(group_id=fn_group, keywords='...')
+async def _(data: Message):
+    ...
+```
+
+::: danger 注意<br>
+仅当 on_message 里没有设置该参数时，功能组的参数才会对其生效。否则优先使用 on_message 的参数。
+:::
 
 ## 私域模式的前缀校验
 
