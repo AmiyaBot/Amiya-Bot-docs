@@ -57,6 +57,10 @@ await bot['222222'].send_message(...)
 
 ### 在事件响应里使用 send_message
 
+::: tip 提示<br>
+事件响应的方法通常可以返回触发了该事件的实例。
+:::
+
 #### 事件监听
 
 ```python

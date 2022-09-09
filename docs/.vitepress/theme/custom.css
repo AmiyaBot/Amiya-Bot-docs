@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Harmony';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cos.amiyabot.com/resource/Harmony_amiyabot.com.min.woff2')
+}
+
+:root {
+    scroll-behavior: smooth;
+    /*--vp-font-family-base: -apple-system, BlinkMacSystemFont, 'Harmony', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;*/
+    --vp-font-family-base: 'Inter var experimental', 'Inter var', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Harmony', sans-serif;
+    --vp-c-brand: #ba68c8;
+    --vp-c-brand-dark: #b74ec9;
+    --vp-c-brand-light: #ce93d8;
+}
+
+.vp-doc table {
+    font-size: 14px;
+}
+
+.vp-doc th, .vp-doc td {
+    padding: 5px 10px;
+}
+
+img {
+    border-radius: 4px;
+}

@@ -1,4 +1,4 @@
-# 快速起步
+# 起步
 
 在开始之前，我们希望你知道 AmiyaBot 是一款针对 QQ
 频道机器人的框架。如果你想使用第三方机器人服务（如 [mirai-api-http](https://github.com/project-mirai/mirai-api-http)），则需要更改实例的适配器。<br>
@@ -35,7 +35,7 @@ asyncio.run(bot.start())
 
 3. 运行代码，在频道里输入 `@机器人 hello`，你预期会看到如下输出。
 
-<img style="width: 220px" :src="$withBase('/examples/hello.png')" alt="image">
+<img style="width: 220px" src="../../assets/examples/hello2.png" alt="image">
 
 那么恭喜你，你的 QQ 机器人已经可以正常运作了。
 
@@ -56,4 +56,4 @@ bot.prefix_keywords = ['amiya', 'amy']
 
 使用前缀触发词唤醒机器人
 
-<img style="width: 220px" :src="$withBase('/examples/hello2.png')" alt="image">
+<img style="width: 220px" src="../../assets/examples/hello.png" alt="image">

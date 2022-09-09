@@ -6,9 +6,9 @@
 
 HTML制图需要使用 playwright 模块，所以仅支持以下操作系统。
 
-- Windows 7 以上系统
+- Windows 10 以上系统
 - MacOS 10.14 Mojave 以上系统
-- Linux 系统仅支持 Ubuntu 18.04 以及 Ubuntu 20.04
+- Linux 系统官方支持 Ubuntu 18.04 以及 Ubuntu 20.04（不完全测试）
 
 :::
 
@@ -22,7 +22,7 @@ HTML制图需要使用 playwright 模块，所以仅支持以下操作系统。
 playwright install chromium
 ```
 
-#### Ubuntu
+#### Ubuntu（Linux）
 
 ```bash
 playwright install --with-deps chromium
@@ -109,7 +109,7 @@ async def _(data: Message):
 。<br>
 渲染结束后，无头浏览器截图生成图片，然后执行常规的图片发送方法。
 
-<img style="width: 220px" :src="$withBase('/examples/hello7.png')" alt="image">
+<img style="width: 220px" src="../../assets/examples/hello7.png" alt="image">
 
 _效果用于示例，相信你可以写出更为美观的页面。_
 

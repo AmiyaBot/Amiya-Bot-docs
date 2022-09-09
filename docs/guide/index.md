@@ -1,5 +1,5 @@
 ---
-sidebar: false
+aside: false
 ---
 
 # AmiyaBot 简介

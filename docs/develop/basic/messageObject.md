@@ -39,7 +39,7 @@
 | wait         | reply,force,max_time,data_filter       | 等待用户消息  | 是   |
 | wait_channel | reply,force,clean,max_time,data_filter | 等待子频道消息 | 是   |
 
-## Message.send
+## Message.send()
 
 **参数列表**
 
@@ -64,9 +64,9 @@ async def _(data: Message):
 
 回复将会呈现以下效果：
 
-<img style="width: 220px" :src="$withBase('/examples/hello3.png')" alt="image">
+<img style="width: 220px" src="../../assets/examples/hello3.png" alt="image">
 
-## Message.wait
+## Message.wait()
 
 **参数列表**
 
@@ -93,7 +93,7 @@ async def _(data: Message):
         return Chain(reply).text(f'hello, {data.nickname}')
 ```
 
-<img style="width: 220px" :src="$withBase('/examples/hello4.png')" alt="image">
+<img style="width: 220px" src="../../assets/examples/hello4.png" alt="image">
 
 ### force 强制等待
 
@@ -126,7 +126,7 @@ async def _(data: Message):
 - 同一个子频道内的同一个用户只能存在一个等待事件，当一个新的等待事件创建后，上一个未使用的等待事件会被注销并引发 `WaitEventCancel` 异常，进行中的业务将会被**终止**，通常这个异常会被全局异常捕捉器过滤。
 - 在等待时间内使用其他功能，等待也会被注销。
 
-## Message.wait_channel
+## Message.wait_channel()
 
 ::: danger 注意<br>
 该方法不可用于支持私信的功能里
@@ -176,7 +176,7 @@ async def _(data: Message):
             await data.send(Chain(reply).text(f'hello，{reply.text}'))
 ```
 
-### close_event
+### close_event()
 
 ::: warning 请注意<br>
 wait_channel 与 wait 的用法是**大致相同**的，但是 wait_channel 在接收到有效消息并返回后，不会像 wait 那样关闭事件，而是保持接收子频道消息。在你的业务逻辑正常结束时，你**必须**使用
@@ -184,7 +184,7 @@ wait_channel 与 wait 的用法是**大致相同**的，但是 wait_channel 在�
 **请务必让你的业务逻辑有机会关闭等待事件**，否则等待事件没有被正常关闭时，它可能会**持续拦截子频道消息**直至超时自动关闭。
 :::
 
-### clean
+### clean()
 
 如果你持续调用 wait_channel（如示例所示），但你不希望在处理业务时错过子频道内的消息，可以设置参数 `clean=False` 让事件不清除消息队列。让你可以按顺序获取到子频道内的消息。
 

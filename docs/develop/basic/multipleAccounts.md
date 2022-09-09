@@ -65,3 +65,26 @@ async def _(data: Message):
 
 asyncio.run(bot.start())
 ```
+
+## 多账号热插拔
+
+多账号支持动态创建和删除里面的实例，也允许先创建**空多账号实例**。随后往里面插入 AmiyaBot 对象。
+
+### MultipleAccounts.append()
+
+插入一个实例
+
+| 参数名             | 类型       | 释义             | 默认值   |
+|-----------------|----------|----------------|-------|
+| item            | AmiyaBot | AmiyaBot 实例    |       |
+| enable_chromium | Bool     | 启动时开启 chromium | False |
+| start_up        | Bool     | 插入后立即启动        | True  |
+
+示例
+
+```python
+bot = MultipleAccounts()  // 创建一个空多账号
+...
+bot.append(AmiyaBot(...)) // 插入一个实例
+del bot[appid]            // 删除实例，同时关闭实例的连接
+```
