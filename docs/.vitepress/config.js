@@ -17,7 +17,7 @@ export default {
         ],
         footer: {
             message: 'MIT Licensed',
-            copyright: 'Copyright © 2022-present vivien8261'
+            copyright: 'Copyright © 2022-present vivien8261 粤ICP备2021107697号-1'
         }
     },
     lastUpdated: true
