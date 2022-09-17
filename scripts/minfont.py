@@ -15,7 +15,7 @@ from fontTools import subset
 from fontTools.ttLib import TTFont
 
 origin_path = join('docs')
-ignore_dirs = ['dist', 'public', '.DS_Store']
+ignore_dirs = ['dist', 'public', '.DS_Store', 'assets']
 out_path = join('fonts')
 font = join('scripts', 'HarmonyOS_Sans_SC.ttf')
 
