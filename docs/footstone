@@ -1,3 +1,13 @@
+***************************
+不要删除这个文件！！！
+DON'T DELETE THIS FILE!!!
+正如文件名“基石”，这个文件包含了一些最基本的字符，以确保在字体压缩时压缩后的产物可以显示这些基本字符。
+如果删除它，当网站拥有评论功能时，将会出现严重问题！
+就算没有评论功能，留着它也没坏处么。
+你还可以自己添加一些内容，如果你的站点要用到没有写在 Markdown 里的字的话。
+本文件使用 WTFPL 授权，但恳请您保留这段说明及作者：Initial_heart。
+***************************
+
 The quick brown fox jumps over the lazy dog.
 THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
 Innovation in China 中国智造，慧及全球 0123456789
