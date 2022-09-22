@@ -10,8 +10,8 @@ hero:
             text: 开始使用
             link: /develop/basic/
         -   theme: alt
-            text: 项目简介
-            link: /guide/
+            text: 部署 AmiyaBot-demo-v6
+            link: /guide/deploy/
 
 features:
     -   icon: 🚀

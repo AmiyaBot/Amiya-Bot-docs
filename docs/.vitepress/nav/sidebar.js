@@ -46,5 +46,24 @@ export default {
                 {text: 'HTTP服务器', link: '/develop/advanced/httpSupport.md'},
             ]
         }
+    ],
+    '/guide/deploy/': [
+        {
+            text: '准备',
+            collapsible: true,
+            items: [
+                {text: '简要说明', link: '/guide/deploy/index.md'},
+                {text: '选择你的运营方', link: '/guide/deploy/yourChoose.md'},
+                {text: '开始部署', link: '/guide/deploy/getStarted.md'},
+            ]
+        },
+        {
+            text: '使用控制台',
+            collapsible: true,
+            items: [
+                {text: '连接控制台', link: '/guide/deploy/console/index.md'},
+                {text: '配置实例', link: '/guide/deploy/console/configure.md'},
+            ]
+        }
     ]
 }
