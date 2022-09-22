@@ -6,8 +6,6 @@ import download from './download.vue'
 
 ::: danger 操作系统支持<br>
 
-内置的制图模块使用了较高版本的 Node，所以仅支持以下操作系统。
-
 - Windows 10 以上系统
 - MacOS 10.14 Mojave 以上系统
 - Linux 系统官方支持 Ubuntu 18.04 以及 Ubuntu 20.04（不完全测试）
@@ -21,7 +19,7 @@ import download from './download.vue'
 
 ## 通过可执行文件部署（推荐）
 
-<download />，解压并运行 AmiyaBot-*.exe，如下图成功运行后可以进入下一节。
+<download />，解压并运行 AmiyaBot-*.exe，如下图成功运行后可以进入[下一节](/guide/deploy/console/)。
 
 ![img.png](../../assets/deploy/running.png)
 
@@ -31,7 +29,7 @@ import download from './download.vue'
 推荐使用 Python 3.7 ~ 3.8 运行本项目代码
 :::
 
-1. [克隆仓库](https://github.com/AmiyaBot/Amiya-Bot)代码并切换到 V6-dev 分支。
+1. [克隆仓库代码](https://github.com/AmiyaBot/Amiya-Bot)并切换到 **V6-dev** 分支。
 2. 安装依赖
 
 ```bash

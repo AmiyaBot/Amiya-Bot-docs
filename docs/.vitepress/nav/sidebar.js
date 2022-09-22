@@ -63,6 +63,7 @@ export default {
             items: [
                 {text: '连接控制台', link: '/guide/deploy/console/index.md'},
                 {text: '配置实例', link: '/guide/deploy/console/configure.md'},
+                {text: '安装插件', link: '/guide/deploy/console/plugin.md'},
             ]
         }
     ]

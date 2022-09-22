@@ -8,16 +8,16 @@ export default [
         link: '/guide/'
     },
     {
-        text: '主体项目',
-        link: '/guide/deploy/'
-    },
-    {
         text: '开发指南',
         link: '/develop/basic/'
     },
     {
         text: '进阶指南',
         link: '/develop/advanced/'
+    },
+    {
+        text: 'AmiyaBot-demo-v6',
+        link: '/guide/deploy/'
     },
     {
         text: '官方频道',

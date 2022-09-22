@@ -12,10 +12,9 @@ authKey 为连接控制台时的密匙，默认不需要。
 
 ## 连接
 
-浏览器打开控制台 https://console.amiyabot.com，在主界面填入你的服务地址。
-
+浏览器打开控制台 https://console.amiyabot.com，在主界面填入你的服务地址。<br>
 默认为 http://127.0.0.1:8088
 
-![img.png](../../../assets/console/link.png)
+![](../../../assets/console/link.png)
 
 点击“测试并连接”，成功进入后即可开始配置。
