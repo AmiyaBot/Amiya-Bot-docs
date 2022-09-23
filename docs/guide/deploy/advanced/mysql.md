@@ -1,6 +1,6 @@
 # 使用 Mysql
 
-  在 `config\database.yaml"` 中可以配置使用的数据库，如果想使用 `Mysql`，请按下面的配置说明进行配置：
+  在 `config\database.yaml` 中可以配置使用的数据库，如果想使用 `Mysql`，请按下面的配置说明进行配置：
 
   ```yaml
   mode: 'mysql'
