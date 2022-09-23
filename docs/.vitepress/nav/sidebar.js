@@ -74,6 +74,7 @@ export default {
                 {text: '使用 Mysql', link: '/guide/deploy/advanced/mysql.md'},
                 {text: '添加自定义表情', link: '/guide/deploy/advanced/face.md'}
             ]
+        }
 
     ]
 }
