@@ -1,6 +1,6 @@
 # 连接控制台
 
-兔兔在启动后会开启一个 HTTP 服务，默认端口为 8088。提供给[控制台](https://console.amiyabot.com)调用。你可以根据需要在启动前修改配置`config/server.yaml`。
+兔兔在启动后会开启一个 HTTP 服务，默认端口为 8088。提供给 [控制台](https://console.amiyabot.com) 调用。你可以根据需要在启动前修改配置`config/server.yaml`。
 
 ```yaml
 host: 127.0.0.1
@@ -9,6 +9,12 @@ authKey:
 ```
 
 authKey 为连接控制台时的密匙，默认不需要。
+
+::: warning 警告
+
+当你试图通过公网连接至控制台时，请务必设定 authKey 且通过反向代理加密连接。
+
+:::
 
 ## 连接
 
