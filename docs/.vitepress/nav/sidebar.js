@@ -65,6 +65,15 @@ export default {
                 {text: '配置实例', link: '/guide/deploy/console/configure.md'},
                 {text: '安装插件', link: '/guide/deploy/console/plugin.md'},
             ]
-        }
+        },
+       {
+           text: '高级使用',
+           collapsible: true,
+           items: [
+                {text: '说明', link '/guide/deploy/advanced/index.md'},
+                {text: '使用 Mysql', link: '/guide/deploy/advanced/mysql.md'},
+                {text: '添加自定义表情', link: '/guide/deploy/advanced/face.md'}
+            ]
+
     ]
 }
