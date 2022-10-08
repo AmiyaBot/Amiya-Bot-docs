@@ -72,7 +72,6 @@ export default {
            items: [
                {text: '说明', link: '/guide/deploy/advanced/index.md'},
                {text: '使用 Mysql', link: '/guide/deploy/advanced/mysql.md'},
-               {text: '添加自定义表情', link: '/guide/deploy/advanced/face.md'},
             ]
         }
     ]
