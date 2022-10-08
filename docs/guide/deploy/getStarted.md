@@ -19,7 +19,11 @@ import download from './download.vue'
 
 ## 通过可执行文件部署
 
-<download />，解压并运行 AmiyaBot-*.exe，如下图成功运行后可以进入[下一节](/guide/deploy/console/)。
+点击下载可执行文件：
+<download version="master" text="正式版" />
+<download version="dev" text="测试版" />
+
+解压并运行 AmiyaBot-*.exe，如下图成功运行后可以进入[下一节](/guide/deploy/console/)。
 
 ![img.png](../../assets/deploy/running.png)
 
@@ -29,7 +33,7 @@ import download from './download.vue'
 推荐使用 Python 3.7 ~ 3.8 运行本项目代码
 :::
 
-1. [克隆仓库代码](https://github.com/AmiyaBot/Amiya-Bot)并切换到 **V6-dev** 分支。
+1. [克隆仓库](https://github.com/AmiyaBot/Amiya-Bot)
 2. 安装依赖
 
 ```bash

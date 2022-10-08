@@ -12,7 +12,7 @@ QQ 机器人目前分为两种，一种是由腾讯官方运营的 [频道机器
 
 ## QQ 群机器人
 
-如果你选择了 QQ 群机器人，首先遗憾的告诉你，你可能需要克服一些困难才能顺利部署。第三方技术我们目前只支持 [mirai-api-http](https://github.com/project-mirai/mirai-api-http)。
+如果你选择了 QQ 群机器人，你可能需要克服一些困难才能顺利部署。第三方技术我们目前只支持 [mirai-api-http](https://github.com/project-mirai/mirai-api-http)。
 你必须自行部署好才能够继续部署兔兔。
 
 我们的团队成员 [Initial-heart](https://github.com/Initial-heart-1) 为你提供了一篇部署 mirai-api-http 的博客，这篇博文详尽的描述了部署 mirai-api-http 的前期准备、部署、配置等整套部署 mirai-api-http 所需的流程。

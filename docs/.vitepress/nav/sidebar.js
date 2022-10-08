@@ -47,6 +47,34 @@ export default {
             ]
         }
     ],
+    '/develop/plugin/': [
+        {
+            text: '准备',
+            collapsible: true,
+            items: [
+                {text: '简要说明', link: '/develop/plugin/index.md'},
+                {text: '准备开发环境', link: '/develop/plugin/env.md'},
+            ]
+        },
+        {
+            text: '开发',
+            collapsible: true,
+            items: [
+                {text: '创建&编写插件', link: '/develop/plugin/dev.md'},
+                {text: '插件生命周期', link: '/develop/plugin/life.md'},
+                {text: '添加插件文档', link: '/develop/plugin/addDoc.md'},
+                {text: '调试插件', link: '/develop/plugin/debug.md'},
+            ]
+        },
+        {
+            text: '发布',
+            collapsible: true,
+            items: [
+                {text: '打包插件', link: '/develop/plugin/build.md'},
+                {text: '发布到插件商店', link: '/develop/plugin/publish.md'},
+            ]
+        },
+    ],
     '/guide/deploy/': [
         {
             text: '准备',
@@ -66,12 +94,12 @@ export default {
                 {text: '安装插件', link: '/guide/deploy/console/plugin.md'},
             ]
         },
-       {
-           text: '高级使用',
-           collapsible: true,
-           items: [
-               {text: '说明', link: '/guide/deploy/advanced/index.md'},
-               {text: '使用 Mysql', link: '/guide/deploy/advanced/mysql.md'},
+        {
+            text: '高级使用',
+            collapsible: true,
+            items: [
+                {text: '说明', link: '/guide/deploy/advanced/index.md'},
+                {text: '使用 Mysql', link: '/guide/deploy/advanced/mysql.md'},
             ]
         }
     ]

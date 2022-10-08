@@ -193,6 +193,27 @@ Chain(data).image(url=target)
 
 添加一条语音（QQ机器人暂未支持发送语音）
 
+## Chain.markdown()
+
+::: danger 注意<br>
+这并非QQ机器人官方提供的[发送markdown消息](https://bot.q.qq.com/wiki/develop/api/openapi/message/post_markdown_messages.html)
+:::
+
+添加一张由 markdown 文本渲染的图片，直接传入 md 格式的文本，使用 html 模式渲染。建议先阅读[使用 html 页面生成的图片](/develop/basic/htmlConvert)。
+
+| 参数名         | 类型     | 释义          | 默认值 |
+|-------------|--------|-------------|-----|
+| content     | String | markdown 文本 |     |
+| render_time | Int    | 渲染时间（毫秒）    | 200 |
+
+```python
+Chain(data).markdown(text)
+```
+
+::: warning 提示 <br>
+文本量大时，渲染将会耗费较长时间，默认预留200ms的渲染时间。可通过参数 `render_time` 设置需要的时间。
+:::
+
 ## Chain.html()
 
 添加一张[使用 html 页面生成的图片](/develop/basic/htmlConvert)，此部分篇幅较长，我们移步下一节。
