@@ -52,7 +52,7 @@ asyncio.run(bot.start())
 bot = AmiyaBot(appid='******', token='******', private=True)
 
 # 添加前缀触发词
-bot.prefix_keywords = ['amiya', 'amy']
+bot.set_prefix_keywords(['amiya', 'amy'])
 ```
 
 使用前缀触发词唤醒机器人
