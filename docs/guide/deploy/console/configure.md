@@ -28,6 +28,12 @@
 ![](../../../assets/console/addMAHBot.png)
 :::
 
+### go-cqhttp支持的群聊机器人
+
+`APP ID` 为登录在 go-cqhttp 的 **QQ 号**。<br>
+`TOKEN` 不需要填。<br>
+`CQ-Http 配置` 请准确填写你部署 go-cqhttp 时的信息。
+
 点击“保存并启动”运行实例。
 
 <img style="width: 300px" src="../../../assets/console/online.png" alt="image">
