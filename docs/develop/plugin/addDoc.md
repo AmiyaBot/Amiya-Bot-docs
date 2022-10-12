@@ -15,7 +15,7 @@ Amiya-Bot
 ...
 ```
 
-demo 允许直接使用文档路径作为文档，只需要把路径传入到 PluginInstance 对象的 `document` 参数。
+demo 允许直接使用 markdown 文件路径作为文档，只需要把路径传入到 PluginInstance 对象的 `document` 参数。
 
 ```python
 import os
@@ -31,7 +31,9 @@ bot = PluginInstance(
 
 ## 直接在参数内编写
 
-如果并非文本量少，我们不推荐这种做法。
+::: warning 提示<br>
+我们不推荐这种做法，除非你的插件文档只有少量文本。
+:::
 
 ```python
 bot = PluginInstance(
