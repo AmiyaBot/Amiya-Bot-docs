@@ -38,10 +38,23 @@ import download from './download.vue'
 
 ```bash
 pip install -r requirements.txt
+```
+
+3. 安装 Chromium
+
+**Windows or MacOS**
+
+```bash
 playwright install chromium
 ```
 
-3. 运行代码
+**Ubuntu（Linux）**
+
+```bash
+playwright install --with-deps chromium
+```
+
+4. 运行代码
 
 ```bash
 python amiya.py

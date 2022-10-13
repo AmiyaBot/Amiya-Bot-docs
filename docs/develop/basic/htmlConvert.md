@@ -30,7 +30,7 @@ playwright install --with-deps chromium
 
 ## 启动时打开 Chromium
 
-在 bot（包括[多账号实例](/develop/basic/multipleAccounts.html#创建一个多账号实例)）启动的 start 方法内设置参数 `enable_chromium=True`
+在 bot（包括[多账号实例](/develop/basic/multipleAccounts.html#创建一个多账号实例)）启动的 start 方法内设置参数 `launch_browser=True`
 
 ```python
 bot.start(launch_browser=True)
