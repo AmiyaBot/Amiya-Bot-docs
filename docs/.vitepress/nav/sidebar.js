@@ -53,8 +53,8 @@ export default {
             text: '准备',
             collapsible: true,
             items: [
-                {text: '简要说明', link: '/develop/plugin/index.md'},
-                {text: '准备开发环境', link: '/develop/plugin/env.md'},
+                {text: '插件开发说明', link: '/develop/plugin/index.md'},
+                {text: '环境准备', link: '/develop/plugin/env.md'},
             ]
         },
         {
@@ -81,7 +81,7 @@ export default {
             text: '准备',
             collapsible: true,
             items: [
-                {text: '简要说明', link: '/guide/deploy/index.md'},
+                {text: '部署AmiyaBot-demo-v6', link: '/guide/deploy/index.md'},
                 {text: '选择你的运营方', link: '/guide/deploy/yourChoose.md'},
                 {text: '开始部署', link: '/guide/deploy/getStarted.md'},
             ]

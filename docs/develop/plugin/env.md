@@ -29,7 +29,7 @@ Amiya-Bot
 ...
 ```
 
-此时建议安装 AmiyaBot-demo 的依赖，如果**不需要使用 demo 的内置模块**或是你在自己的目录内开发插件。那么只需要安装 amiyabot 即可。
+建议安装 AmiyaBot-demo 的依赖，如果**不需要使用 demo 的内置模块**或是你在自己的目录内开发插件。那么只需要安装 amiyabot 即可。
 
 ```bash
 pip install amiyabot

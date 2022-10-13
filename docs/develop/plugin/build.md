@@ -35,3 +35,7 @@ myPlugin.zip
 ```bash
 python run_build.py --type plugins
 ```
+
+::: warning 注意<br>
+脚本打包尚处于试验阶段，你仍然需要手动添加第三方包进插件
+:::
