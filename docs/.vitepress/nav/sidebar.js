@@ -31,11 +31,12 @@ export default {
     ],
     '/develop/advanced/': [
         {
-            text: '设计',
+            text: '进阶开发',
             collapsible: true,
             items: [
-                {text: '设计', link: '/develop/advanced/index.md'},
+                {text: '说明', link: '/develop/advanced/index.md'},
                 {text: '生命周期', link: '/develop/advanced/lifeCycle.md'},
+                {text: '日志模块', link: '/develop/advanced/logger.md'},
             ]
         },
         {

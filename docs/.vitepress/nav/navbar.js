@@ -8,6 +8,10 @@ export default [
         link: '/guide/'
     },
     {
+        text: '设计',
+        link: '/develop/design'
+    },
+    {
         text: '开发指南',
         link: '/develop/basic/'
     },
