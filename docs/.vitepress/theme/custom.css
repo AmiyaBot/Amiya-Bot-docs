@@ -7,7 +7,6 @@
 
 :root {
     scroll-behavior: smooth;
-    /*--vp-font-family-base: -apple-system, BlinkMacSystemFont, 'Harmony', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;*/
     --vp-font-family-base: 'Inter var experimental', 'Inter var', -apple-system,
     BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Harmony', sans-serif;
@@ -22,6 +21,10 @@
 
 .vp-doc th, .vp-doc td {
     padding: 5px 10px;
+}
+
+code:not(div[class*='language-'] code) {
+    font-family: var(--vp-font-family-base);
 }
 
 img {
