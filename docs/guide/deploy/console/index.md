@@ -1,6 +1,7 @@
 # 连接控制台
 
-兔兔在启动后会开启一个 HTTP 服务，默认端口为 8088。提供给 [控制台](https://console.amiyabot.com) 调用。你可以根据需要在启动前修改配置`config/server.yaml`。
+兔兔在启动后会开启一个 HTTP 服务，默认端口为 8088。提供给 [控制台](https://console.amiyabot.com)
+调用。你可以根据需要在启动前修改配置`config/server.yaml`。
 
 ```yaml
 host: 127.0.0.1
@@ -26,10 +27,28 @@ authKey 为连接控制台时的密匙，默认不需要。
 
 点击“测试并连接”，成功进入后即可开始配置。
 
-::: danger 危险
+## 无法访问？
 
+尝试将 https 访问更改为 http，也就是 http://console.amiyabot.com
+
+谷歌或 chrome 内核的浏览器，可能会自动阻止发送不安全的内网请求。可通过修改浏览器设置解决。
+
+- 浏览器访问设置页面：chrome://flags/#block-insecure-private-network-requests
+- 将该设置改为 **Disabled**
+- 重启浏览器
+
+## 公网访问
+
+host 配置为 `0.0.0.0` 即可让服务通过本机 IP 访问
+
+```yaml
+host: 0.0.0.0
+```
+
+::: danger 危险<br>
 **当你试图从公网连接至控制台时，请务必通过反向代理加密连接！**
 **如果不这么做，你的服务将面临极大的安全风险！因此造成的一切后果由你自行承担！**
-我们的团队成员 Initial-heart 为你提供了 [一篇通过 Nginx 反向代理加密连接的博客](https://www.initbili.top/2022/84452dac2fe6/)，你可以根据这篇博客对你的连接进行加密。
-
 :::
+
+我们的团队成员 Initial-heart
+为你提供了 [一篇通过 Nginx 反向代理加密连接的博客](https://www.initbili.top/2022/84452dac2fe6/)，你可以根据这篇博客对你的连接进行加密。

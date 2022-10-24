@@ -12,10 +12,40 @@
 
 ### 腾讯频道机器人
 
-填写你注册的频道机器人信息
+填写你注册的频道机器人信息，表单字段就是对应内容。
 
 ::: details 窗口图示
 ![](../../../assets/console/addQQBot.png)
+:::
+
+### go-cqhttp支持的群聊机器人
+
+`APP ID` 为登录在 go-cqhttp 的 **QQ 号**。<br>
+`TOKEN` 填写配置的 access-token，没有配置则不需要填写。<br>
+`CQ-Http 配置` 请准确填写你部署 go-cqhttp 时的信息。
+
+可在 go-cqhttp 目录下的文件 `config.yml` 找到
+
+```yaml {4}
+# 默认中间件锚点
+default-middlewares: &default
+    # 访问密钥, 强烈推荐在公网的服务器设置
+    access-token: '*******'
+    # 事件过滤器文件目录
+    filter: ''
+    # API限速设置
+    # 该设置为全局生效
+    # 原 cqhttp 虽然启用了 rate_limit 后缀, 但是基本没插件适配
+    # 目前该限速设置为令牌桶算法, 请参考:
+    # https://baike.baidu.com/item/%E4%BB%A4%E7%89%8C%E6%A1%B6%E7%AE%97%E6%B3%95/6597000?fr=aladdin
+    rate-limit:
+        enabled: false # 是否启用限速
+        frequency: 1  # 令牌回复频率, 单位秒
+        bucket: 1     # 令牌桶大小
+```
+
+::: details 窗口图示
+![](../../../assets/console/addCQBot.png)
 :::
 
 ### mirai-api-http支持的群聊机器人
@@ -48,16 +78,6 @@ adapterSettings:
 
 ::: details 窗口图示
 ![](../../../assets/console/addMAHBot.png)
-:::
-
-### go-cqhttp支持的群聊机器人
-
-`APP ID` 为登录在 go-cqhttp 的 **QQ 号**。<br>
-`TOKEN` 不需要填。<br>
-`CQ-Http 配置` 请准确填写你部署 go-cqhttp 时的信息。
-
-::: details 窗口图示
-![](../../../assets/console/addCQBot.png)
 :::
 
 ### 点击“保存并启动”运行实例。
