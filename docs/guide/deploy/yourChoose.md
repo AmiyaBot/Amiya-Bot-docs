@@ -1,6 +1,6 @@
 # 选择你的运营方
 
-QQ 机器人目前分为两种，一种是由腾讯官方运营的 [频道机器人](https://bot.q.qq.com/wiki)，另一种则是由第三方技术提供支持的**QQ 群机器人**。
+QQ 机器人目前分为两种，一种是由腾讯官方运营的 [频道机器人](https://bot.q.qq.com/wiki)，另一种则是由第三方技术提供支持的QQ群机器人。
 
 ## 频道机器人
 
@@ -18,21 +18,47 @@ QQ 机器人目前分为两种，一种是由腾讯官方运营的 [频道机器
 
 第三方技术目前支持：
 
-- [mirai-api-http](https://docs.mirai.mamoe.net/mirai-api-http/)
 - [go-cqhttp](https://docs.go-cqhttp.org/)
+- [mirai-api-http](https://docs.mirai.mamoe.net/mirai-api-http/)
 
-选择其中一个进行部署。
-
-### 使用 mirai-api-http
-
-我们的团队成员 [Initial-heart](https://github.com/Initial-heart-1) 为你提供了一篇部署 mirai-api-http 的博客，这篇博文详尽的描述了部署 mirai-api-http
-的前期准备、部署、配置等整套部署 mirai-api-http 所需的流程。
-
-https://www.initbili.top/2022/8d92a2feb3e2/#2-%E9%83%A8%E7%BD%B2-mirai
+选择其中一个进行部署即可。
 
 ### 使用 go-cqhttp
 
-> 编写中，敬请期待...
+推荐你直接在 [go-cqhttp 官网](https://docs.go-cqhttp.org/) 按照说明进行部署。如果你能力有限，可以点击下面的链接，下载已经配置好的一键包。
+
+https://cos.amiyabot.com/tools/go-cqhttp.zip
+
+该一键包为 go-cqhttp 的 [v1.0.0-rc3](https://github.com/Mrs4s/go-cqhttp/releases/tag/v1.0.0-rc3)
+版本，省去了首次启动后生成配置文件和启动批处理脚本的步骤，并修改了配置文件。
+
+::: danger 注意<br>
+仅适合 64 位的 Windows 系统。并且使用过程中遇到的一切非预期问题，本项目都概不负责。
+:::
+
+- 解压 go-cqhttp.zip
+- 双击运行 go-cqhttp.bat
+- 等待启动完成后，扫码登录你的机器人QQ帐号
+
+登录成功后请记住以下配置信息，在配置实例的时候需要使用到。
+
+```
+TOKEN：AmiyaBot
+适配器类型：CQ-Http
+Host地址：127.0.0.1
+HTTP端口：8080
+WS端口：8060
+```
+
+### 使用 mirai-api-http
+
+mirai-api-http 有一定的部署难度，需要你拥有一定的计算机科学基础。但对比其他第三方服务，mirai 在很多方面都占有优势。
+
+我们的团队成员 [Initial-heart](https://github.com/Initial-heart-1) 为你提供了一篇部署 mirai-api-http 的博客，这篇博文详尽的描述了部署
+mirai-api-http
+的前期准备、部署、配置等整套部署 mirai-api-http 所需的流程。
+
+https://www.initbili.top/2022/8d92a2feb3e2/#2-%E9%83%A8%E7%BD%B2-mirai
 
 ## 结语
 
