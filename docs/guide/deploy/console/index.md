@@ -29,6 +29,8 @@ authKey 为连接控制台时的密匙，默认不需要。
 
 ## 无法访问？
 
+> 出现报错 `ERR_NETWORK 服务器异常`
+
 尝试将 https 访问更改为 http，也就是 http://console.amiyabot.com
 
 谷歌或 chrome 内核的浏览器，可能会自动阻止发送不安全的内网请求。可通过修改浏览器设置解决。

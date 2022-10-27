@@ -24,7 +24,16 @@
 `TOKEN` 填写配置的 access-token，没有配置则不需要填写。<br>
 `CQ-Http 配置` 请准确填写你部署 go-cqhttp 时的信息。
 
-可在 go-cqhttp 目录下的文件 `config.yml` 找到
+需要配置 go-cqhttp 目录下的文件 `config.yml` 里数据类型为 array，修改完后重启 go-cqhttp 生效。
+
+```yaml {4}
+message:
+  # 上报数据类型
+  # 可选: string,array
+  post-format: array
+```
+
+access-token 可在 go-cqhttp 目录下的文件 `config.yml` 找到
 
 ```yaml {4}
 # 默认中间件锚点
