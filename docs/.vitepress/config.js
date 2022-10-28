@@ -7,13 +7,14 @@ export default {
     description: '基于 Python asyncio 的简洁高效的 QQ 机器人框架',
     themeConfig: {
         nav: navbar,
+        logo: '/logo.svg',
         sidebar: sidebar,
         editLink: {
             pattern: 'https://github.com/AmiyaBot/Amiya-Bot-docs/edit/master/docs/:path',
             text: '在 GitHub 上编辑此页'
         },
         socialLinks: [
-            {icon: 'github', link: 'https://github.com/AmiyaBot/Amiya-Bot-core'}
+            {icon: 'github', link: 'https://github.com/AmiyaBot'}
         ],
         footer: {
             message: 'MIT Licensed',
