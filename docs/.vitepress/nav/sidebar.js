@@ -96,6 +96,13 @@ export default {
             ]
         },
         {
+            text: '维护',
+            collapsible: true,
+            items: [
+                {text: '如何更新', link: '/guide/deploy/maintain/upgrade.md'},
+            ]
+        },
+        {
             text: '高级使用',
             collapsible: true,
             items: [

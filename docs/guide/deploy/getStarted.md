@@ -1,5 +1,5 @@
 <script setup>
-import download from './download.vue'
+import download from '../../components/download.vue'
 </script>
 
 # 开始部署
