@@ -29,7 +29,7 @@ bot = PluginInstance(
 )
 ```
 
-`PluginInstance` 对象继承了工厂类 `BotHandlerFactory`，这意味着你完全可以按照[开发指南](/develop/basic/handlerDecorator)去编写你的插件功能。
+`PluginInstance` 对象继承了工厂类 `BotHandlerFactory`，这意味着你完全可以按照[开发指南](/develop/basic/messageHandler)去编写你的插件功能。
 
 ```python
 @bot.on_message(keywords='hello')
