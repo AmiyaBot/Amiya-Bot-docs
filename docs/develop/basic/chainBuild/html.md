@@ -1,4 +1,4 @@
-# 发送 HTML 生成的图片
+# 发送 html 生成的图片
 
 发送一张使用 html 页面生成的图片，它可以比使用 PIL 合成的图片更加生动，技术难度也比 PIL 要简单得多。
 
@@ -30,13 +30,14 @@ playwright install --with-deps chromium
 
 ## 启动时打开 Chromium
 
-在 bot（包括[多账号实例](/develop/basic/multipleAccounts.html#创建一个多账号实例)）启动的 start 方法内设置参数 `launch_browser=True`
+在 bot（包括[多账号实例](/develop/basic/multipleAccounts.html#创建一个多账号实例)）启动的 start
+方法内设置参数 `launch_browser=True`
 
 ```python
 bot.start(launch_browser=True)
 ```
 
-## Chain.html 参数
+## Chain().html()
 
 | 参数名         | 类型         | 释义           | 默认值  |
 |-------------|------------|--------------|------|
@@ -105,11 +106,12 @@ async def _(data: Message):
     return Chain(data).html('hello.html', {'username': data.nickname})
 ```
 
-示例在触发会话并开始发送消息时，Chain 对象将会调用 Chromium 无头浏览器，渲染 `hello.html` 并在页面内执行 JavaScript 语句 `init({'username': 'vivien8261'})`
+示例在触发会话并开始发送消息时，Chain 对象将会调用 Chromium 无头浏览器，渲染 `hello.html` 并在页面内执行 JavaScript
+语句 `init({'username': 'vivien8261'})`
 。<br>
 渲染结束后，无头浏览器截图生成图片，然后执行常规的图片发送方法。
 
-<img style="width: 220px" src="../../assets/examples/hello7.png" alt="image">
+<img style="width: 220px" src="../../../assets/examples/hello7.png" alt="image">
 
 _效果用于示例，相信你可以写出更为美观的页面。_
 
@@ -122,7 +124,8 @@ html 制图旨在不使用 PIL 也能制作出美观的图片，但不建议你�
 支持直接使用网站URL生成图片
 
 ::: danger 注意 <br>
-在页面加载完毕后，默认预留200ms的渲染时间。如果页面有部分元素是异步渲染的，将有可能不显示在图片内。可通过参数 `render_time` 设置需要的时间。
+在页面加载完毕后，默认预留200ms的渲染时间。如果页面有部分元素是异步渲染的，将有可能不显示在图片内。可通过参数 `render_time`
+设置需要的时间。
 :::
 
 设置参数 `is_template=False`

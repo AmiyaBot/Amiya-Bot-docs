@@ -1,7 +1,8 @@
 # 事件监听
 
 监听频道发生的事件。<br>
-一般来说消息（`MESSAGE_CREATE`、`AT_MESSAGE_CREATE`以及`DIRECT_MESSAGE_CREATE`）也属于事件，但是在构建阶段，这些消息事件会被归类并产出 Message 对象。剩下的事件类型，则会产出
+一般来说消息（`MESSAGE_CREATE`、`AT_MESSAGE_CREATE`以及`DIRECT_MESSAGE_CREATE`）也属于事件，但是在构建阶段，这些消息事件会被归类并产出
+Message 对象。剩下的事件类型，则会产出
 Event 对象。可以使用 on_event 装饰器去获取事件。
 
 ## 注册事件响应
@@ -33,7 +34,8 @@ async def _(event: Event, instance: BotAdapterProtocol):
 
 事件的内容**暂未封装**~~（下次一定）~~，请查阅官方文档或通过调试获得格式，返回的内容均为 websocket 消息体里的 `d` 字段。
 
-如下为 [频道事件 - GUILD_CREATE](https://bot.q.qq.com/wiki/develop/api/gateway/guild.html#guild-create) 官方文档示例的 websocket 消息体。
+如下为 [频道事件 - GUILD_CREATE](https://bot.q.qq.com/wiki/develop/api/gateway/guild.html#guild-create) 官方文档示例的
+websocket 消息体。
 
 ```json
 {
@@ -84,14 +86,16 @@ async def _(event: Event, instance: BotAdapterProtocol):
 
 ### 消息事件
 
-| 事件名                   | 触发方式     | 事件名                     | 触发方式     |
-|-----------------------|----------|-------------------------|----------|
-| MESSAGE_DELETE        | 消息撤回（私域） |                         |          |
-| PUBLIC_MESSAGE_DELETE | 消息撤回（公域） |                         |          |
-| DIRECT_MESSAGE_DELETE | 消息撤回（私信） |                         |          |
-| MESSAGE_REACTION_ADD  | 消息添加表情表态 | MESSAGE_REACTION_REMOVE | 消息删除表情表态 |
-| MESSAGE_AUDIT_PASS    | 消息审核通过   | MESSAGE_AUDIT_REJECT    | 消息审核不通过  |
-| INTERACTION_CREATE    | 互动事件创建   |                         |          |
+| 事件名                     | 触发方式     |
+|-------------------------|----------|
+| MESSAGE_DELETE          | 消息撤回（私域） |
+| PUBLIC_MESSAGE_DELETE   | 消息撤回（公域） |
+| DIRECT_MESSAGE_DELETE   | 消息撤回（私信） |
+| MESSAGE_REACTION_ADD    | 消息添加表情表态 |
+| MESSAGE_AUDIT_PASS      | 消息审核通过   |
+| MESSAGE_REACTION_REMOVE | 消息删除表情表态 |
+| MESSAGE_AUDIT_REJECT    | 消息审核不通过  |
+| INTERACTION_CREATE      | 互动事件创建   |
 
 ### 论坛事件
 

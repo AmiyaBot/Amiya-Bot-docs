@@ -1,14 +1,15 @@
-# 如何开发机器人的功能？
+# 注册消息响应器
 
 AmiyaBot 功能开发的关键模块一共有三个，分别是 `AmiyaBot`、`Message`和`Chain`。
 
 - `AmiyaBot` 为机器人实例，包含了消息和事件的注册器。
-- `Message` 为接收的消息主体，内含预解析的消息内容，以及一些相关操作函数。Message 对象在此仅用于参数类型注解，供编辑器智能提示使用，任何时候，你都不需要实例化 Message 对象。
+- `Message` 为接收的消息主体，内含预解析的消息内容，以及一些相关操作函数。Message 对象在此仅用于参数类型注解，供编辑器智能提示使用，任何时候，你都不需要实例化
+  Message 对象。
 - `Chain` 为机器人消息的创建工具。任何需要发送消息的时候，消息都必须由 Chain 类创建。核心会调用 Chain 类的 build 方法生成消息链。
 
 首先需要知道的是，如何注册消息响应。
 
-## 注册消息响应
+## on_message 装饰器
 
 ::: tip 何为机器人的功能？<br>
 消息响应我们会在后续的文档称之为**功能**，因为机器人的主要功能，一般就是通过响应用户的消息实现的。
@@ -25,15 +26,15 @@ async def _(data: Message):
 
 #### 参数列表
 
-| 参数名          | 类型       | 释义                                 | 默认值   |
-|--------------|----------|------------------------------------|-------|
-| group_id     | String   | 功能组ID                              |       |
-| keywords     | Union    | 触发关键字，支持字符串、正则、全等句（equal）或由它们构成的列表 |       |
-| verify       | Callable | 自定义校验方法，当该参数被赋值时，keywords 将会失效     |       |
-| check_prefix | Bool     | 是否校验前缀或指定需要校验的前缀                   | True  |
-| allow_direct | Bool     | 是否支持通过私信使用该功能                      | False |
-| direct_only  | Bool     | 是否仅支持私信                            | False |
-| level        | Int      | 关键字校验成功后函数的候选默认等级                  | 0     |
+| 参数名          | 类型       | 释义                             | 默认值   |
+|--------------|----------|--------------------------------|-------|
+| group_id     | String   | 功能组ID                          |       |
+| keywords     | Union    | 触发关键字                          |       |
+| verify       | Callable | 自定义校验方法，当该参数被赋值时，keywords 将会失效 |       |
+| check_prefix | Bool     | 是否校验前缀或指定需要校验的前缀               | True  |
+| allow_direct | Bool     | 是否支持通过私信使用该功能                  | False |
+| direct_only  | Bool     | 是否仅支持私信                        | False |
+| level        | Int      | 关键字校验成功后函数的候选默认等级              | 0     |
 
 ## 功能组
 
@@ -76,7 +77,8 @@ async def _(data: Message):
 
 ## 私域模式的前缀校验
 
-AmiyaBot 私域模式默认需要对话中包含指定前缀才能进入消息分配器。如果你不希望这么做，可以通过**忽略前缀检查**和**校验完全匹配**的方式达到效果。后者将会在下文说明。
+AmiyaBot 私域模式默认需要对话中包含指定前缀才能进入消息分配器。如果你不希望这么做，可以通过**忽略前缀检查**和**
+校验完全匹配**的方式达到效果。后者将会在下文说明。
 
 ### 接收不包含前缀的消息
 
@@ -199,10 +201,17 @@ async def _(data: Message):
 
 ## 使功能在私信里可用
 
-设置参数 `allow_direct=True`，可以允许功能在私信里用**同样的方式**触发。在私信里，用户将不需要使用 `@机器人` 或 `前缀校验` 唤起机器人。（包括公域机器人）
+设置参数 `allow_direct=True`，可以允许功能在私信里用**同样的方式**触发。在私信里，用户将不需要使用 `@机器人` 或 `前缀校验`
+唤起机器人。（包括公域机器人）
 
 ```python
 @bot.on_message(keywords='hello', allow_direct=True)
 async def _(data: Message):
     return Chain(data).text(f'hello, {data.nickname}')
+
+
+# 仅私信可触发
+@bot.on_message(keywords='hi', direct_only=True)
+async def _(data: Message):
+    return Chain(data).text(f'hey, {data.nickname}')
 ```

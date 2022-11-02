@@ -10,14 +10,28 @@ export default {
             ]
         },
         {
-            text: '功能开发',
+            text: '基础开发',
             collapsible: true,
             items: [
-                {text: '注册消息响应', link: '/develop/basic/handlerDecorator.md'},
-                {text: '接收消息', link: '/develop/basic/messageObject.md'},
-                {text: '发送消息', link: '/develop/basic/chainObject.md'},
-                {text: '发送 HTML 生成的图片', link: '/develop/basic/htmlConvert.md'},
-                {text: '发送主动消息', link: '/develop/basic/activeMessage.md'}
+                {text: '注册消息响应', link: '/develop/basic/messageHandler.md'},
+                {text: '接收消息', link: '/develop/basic/recvMessage.md'},
+                {text: '发送消息', link: '/develop/basic/sendMessage.md'},
+                {text: '发送主动消息', link: '/develop/basic/activeMessage.md'},
+                {text: '创建连续对话', link: '/develop/basic/continuityMessage.md'}
+            ]
+        },
+        {
+            text: '消息的构建',
+            collapsible: true,
+            items: [
+                {text: '发送At', link: '/develop/basic/chainBuild/at.md'},
+                {text: '发送表情', link: '/develop/basic/chainBuild/face.md'},
+                {text: '发送文字', link: '/develop/basic/chainBuild/text.md'},
+                {text: '发送图片', link: '/develop/basic/chainBuild/image.md'},
+                {text: '发送文字生成的图片', link: '/develop/basic/chainBuild/textImage.md'},
+                {text: '发送html生成的图片', link: '/develop/basic/chainBuild/html.md'},
+                {text: '发送markdown生成的图片', link: '/develop/basic/chainBuild/markdown.md'},
+                {text: '发送语音', link: '/develop/basic/chainBuild/voice.md'}
             ]
         },
         {

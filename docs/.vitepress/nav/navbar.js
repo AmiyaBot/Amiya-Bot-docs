@@ -32,14 +32,14 @@ export default [
                     {
                         text: '6.x',
                         link: '/guide/deploy/'
-                    },
+                    }
                 ]
             },
-            {
-                text: '插件开发',
-                link: '/develop/plugin/'
-            }
         ]
+    },
+    {
+        text: '插件开发',
+        link: '/develop/plugin/'
     },
     {
         text: '下载',
