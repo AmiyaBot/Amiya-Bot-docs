@@ -201,8 +201,7 @@ async def _(data: Message):
 
 ## 使功能在私信里可用
 
-设置参数 `allow_direct=True`，可以允许功能在私信里用**同样的方式**触发。在私信里，用户将不需要使用 `@机器人` 或 `前缀校验`
-唤起机器人。（包括公域机器人）
+设置参数 `allow_direct=True`，可以允许功能在私信里用**同样的方式**触发。
 
 ```python
 @bot.on_message(keywords='hello', allow_direct=True)
