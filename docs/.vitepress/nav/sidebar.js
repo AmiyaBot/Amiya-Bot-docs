@@ -51,6 +51,7 @@ export default {
                 {text: '说明', link: '/develop/advanced/index.md'},
                 {text: '生命周期', link: '/develop/advanced/lifeCycle.md'},
                 {text: '日志模块', link: '/develop/advanced/logger.md'},
+                {text: '启动参数', link: '/develop/advanced/startupParameter.md'}
             ]
         },
         {
@@ -58,7 +59,7 @@ export default {
             collapsible: true,
             items: [
                 {text: '数据库', link: '/develop/advanced/databaseSupport.md'},
-                {text: 'HTTP服务器', link: '/develop/advanced/httpSupport.md'},
+                {text: 'HTTP服务器', link: '/develop/advanced/httpSupport.md'}
             ]
         }
     ],
