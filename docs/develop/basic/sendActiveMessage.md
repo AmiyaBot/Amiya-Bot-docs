@@ -5,7 +5,7 @@
 详见官方文档 [接入流程-语料配置-消息类型](https://bot.q.qq.com/wiki/#_9-%E5%8F%91%E5%B8%83%E8%AE%BE%E7%BD%AE)
 :::
 
-### AmiyaBot.send_message
+### AmiyaBot.send_message()
 
 send_message 是发送主动消息的方法，它的第一个参数 chain 需要传入一个 Chain 对象。可以通过实例化一个无 Message 的 Chain 得到。
 

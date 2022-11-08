@@ -1,8 +1,7 @@
 # 事件监听
 
 监听频道发生的事件。<br>
-一般来说消息（`MESSAGE_CREATE`、`AT_MESSAGE_CREATE`以及`DIRECT_MESSAGE_CREATE`）也属于事件，但是在构建阶段，这些消息事件会被归类并产出
-Message 对象。剩下的事件类型，则会产出
+一般来说消息（`MESSAGE_CREATE`、`AT_MESSAGE_CREATE`以及`DIRECT_MESSAGE_CREATE`）也属于事件，但是在构建阶段，这些消息事件会被归类并产出 Message 对象。剩下的事件类型，则会产出
 Event 对象。可以使用 on_event 装饰器去获取事件。
 
 ## 注册事件响应
@@ -34,8 +33,7 @@ async def _(event: Event, instance: BotAdapterProtocol):
 
 事件的内容**暂未封装**~~（下次一定）~~，请查阅官方文档或通过调试获得格式，返回的内容均为 websocket 消息体里的 `d` 字段。
 
-如下为 [频道事件 - GUILD_CREATE](https://bot.q.qq.com/wiki/develop/api/gateway/guild.html#guild-create) 官方文档示例的
-websocket 消息体。
+如下为 [频道事件 - GUILD_CREATE](https://bot.q.qq.com/wiki/develop/api/gateway/guild.html#guild-create) 官方文档示例的 websocket 消息体。
 
 ```json
 {
@@ -66,7 +64,7 @@ async def _(event: Event, instance: BotAdapterProtocol):
     print(event.data['description']) // 频道介绍
 ```
 
-## 事件列表
+## 频道事件列表
 
 ### 频道事件
 
@@ -114,3 +112,8 @@ async def _(event: Event, instance: BotAdapterProtocol):
 |---------------------|--------|----------------------------|-------|
 | AUDIO_START         | 音频开始播放 | AUDIO_ON_MIC               | 机器人上麦 |
 | AUDIO_FINISH        | 音频播放结束 | AUDIO_OFF_MIC              | 机器人下麦 |
+
+## 第三方服务事件
+
+- [mirai-api-http 事件类型一览](https://docs.mirai.mamoe.net/mirai-api-http/api/EventType.html)
+- [go-cqhttp 事件](https://docs.go-cqhttp.org/event/)

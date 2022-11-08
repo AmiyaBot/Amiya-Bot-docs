@@ -13,10 +13,11 @@ export default {
             text: '基础开发',
             collapsible: true,
             items: [
+                {text: '声明', link: '/develop/basic/statement.md'},
                 {text: '注册消息响应', link: '/develop/basic/messageHandler.md'},
                 {text: '接收消息', link: '/develop/basic/recvMessage.md'},
                 {text: '发送消息', link: '/develop/basic/sendMessage.md'},
-                {text: '发送主动消息', link: '/develop/basic/activeMessage.md'},
+                {text: '发送主动消息', link: '/develop/basic/sendActiveMessage.md'},
                 {text: '创建连续对话', link: '/develop/basic/continuityMessage.md'}
             ]
         },
@@ -50,6 +51,7 @@ export default {
             items: [
                 {text: '说明', link: '/develop/advanced/index.md'},
                 {text: '生命周期', link: '/develop/advanced/lifeCycle.md'},
+                {text: '定时任务', link: '/develop/advanced/timedTask.md'},
                 {text: '日志模块', link: '/develop/advanced/logger.md'},
                 {text: '启动参数', link: '/develop/advanced/startupParameter.md'}
             ]

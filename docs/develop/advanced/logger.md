@@ -66,6 +66,8 @@ with log.sync_catch(...):
 
 ## 创建日志模块
 
+你可以创建一个独立的日志模块以标记输出。
+
 ```python
 from amiyabot.log import LoggerManager
 
@@ -73,6 +75,14 @@ logger = LoggerManager('MyLogger')
 logger.info('this is a log.')
 
 # 2022-11-02 18:32:05,053 [MyLogger][    INFO] this is a log.
+```
+
+## 保存的日志文件
+
+保存的日志文件默认为 running.log，LoggerManager 的所有等级输出方法内，都有一个 `filename` 参数，可用于指定输出的文件名。
+
+```python
+log.info('some text.', filename='other') # 将输出到 log/other.log 文件
 ```
 
 ## 自定义全局日志模块
