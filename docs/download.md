@@ -8,6 +8,10 @@ import download from './components/download.vue'
 
 # 下载
 
+## 框架最新版本
+
+![amiyabot](https://img.shields.io/pypi/v/amiyabot)
+
 ## AmiyaBot-demo-v6
 
 <download version="master" text="正式版" />

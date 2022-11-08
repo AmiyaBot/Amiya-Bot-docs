@@ -8,6 +8,8 @@
 
 ## 安装依赖
 
+![amiyabot](https://img.shields.io/pypi/v/amiyabot)
+
 ```bash
 pip install amiyabot
 ```
