@@ -50,7 +50,7 @@ db = connect_database('database_name', mysql=True, config=MysqlConfig(
 
 ## 表结构管理
 
-在 table 装饰的表模型内增加字段，启动程序时会自动添加进数据库表结构中。**暂不支持删除字段或更新字段类型。**
+在 table 装饰的表模型内增加或删除字段，启动程序时会自动修改到数据库表结构中。**暂不支持更新字段类型。**
 
 ```python
 @table

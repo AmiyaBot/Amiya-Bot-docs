@@ -1,6 +1,6 @@
 # HTTP服务器支持
 
-AmiyaBot 内置了基于 [FastApi](https://fastapi.tiangolo.com/) 的HTTP服务。与 AmiyaBot 的宗旨相同，你仍然可以用简便的方式创建HTTP服务。
+AmiyaBot 内置了基于 [FastApi](https://fastapi.tiangolo.com/) 的HTTP服务构建工具。
 
 ## 创建服务
 
@@ -41,7 +41,7 @@ async def get_name(self):
     ...
 ```
 
-## 密匙校验
+## 请求头密钥
 
 在创建 HttpServer 时传入 auth_key 参数，则在调用接口时，需要在请求头（Header）里添加 `authKey` 字段并匹配参数的值，才允许访问。
 

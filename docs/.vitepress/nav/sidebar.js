@@ -60,8 +60,8 @@ export default {
             text: '额外支持',
             collapsible: true,
             items: [
-                {text: '数据库', link: '/develop/advanced/databaseSupport.md'},
-                {text: 'HTTP服务器', link: '/develop/advanced/httpSupport.md'}
+                {text: 'HTTP服务器', link: '/develop/advanced/httpSupport.md'},
+                {text: '数据库', link: '/develop/advanced/databaseSupport.md'}
             ]
         }
     ],
