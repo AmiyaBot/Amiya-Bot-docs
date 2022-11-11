@@ -2,7 +2,7 @@
 
 在 pluginsDev 目录内，创建一个 Python package 形式的模块。为了防止加载插件时的**全局环境变量污染**。你的业务逻辑必须在另一个入口文件内进行。
 
-创建入口文件 main.py
+创建入口文件 `main.py`
 
 ```text {3,4,5}
 Amiya-Bot
@@ -29,7 +29,8 @@ bot = PluginInstance(
 )
 ```
 
-`PluginInstance` 对象继承了工厂类 `BotHandlerFactory`，这意味着你完全可以按照[开发指南](/develop/basic/messageHandler)去编写你的插件功能。
+`PluginInstance` 对象继承了工厂类 `BotHandlerFactory`，这意味着你完全可以按照[开发指南](/develop/basic/messageHandler)
+去编写你的插件功能。
 
 ```python
 @bot.on_message(keywords='hello')
@@ -68,12 +69,14 @@ file = open(f'{plugin_dir}/file.txt')
 
 ## 导出插件的实例
 
-在 `__init__.py` 内导出插件的入口
+在 `__init__.py` 内导出插件的入口，命名为 <span style="color: red">bot</span>。这个命名是固定的，即使 main 内部的
+PluginInstance 实例变量名不为 bot，在导出时都必须使用 `as bot` 重命名。
 
 ```python
 from .main import bot
 ```
 
 ::: danger 注意<br>
-请不要在 `__init__.py` 内编写多余的代码，我们希望这个文件有且只有上面的一行。插件在加载时，会临时添加插件目录为系统路径，这会使主模块（`__init__.py`）的一些全局一等对象污染主体程序，导致不可预测的后果。
+请不要在 `__init__.py`
+内编写多余的代码，我们希望这个文件有且只有上面的一行。插件在加载时，会临时添加插件目录为系统路径，这会使主模块的一些全局一等对象污染主体程序，导致不可预测的后果。
 :::

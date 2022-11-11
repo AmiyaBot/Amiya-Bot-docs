@@ -53,7 +53,7 @@ export default {
                 {text: '生命周期', link: '/develop/advanced/lifeCycle.md'},
                 {text: '定时任务', link: '/develop/advanced/timedTask.md'},
                 {text: '日志模块', link: '/develop/advanced/logger.md'},
-                {text: '启动参数', link: '/develop/advanced/startupParameter.md'}
+                {text: '加载插件', link: '/develop/advanced/loadPlugins.md'}
             ]
         },
         {
@@ -62,6 +62,13 @@ export default {
             items: [
                 {text: 'HTTP服务器', link: '/develop/advanced/httpSupport.md'},
                 {text: '数据库', link: '/develop/advanced/databaseSupport.md'}
+            ]
+        },
+        {
+            text: '辅助',
+            collapsible: true,
+            items: [
+                {text: '启动参数', link: '/develop/advanced/startupParameter.md'}
             ]
         }
     ],
@@ -78,7 +85,7 @@ export default {
             text: '开发',
             collapsible: true,
             items: [
-                {text: '创建&编写插件', link: '/develop/plugin/dev.md'},
+                {text: '创建&编写插件', link: '/develop/plugin/create.md'},
                 {text: '插件生命周期', link: '/develop/plugin/life.md'},
                 {text: '添加插件文档', link: '/develop/plugin/addDoc.md'},
                 {text: '调试插件', link: '/develop/plugin/debug.md'},

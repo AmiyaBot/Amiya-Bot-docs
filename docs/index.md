@@ -3,8 +3,8 @@ layout: home
 
 hero:
     name: AmiyaBot
-    text: Bot Framework By Python Asyncio
-    tagline: 简洁、易用且流畅的 Python 异步 QQ 机器人框架，让代码符合你的想象。
+    text: Beautiful & Fluent Bot Framework
+    tagline: 简洁、易用且流畅的 Python 异步 QQ 机器人框架，让代码符合想象。
     actions:
         -   theme: brand
             text: 开始使用
