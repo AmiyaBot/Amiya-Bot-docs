@@ -1,10 +1,10 @@
 # 加载插件
 
-本篇将会讲解 AmiyaBot 插件的工作原理已经日常使用的实现。
+本篇将会讲解 AmiyaBot 插件的工作原理以及插件导入和卸载的方法。
 
 ## 前言
 
-插件设计的目的是因为 [主项目](https://github.com/AmiyaBot/Amiya-Bot)
+插件设计的目的是因为 [主项目 AmiyaBot-demo](https://github.com/AmiyaBot/Amiya-Bot)
 通常会以可执行文件的形式发布，将一些功能模块分散为插件的形式，更有助于用户灵活的管理自己的机器人功能，以及对单独的功能进行热更新。
 
 AmiyaBot 的插件加载得益于 Python 作为脚本语言的一个优点：**动态执行代码**，配合标准库的 `importlib` 和
