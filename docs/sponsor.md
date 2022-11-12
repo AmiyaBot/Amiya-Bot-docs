@@ -13,7 +13,7 @@ AmiyaBot 也给你带去了快乐吧。
 
 [爱发电主页](https://afdian.net/a/amiyabot)
 
-<img style="width: 400px" src="assets/5a4a07cc67f556288d3df2e9029fc14.jpg" alt="image">
+<img style="width: 400px" src="./assets/5a4a07cc67f556288d3df2e9029fc14.jpg" alt="image">
 
 ## 特别鸣谢
 
