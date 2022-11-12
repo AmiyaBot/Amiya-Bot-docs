@@ -28,7 +28,7 @@ export default {
     },
     methods: {
         get_sponsors: function () {
-            axios.get('https://server.amiyabot.com:8000/get_sponsors').then(res => {
+            axios.get('https://server.amiyabot.com:9000/get_sponsors').then(res => {
                 this.data = JSON.parse(res.data)
                 console.log(this.data)
             })
