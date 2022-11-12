@@ -4,7 +4,10 @@
             <div class="user" :class="{ small: !displayUserName }"
                  v-if="item['all_sum_amount'] >= min && item['all_sum_amount'] < max">
                 <img class="avatar" :src="item.user.avatar" :alt="item.user.name">
-                <span class="userName" v-if="displayUserName">{{ item.user.name }}</span>
+                <div class="userName" v-if="displayUserName">
+                    <span>{{ item.user.name }}</span>
+                    <span class="amount">￥{{ item.all_sum_amount }}</span>
+                </div>
             </div>
         </template>
     </div>
@@ -59,6 +62,8 @@ export default {
 .avatar {
     width: 50px;
     border-radius: 50%;
+    border: 1px solid #b74ec9;
+    margin-left: 5px;
 }
 
 .small .avatar {
@@ -67,5 +72,13 @@ export default {
 
 .userName {
     margin: 0 20px 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.amount {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ff9800;
 }
 </style>
