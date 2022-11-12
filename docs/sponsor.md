@@ -17,4 +17,8 @@ AmiyaBot 也给你带去了快乐吧。
 
 ## 特别鸣谢
 
-<specialThanks />
+<specialThanks :min="20" :displayUserName="true"/>
+
+## 鸣谢
+
+<specialThanks :max="20"/>
