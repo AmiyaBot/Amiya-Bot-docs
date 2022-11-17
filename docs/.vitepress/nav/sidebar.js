@@ -42,6 +42,13 @@ export default {
                 {text: '事件监听', link: '/develop/basic/handleEvents.md'},
                 {text: '异常监听', link: '/develop/basic/handleException.md'}
             ]
+        },
+        {
+            text: '测试',
+            collapsible: true,
+            items: [
+                {text: '使用测试实例调试', link: '/develop/basic/testInstance.md'}
+            ]
         }
     ],
     '/develop/advanced/': [
@@ -132,6 +139,14 @@ export default {
             items: [
                 {text: '说明', link: '/guide/deploy/advanced/index.md'},
                 {text: '使用 Mysql', link: '/guide/deploy/advanced/mysql.md'},
+            ]
+        },
+        {
+            text: 'F&Q',
+            collapsible: true,
+            items: [
+                {text: '使用常见问题', link: '/guide/deploy/faq/usingProblem.md'},
+                {text: '部署常见问题', link: '/guide/deploy/faq/deployProblem.md'},
             ]
         }
     ]

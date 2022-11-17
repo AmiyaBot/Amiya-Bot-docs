@@ -35,11 +35,15 @@ export default [
                     }
                 ]
             },
+            {
+                text: '插件开发',
+                link: '/develop/plugin/'
+            },
+            {
+                text: 'F&Q',
+                link: '/guide/deploy/faq/usingProblem'
+            }
         ]
-    },
-    {
-        text: '插件开发',
-        link: '/develop/plugin/'
     },
     {
         text: '下载',
