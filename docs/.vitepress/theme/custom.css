@@ -23,6 +23,16 @@
     padding: 5px 10px;
 }
 
+.vp-doc blockquote {
+    padding: 10px 16px;
+    border-left: 3px solid #b74ec9;
+    background: rgb(240 248 255 / 10%);
+}
+
+.vp-doc blockquote > p {
+    color: #b74ec9;
+}
+
 code:not(div[class*='language-'] code) {
     font-family: var(--vp-font-family-base);
 }

@@ -40,8 +40,8 @@ export default [
                 link: '/develop/plugin/'
             },
             {
-                text: 'F&Q',
-                link: '/guide/deploy/faq/usingProblem'
+                text: '常见问题',
+                link: '/guide/deploy/faq/commonProblem'
             }
         ]
     },

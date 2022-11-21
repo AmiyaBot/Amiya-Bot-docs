@@ -27,19 +27,7 @@ authKey 为连接控制台时的密匙，默认不需要。
 
 点击“测试并连接”，成功进入后即可开始配置。
 
-## 无法访问？
-
-> 出现报错 `ERR_NETWORK 服务器异常`
-
-尝试将 https 访问更改为 http，也就是 http://console.amiyabot.com
-
-谷歌或 chrome 内核的浏览器，可能会自动阻止发送不安全的内网请求。可通过修改浏览器设置解决。
-
-- 浏览器访问设置页面：chrome://flags/#block-insecure-private-network-requests
-- 将该设置改为 **Disabled**
-- 重启浏览器
-
-## 公网访问
+## 公网/局域网访问
 
 host 配置为 `0.0.0.0` 即可让服务通过本机 IP 访问
 
