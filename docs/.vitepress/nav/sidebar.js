@@ -145,8 +145,8 @@ export default {
             text: 'F&Q',
             collapsible: true,
             items: [
-                {text: '使用常见问题', link: '/guide/deploy/faq/usingProblem.md'},
-                {text: '部署常见问题', link: '/guide/deploy/faq/deployProblem.md'},
+                {text: '常见问题', link: '/guide/deploy/faq/commonProblem.md'},
+                {text: '插件常见问题', link: '/guide/deploy/faq/PluginProblem.md'}
             ]
         }
     ]
