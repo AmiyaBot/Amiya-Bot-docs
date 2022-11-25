@@ -51,7 +51,7 @@ Windows 系统推荐使用**可执行文件部署**，可执行文件部署是�
 git clone https://github.com/AmiyaBot/Amiya-Bot.git
 ```
 
-3. 安装依赖
+2. 安装依赖
 
 ```bash
 pip install -r requirements.txt
