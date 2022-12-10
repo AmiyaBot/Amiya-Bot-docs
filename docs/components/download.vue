@@ -27,7 +27,7 @@ export default {
     },
     mounted() {
         axios.get(`${cos}/latest-V6-${this.version}.txt`).then(response => {
-            this.latest = response.data.toString().replace(/\r\n/g, '')
+            this.latest = response.data.toString().replace(/\r\n/g, '').replace(/\n/g, '')
         })
     }
 }
