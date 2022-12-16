@@ -24,9 +24,10 @@ async def _(data: Message):
 
 | 属性           | 类型                 | 释义                        |
 |--------------|--------------------|---------------------------|
-| bot          | BotAdapterProtocol | bot 实例                    |
+| instance     | BotAdapterProtocol | bot 实例                    |
 | message      | Dict               | 原始消息字典                    |
 | message_id   | String             | 消息ID                      |
+| message_type | String             | 消息类型（适用于群聊适配器）            |
 | face         | List\[String]      | 消息内表情列表                   |
 | image        | List\[String]      | 消息内图片列表                   |
 | text         | String             | 消息文本（去字符处理、中间件处理）         |
