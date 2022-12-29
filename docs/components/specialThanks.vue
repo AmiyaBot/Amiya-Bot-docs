@@ -4,8 +4,8 @@
             <div class="user" :class="{ small: !displayUserName }"
                  v-if="item['all_sum_amount'] >= min && item['all_sum_amount'] < max">
                 <img class="avatar" :src="item.user.avatar" :alt="item.user.name">
-                <div class="userName" v-if="displayUserName">
-                    <span>{{ item.user.name }}</span>
+                <div class="user-name" v-if="displayUserName">
+                    <span class="name">{{ item.user.name }}</span>
                     <span class="amount">￥{{ item.all_sum_amount }}</span>
                 </div>
             </div>
@@ -33,7 +33,9 @@ export default {
         get_sponsors: function () {
             axios.get('https://server.amiyabot.com:9000/get_sponsors').then(res => {
                 this.data = JSON.parse(res.data)
-                console.log(this.data)
+                this.data.sort((a, b) => {
+                    return b.all_sum_amount - a.all_sum_amount
+                })
             })
         }
     },
@@ -57,6 +59,11 @@ export default {
 .user {
     display: flex;
     align-items: center;
+    margin-bottom: 5px;
+}
+
+.user:not(.small) {
+    width: 25%;
 }
 
 .avatar {
@@ -70,10 +77,17 @@ export default {
     width: 40px;
 }
 
-.userName {
+.user-name {
+    width: calc(100% - 85px);
     margin: 0 20px 0 10px;
     display: flex;
     flex-direction: column;
+}
+
+.user-name > .name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .amount {
