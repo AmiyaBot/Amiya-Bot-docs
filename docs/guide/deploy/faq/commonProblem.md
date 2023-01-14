@@ -107,10 +107,6 @@ work on the current change (see also: git help everyday)
 
 我们先来对配置单的具体内容进行一些解释
 
-::: details 窗口图示
-![](../../../assets/console/addMAHBot.png)
-:::
-
 + APP ID：mirai登陆的qq号，也就是你bot的qq号
 + TOKEN：对mirai来说，为`mirai/config/net.mamoe.mirai-api-http/settings.yml`中`verifyKey`的值
 + 适配器类型：通常你**应该**选择`CQ-Http`或是`Mirai-api-http`**而不是**`QQ-Bot`

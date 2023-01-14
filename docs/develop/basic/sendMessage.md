@@ -52,3 +52,11 @@ Chain(data).text(...).image(...).text(...).html(...)
 ::: warning 关于语音<br>
 voice 方法并不参与构建消息体，因为 QQ 无法在发送的文字消息中间镶嵌语音，语音将会单独发送。
 :::
+
+## 空 Chain
+
+实例化 Chain 对象时，不传入 Message 对象构建的。本文称之为 **“空 Chain”**。空 Chain 一般用于预构建消息。
+
+```python
+Chain().text(...).image(...)
+```

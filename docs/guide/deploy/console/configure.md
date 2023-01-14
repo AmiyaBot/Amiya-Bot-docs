@@ -12,13 +12,13 @@
 
 ### 腾讯频道机器人
 
+> 适配器类型：**QQ-Bot**
+
 填写你注册的频道机器人信息，表单字段就是对应内容。
 
-::: details 窗口图示
-![](../../../assets/console/addQQBot.png)
-:::
-
 ### go-cqhttp支持的群聊机器人
+
+> 适配器类型：**CQ-Http**
 
 `APP ID` 为登录在 go-cqhttp 的 **QQ 号**。<br>
 `TOKEN` 填写配置的 access-token，没有配置则不需要填写。<br>
@@ -53,11 +53,9 @@ default-middlewares: &default
         bucket: 1     # 令牌桶大小
 ```
 
-::: details 窗口图示
-![](../../../assets/console/addCQBot.png)
-:::
-
 ### mirai-api-http支持的群聊机器人
+
+> 适配器类型：**Mirai-api-http**
 
 `APP ID` 为登录在 mirai-api-http 的 **QQ 号**。<br>
 `TOKEN` 为 mirai-api-http 的 **AuthKey**。<br>
@@ -85,15 +83,15 @@ adapterSettings:
     reservedSyncId: -1
 ```
 
-::: details 窗口图示
-![](../../../assets/console/addMAHBot.png)
-:::
-
 ### 点击“保存并启动”运行实例。
 
 当实例状态为在线时，即启动成功。
 
 <img style="width: 400px" src="../../../assets/console/online.png" alt="image">
+
+::: tip 温馨提示<br>
+实例的连接需要时间，通常只需要几秒钟不到。如果显示**离线**可以等待几秒再刷新页面。
+:::
 
 ## 配置可控实例
 

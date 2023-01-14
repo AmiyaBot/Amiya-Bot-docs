@@ -32,7 +32,8 @@ export default {
                 {text: '发送文字生成的图片', link: '/develop/basic/chainBuild/textImage.md'},
                 {text: '发送html生成的图片', link: '/develop/basic/chainBuild/html.md'},
                 {text: '发送markdown生成的图片', link: '/develop/basic/chainBuild/markdown.md'},
-                {text: '发送语音', link: '/develop/basic/chainBuild/voice.md'}
+                {text: '发送语音', link: '/develop/basic/chainBuild/voice.md'},
+                {text: '发送合并转发消息', link: '/develop/basic/chainBuild/forward.md'}
             ]
         },
         {
