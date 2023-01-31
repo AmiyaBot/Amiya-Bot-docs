@@ -49,6 +49,11 @@ img {
     border-radius: 4px;
 }
 
+i.red {
+    font-style: normal;
+    color: red;
+}
+
 /*.VPContent.is-home {*/
 /*    -webkit-filter: grayscale(100%);*/
 /*    -moz-filter: grayscale(100%);*/
