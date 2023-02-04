@@ -72,7 +72,9 @@ async def _(event: Event, instance: BotAdapterProtocol):
 #### 异常监听
 
 ```python
-@bot.on_exception(KeyError)
-async def _(err: Exception, instance: BotAdapterProtocol):
+@bot.on_exception()
+async def _(err: Exception,
+            instance: BotAdapterProtocol,
+            data: Union[Message, Event]):
     await instance.send_message(...)
 ```

@@ -15,8 +15,8 @@ export default {
             items: [
                 {text: '声明', link: '/develop/basic/statement.md'},
                 {text: '注册消息响应', link: '/develop/basic/messageHandler.md'},
-                {text: '接收消息', link: '/develop/basic/recvMessage.md'},
-                {text: '发送消息', link: '/develop/basic/sendMessage.md'},
+                {text: '接收消息（Message 对象）', link: '/develop/basic/recvMessage.md'},
+                {text: '发送消息（Chain 对象）', link: '/develop/basic/sendMessage.md'},
                 {text: '发送主动消息', link: '/develop/basic/sendActiveMessage.md'},
                 {text: '创建连续对话', link: '/develop/basic/continuityMessage.md'}
             ]
@@ -33,7 +33,8 @@ export default {
                 {text: '发送html生成的图片', link: '/develop/basic/chainBuild/html.md'},
                 {text: '发送markdown生成的图片', link: '/develop/basic/chainBuild/markdown.md'},
                 {text: '发送语音', link: '/develop/basic/chainBuild/voice.md'},
-                {text: '发送合并转发消息', link: '/develop/basic/chainBuild/forward.md'}
+                {text: '发送合并转发消息', link: '/develop/basic/chainBuild/forward.md'},
+                {text: '扩展消息类型', link: '/develop/basic/chainBuild/extend.md'}
             ]
         },
         {

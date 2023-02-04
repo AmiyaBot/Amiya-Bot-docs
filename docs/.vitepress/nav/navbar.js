@@ -20,20 +20,11 @@ export default [
         link: '/develop/advanced/'
     },
     {
-        text: 'AmiyaBot-demo',
+        text: 'AmiyaBot-demo-V6',
         items: [
             {
-                text: '版本',
-                items: [
-                    {
-                        text: '5.2.1',
-                        link: 'https://www.amiya.cn/'
-                    },
-                    {
-                        text: '6.x',
-                        link: '/guide/deploy/'
-                    }
-                ]
+                text: '部署',
+                link: '/guide/deploy/'
             },
             {
                 text: '插件开发',

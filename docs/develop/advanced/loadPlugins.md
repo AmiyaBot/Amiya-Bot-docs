@@ -120,7 +120,7 @@ bot.install_plugin('myPlugin.zip')
 python __init__.py
 ```
 
-那么当 `__init__.py ` 在相对导入其目录下的模块时，由于它属于顶级模块，插件将会
+那么当 `__init__.py` 在相对导入其目录下的模块时，由于它属于顶级模块，插件将会
 <span style="color: red">加载失败</span>
 并抛出如下异常。
 

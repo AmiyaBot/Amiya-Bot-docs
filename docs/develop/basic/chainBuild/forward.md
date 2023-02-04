@@ -2,7 +2,9 @@
 
 合并转发消息不是 Chain 对象的方法，需要使用适配器提供的工具类构建。
 
-目前仅支持 `mirai-api-http` 和 `cq-http`。**不支持 QQ 频道。**
+::: danger 注意<br>
+QQ 频道机器人暂时不支持发送合并转发消息，目前仅支持 `mirai-api-http` 和 `cq-http`。
+:::
 
 ```python
 from amiyabot.adapters.mirai import MiraiForwardMessage

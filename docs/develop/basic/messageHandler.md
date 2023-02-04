@@ -166,29 +166,9 @@ async def _(data: Message):
 ## 自定义检查
 
 当关键字检查无法满足功能的触发方式时，就需要使用自定义检查。<br>
-自定义检查是一个协程函数，参数为 Message 对象，返回一个`布尔值（必选）`和`优先级（可选）`的元祖。
+自定义检查是一个协程函数，参数为 Message 对象，返回一个`布尔值（必选）`、`优先级（可选）` 和 `关键值（可选）`的元祖。
 
 ```python
-async def my_verify(data: Message):
-    if ...:
-        return True
-    return False
-```
-
-在自定义检查里，你可以动态输出优先级的值。
-
-```python {3,5}
-async def my_verify(data: Message):
-    if ...:
-        return True, 2
-    elif ...:
-        return True, 1
-    return False
-```
-
-**完整示例**
-
-```python {10}
 async def my_verify(data: Message):
     if 'hello' in data.text:
         return True
@@ -199,9 +179,49 @@ async def _(data: Message):
     return Chain(data).text(f'hello, {data.nickname}')
 ```
 
+当消息响应获得执行权，自定义检查结果（Verify）将储存在 Message.verify 中。
+
+**Verify 对象**
+
+| 属性       | 类型   | 释义    |
+|----------|------|-------|
+| result   | Bool | 检查结果  |
+| weight   | Int  | 优先级   |
+| keypoint | Any  | 关键值信息 |
+
+### 动态输出优先级的值
+
+返回元祖第二个值，即可以指定动态优先级。
+
+```python {3,5}
+async def my_verify(data: Message):
+    if ...:
+        return True, 2
+    elif ...:
+        return True, 1
+    return False
+```
+
+### 输出关键值
+
+返回元祖第三个值，可以向 Message 的检查结果里添加关键值信息。可以是任意类型。
+
+```python {3,9}
+async def my_verify(data: Message):
+    if ...:
+        return True, 1, {'name': 'my name'}
+    return False
+
+
+@bot.on_message(verify=my_verify)
+async def _(data: Message):
+    info = data.verify.keypoint # {'name': 'my name'}
+```
+
 ## 使功能在私信里可用
 
-设置参数 `allow_direct=True`，可以允许功能在私信里用**同样的方式**触发。
+设置参数 `allow_direct=True`，允许功能在私信里触发。<br>
+设置参数 `direct_only=True`，功能仅私信可触发。
 
 ```python
 @bot.on_message(keywords='hello', allow_direct=True)

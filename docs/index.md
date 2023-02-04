@@ -10,7 +10,7 @@ hero:
             text: 开始使用
             link: /develop/basic/
         -   theme: alt
-            text: 部署《明日方舟》机器人 AmiyaBot-demo
+            text: 部署《明日方舟》机器人 AmiyaBot-demo-V6
             link: /guide/deploy/
 
 features:
