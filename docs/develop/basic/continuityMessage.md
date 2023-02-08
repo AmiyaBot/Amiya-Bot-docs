@@ -2,7 +2,7 @@
 
 在一些使用场景里，需要机器人与使用者产生连续的对话。比如询问使用者以获取信息等。
 
-Message 对象内置了连续对话支持。可以在极具流畅度的方式下创建对话事件完成这一工作。
+Message 对象内置了连续对话支持。
 
 ## Message.wait()
 
@@ -25,20 +25,19 @@ async def _(data: Message):
 
     if reply:
         return Chain(reply).text(f'hello，{reply.text}')
-    else:
-        return Chain(reply).text(f'hello, {data.nickname}')
 ```
 
 <img style="width: 220px" src="../../assets/examples/hello4.png" alt="image">
 
 ### force 强制等待
 
-等待通常不会影响消息分配器运作，也就是说仅在不能触发任何其他功能（也包括本功能的初始触发方式）的时候，消息才会返回到当前等待处。<br>
+等待通常不会影响消息分配器运作，也就是说 **仅在不能触发任何其他功能（也包括本功能的初始触发方式）**
+的时候，消息才会返回到当前等待处。<br>
 如果你不希望如此，使用参数 `force=True`，可以忽略分配器让消息强制返回到等待处。
 
 ### data_filter 消息过滤器
 
-如果在等待过程中，希望 wait 接收到符合期望的消息后再返回到等待处，可以使用 data_filter 过滤消息。
+如果在等待过程中，希望 wait 接收到符合期望的消息后再返回到等待处，可以使用 data_filter 参数过滤消息。
 
 ```python {8}
 async def my_data_filter(data: Message):
@@ -52,16 +51,13 @@ async def _(data: Message):
 
     if reply:
         return Chain(reply).text(f'hello，{reply.text}')
-    else:
-        return Chain(reply).text(f'hello, {data.nickname}')
 ```
 
 ### 关于 wait 方法你需要知道的事
 
-- 若用户超过最长等待时间未回复，wait 会返回 `None`
--
-同一个子频道内的同一个用户只能存在一个等待事件，当一个新的等待事件创建后，上一个未使用的等待事件会被注销并引发 `WaitEventCancel`
-异常，进行中的业务将会被**终止**，这是符合预期的，通常这个异常会被全局异常捕捉器过滤。
+- 若用户超过最长等待时间未回复，wait 会返回 `None`。
+- 同一个子频道内的同一个用户只能存在一个等待事件，当一个新的等待事件创建后，上一个未使用的等待事件会被注销并引发 `WaitEventCancel`
+  异常，进行中的业务将会被**终止**，这是符合预期的，通常这个异常会被全局异常捕捉器过滤。
 - 在等待时间内使用其他功能，等待也会被注销。
 
 ## Message.wait_channel()

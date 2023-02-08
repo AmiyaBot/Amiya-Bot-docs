@@ -68,3 +68,4 @@ async def _(data: Message):
 | send         | reply                                  | 发送一条消息  | 是   |
 | wait         | reply,force,max_time,data_filter       | 等待用户消息  | 是   |
 | wait_channel | reply,force,clean,max_time,data_filter | 等待子频道消息 | 是   |
+| recall       |                                        | 撤回消息    | 是   |

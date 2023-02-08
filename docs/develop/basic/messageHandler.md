@@ -166,7 +166,7 @@ async def _(data: Message):
 ## 自定义检查
 
 当关键字检查无法满足功能的触发方式时，就需要使用自定义检查。<br>
-自定义检查是一个协程函数，参数为 Message 对象，返回一个`布尔值（必选）`、`优先级（可选）` 和 `关键值（可选）`的元祖。
+自定义检查是一个协程函数，参数为 Message 对象，返回一个`布尔值（必选）`、`优先级（可选）` 和 `关键值（可选）`的元组。
 
 ```python
 async def my_verify(data: Message):
@@ -191,7 +191,7 @@ async def _(data: Message):
 
 ### 动态输出优先级的值
 
-返回元祖第二个值，即可以指定动态优先级。
+返回元组第二个值，即可以指定动态优先级。
 
 ```python {3,5}
 async def my_verify(data: Message):
@@ -204,7 +204,7 @@ async def my_verify(data: Message):
 
 ### 输出关键值
 
-返回元祖第三个值，可以向 Message 的检查结果里添加关键值信息。可以是任意类型。
+返回元组第三个值，可以向 Message 的检查结果里添加关键值信息。可以是任意类型。
 
 ```python {3,9}
 async def my_verify(data: Message):

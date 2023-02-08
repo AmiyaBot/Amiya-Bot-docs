@@ -18,7 +18,8 @@ export default {
                 {text: '接收消息（Message 对象）', link: '/develop/basic/recvMessage.md'},
                 {text: '发送消息（Chain 对象）', link: '/develop/basic/sendMessage.md'},
                 {text: '发送主动消息', link: '/develop/basic/sendActiveMessage.md'},
-                {text: '创建连续对话', link: '/develop/basic/continuityMessage.md'}
+                {text: '创建连续对话', link: '/develop/basic/continuityMessage.md'},
+                {text: '撤回消息', link: '/develop/basic/recallMessage.md'}
             ]
         },
         {
