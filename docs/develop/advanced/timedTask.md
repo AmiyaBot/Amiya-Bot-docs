@@ -4,9 +4,9 @@ AmiyaBot 提供了全局定时任务管理器。你可以通过单独导入或�
 
 ```python
 from amiyabot import AmiyaBot, tasks_control
-from amiyabot.handler import BotHandlerFactory
+from amiyabot.factory import BotHandlerFactory
 
-bot = AmiyaBot(...)  # or MultipleAccounts
+bot = AmiyaBot(...)  # 或 MultipleAccounts / PluginInstance 对象
 
 
 @bot.timed_task(each=60)
@@ -25,6 +25,24 @@ TasksControl 实例里。唯一不同的是使用 AmiyaBot
 属性访问到适配器实例。此设计的目的是为了能够给单独的 AmiyaBot 实例注册专属的定时任务。
 
 TasksControl 实例是单例的，即使你手动实例化，返回的实例仍然会是同一个。
+
+::: tip 提示<br>
+如果你在开发插件，并且你不希望在插件的卸载方法里手动取消定时任务，请务必通过 `PluginInstance.timed_task` 定义任务。
+
+通过 `PluginInstance.timed_task` 定义的任务可以在插件被卸载时自动取消。
+
+```python {3,5}
+from amiyabot import PluginInstance
+
+bot = PluginInstance(...)
+
+@bot.timed_task(each=60)
+async def _(instance: BotHandlerFactory):
+    ...
+```
+
+插件开发详情请查看 [文档](/develop/plugin)。
+:::
 
 ## timed_task 装饰器
 
