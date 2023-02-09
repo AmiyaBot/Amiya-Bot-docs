@@ -41,7 +41,7 @@ async def _(instance: BotHandlerFactory):
     ...
 ```
 
-插件开发详情请查看 [文档](/develop/plugin)。
+插件开发详情请查看 [文档](/develop/plugin/)。
 :::
 
 ## timed_task 装饰器
