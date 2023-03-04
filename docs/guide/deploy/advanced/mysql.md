@@ -10,5 +10,3 @@ config:
     user: '登录用户名'
     password: '数据库密码'
 ```
-
-需手动建立 4 个数据库，它们分别是 `amiya_bot` `amiya_group` `amiya_message` `amiya_user`。

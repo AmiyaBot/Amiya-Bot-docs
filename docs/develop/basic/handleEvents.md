@@ -1,8 +1,7 @@
 # 事件监听
 
 监听频道发生的事件。<br>
-一般来说消息（`MESSAGE_CREATE`、`AT_MESSAGE_CREATE`以及`DIRECT_MESSAGE_CREATE`）也属于事件，但是在构建阶段，这些消息事件会被归类并产出
-Message 对象。剩下的事件类型，则会产出
+一般来说消息（`MESSAGE_CREATE`、`AT_MESSAGE_CREATE`以及`DIRECT_MESSAGE_CREATE`）也属于事件，但是在构建阶段，这些消息事件会被归类并产出 Message 对象。剩下的事件类型，则会产出
 Event 对象。可以使用 on_event 装饰器去获取事件。
 
 ## 注册事件响应
@@ -11,6 +10,10 @@ Event 对象。可以使用 on_event 装饰器去获取事件。
 from amiyabot import Event, BotAdapterProtocol
 
 ...
+
+@bot.on_event()
+async def _(event: Event, instance: BotAdapterProtocol):
+    ...
 
 @bot.on_event('GUILD_CREATE')
 async def _(event: Event, instance: BotAdapterProtocol):
@@ -21,7 +24,7 @@ async def _(event: Event, instance: BotAdapterProtocol):
     ...
 ```
 
-- `on_event` 接受一个**事件名或事件名列表**作为参数。事件名可参阅对应适配器服务的官方文档。
+- `on_event` 接受一个**事件名或事件名列表**作为参数（无参数则监听全事件）。事件名可参阅对应适配器服务的官方文档。
 - 响应函数是一个协程，接受 Event 对象和 bot 实例两个参数。
 
 ### Event 对象
@@ -36,8 +39,7 @@ async def _(event: Event, instance: BotAdapterProtocol):
 
 频道事件 `Event.data` 的值为 websocket 消息体里的 `d` 字段内容。
 
-如下为 [频道事件 - GUILD_CREATE](https://bot.q.qq.com/wiki/develop/api/gateway/guild.html#guild-create) 官方文档示例的
-websocket 消息体。
+如下为 [频道事件 - GUILD_CREATE](https://bot.q.qq.com/wiki/develop/api/gateway/guild.html#guild-create) 官方文档示例的 websocket 消息体。
 
 ```json
 {

@@ -35,7 +35,9 @@ TableName.select()  # ORM 操作详见 peewee 文档
 
 ## MySQL
 
-`connect_database` 参数设置 `mysql=True` 以及 `config` 即可更改为 MySQL 数据库
+`connect_database` 参数设置 `mysql=True` 以及 `config` 即可更改为 MySQL 数据库。
+
+**可自动创建数据库。**
 
 ```python
 from amiyabot.database import *

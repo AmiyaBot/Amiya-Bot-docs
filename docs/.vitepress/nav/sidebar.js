@@ -26,16 +26,16 @@ export default {
             text: '消息的构建',
             collapsible: true,
             items: [
-                {text: '发送At', link: '/develop/basic/chainBuild/at.md'},
+                {text: '发送 At', link: '/develop/basic/chainBuild/at.md'},
                 {text: '发送表情', link: '/develop/basic/chainBuild/face.md'},
                 {text: '发送文字', link: '/develop/basic/chainBuild/text.md'},
                 {text: '发送图片', link: '/develop/basic/chainBuild/image.md'},
                 {text: '发送文字生成的图片', link: '/develop/basic/chainBuild/textImage.md'},
-                {text: '发送html生成的图片', link: '/develop/basic/chainBuild/html.md'},
-                {text: '发送markdown生成的图片', link: '/develop/basic/chainBuild/markdown.md'},
+                {text: '发送 html 生成的图片', link: '/develop/basic/chainBuild/html.md'},
+                {text: '发送 markdown 生成的图片', link: '/develop/basic/chainBuild/markdown.md'},
                 {text: '发送语音', link: '/develop/basic/chainBuild/voice.md'},
                 {text: '发送合并转发消息', link: '/develop/basic/chainBuild/forward.md'},
-                {text: '扩展消息类型', link: '/develop/basic/chainBuild/extend.md'}
+                {text: '发送原生模板 & CQ码', link: '/develop/basic/chainBuild/extend.md'}
             ]
         },
         {
@@ -67,18 +67,21 @@ export default {
             ]
         },
         {
-            text: '额外支持',
-            collapsible: true,
-            items: [
-                {text: 'HTTP服务器', link: '/develop/advanced/httpSupport.md'},
-                {text: '数据库', link: '/develop/advanced/databaseSupport.md'}
-            ]
-        },
-        {
             text: '辅助',
             collapsible: true,
             items: [
-                {text: '启动参数', link: '/develop/advanced/startupParameter.md'}
+                {text: 'HTTP 请求', link: '/develop/advanced/httpRequests.md'},
+                {text: 'Playwright 配置', link: '/develop/advanced/playwright.md'},
+                {text: '处理阻塞操作', link: '/develop/advanced/blockingIO.md'},
+                {text: '命令行参数', link: '/develop/advanced/startupParameter.md'}
+            ]
+        },
+        {
+            text: '额外支持',
+            collapsible: true,
+            items: [
+                {text: 'HTTP 服务器', link: '/develop/advanced/httpSupport.md'},
+                {text: '数据库', link: '/develop/advanced/databaseSupport.md'}
             ]
         }
     ],

@@ -1,4 +1,4 @@
-# 扩展消息类型
+# 发送原生模板
 
 使用原生消息模板扩展 Chain 对象
 
@@ -19,8 +19,7 @@
 
 ### 示例
 
-使用 [mirai-api-http 消息类型 Dice](https://docs.mirai.mamoe.net/mirai-api-http/api/MessageType.html#dice) 发送一个点数
-6 的骰子魔法表情
+使用 [mirai-api-http 消息类型 Dice](https://docs.mirai.mamoe.net/mirai-api-http/api/MessageType.html#dice) 发送一个点数 6 的骰子魔法表情
 
 ```python
 Chain(data).extend(
@@ -43,4 +42,27 @@ Chain(data).extend(
         }
     }
 )
+```
+
+## 发送 CQ 码
+
+发送 CQ 码目前仅支持 `cq-http` 适配器。可通过适配器的 API 对象发送或扩展消息发送。
+
+```python
+from amiyabot import CQCode, CQHttpBotInstance
+
+instance: CQHttpBotInstance = bot.instance
+
+
+@bot.on_message(keywords='hello')
+async def _(data: Message):
+    # 通过 API 发送
+    instance.api.send_cq_code(data.user_id,
+                              data.channel_id,
+                              f'hello, {data.nickname} [CQ:face,id=123]')
+
+    # 通过扩展消息发送
+    return Chain(data).extend(
+        CQCode(f'hello, {data.nickname} [CQ:face,id=123]')
+    )
 ```
