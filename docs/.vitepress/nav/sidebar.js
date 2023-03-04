@@ -71,9 +71,9 @@ export default {
             collapsible: true,
             items: [
                 {text: 'HTTP 请求', link: '/develop/advanced/httpRequests.md'},
-                {text: 'Playwright 配置', link: '/develop/advanced/playwright.md'},
-                {text: '处理阻塞操作', link: '/develop/advanced/blockingIO.md'},
-                {text: '命令行参数', link: '/develop/advanced/startupParameter.md'}
+                {text: '处理 IO 阻塞的操作', link: '/develop/advanced/blockingIO.md'},
+                {text: '改变 Playwright 启动', link: '/develop/advanced/playwright.md'},
+                {text: '启动参数', link: '/develop/advanced/startupParameter.md'}
             ]
         },
         {

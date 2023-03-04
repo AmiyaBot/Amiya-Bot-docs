@@ -37,6 +37,8 @@ playwright install --with-deps chromium
 bot.start(launch_browser=True)
 ```
 
+进阶使用：[改变默认的 Playwright 启动行为](/develop/advanced/playwright)
+
 ## Chain().html()
 
 | 参数名         | 类型         | 释义           | 默认值  |
