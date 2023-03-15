@@ -163,6 +163,10 @@ async def _(data: Message):
     return Chain(data).text('hello，world')
 ```
 
+::: tip 提示<br>
+优先级允许为 0 或**负数**。
+:::
+
 ## 自定义检查
 
 当关键字检查无法满足功能的触发方式时，就需要使用自定义检查。<br>
