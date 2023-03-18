@@ -1,20 +1,20 @@
 # 发送 html 生成的图片
 
-发送一张使用 html 页面生成的图片，它可以比使用 PIL 合成的图片更加生动，技术难度也比 PIL 要简单得多。
+发送一张使用 html 页面生成的图片，在同等工作量下，它通常比使用 PIL 合成的图片更加生动，技术难度也比 PIL 要低得多。
 
 ::: danger 操作系统支持<br>
 
-HTML制图需要使用 playwright 模块，所以仅支持以下操作系统。
+HTML制图需要使用 playwright 模块，所以仅支持以下操作系统：
 
-- Windows 10 以上系统
-- MacOS 10.14 Mojave 以上系统
-- Linux 系统官方支持 Ubuntu 18.04 以及 Ubuntu 20.04（不完全测试）
+- Windows 10 及以上系统
+- MacOS 10.14 Mojave 及以上系统
+- Linux 系统官方支持 Ubuntu 18.04 及 Ubuntu 20.04（不完全测试）
 
 :::
 
 ## 安装 Chromium
 
-命令行执行以下命令安装 Chromium 内核。
+命令行执行以下命令安装 Chromium 内核：
 
 #### Windows or MacOS
 
@@ -44,7 +44,7 @@ bot.start(launch_browser=True)
 | 参数名         | 类型         | 释义           | 默认值  |
 |-------------|------------|--------------|------|
 | path        | String     | 模板文件路径或网站URL |      |
-| data        | Dict, List | 模板文件数据       |      |
+| data        | Dict, List | 传入模板文件的数据    |      |
 | width       | int        | 浏览器视窗宽度      | 1280 |
 | height      | int        | 浏览器视窗高度      | 720  |
 | is_template | Bool       | 是否为模板文件      | True |
@@ -98,9 +98,11 @@ Chain(data).html('template.html', {...})
 
 #### **Vue.js**
 
-模板文件建议使用 [Vue.js](https://cn.vuejs.org/)（以下简称 `vue`）编写，vue 可以有效提高模板渲染速度以及代码可读性。当然这里只是示例，你也可以使用自己惯用的方法。
+模板文件建议使用 [Vue.js](https://cn.vuejs.org/)（以下简称 `vue`）编写，vue 可以有效提高模板渲染速度以及代码可读性。
 
-将需要渲染的数据传入模板
+当然这里只是示例，你也可以使用自己惯用的方法。
+
+将需要渲染的数据传入模板：
 
 ```python
 @bot.on_message(keywords='hello')
@@ -118,12 +120,12 @@ async def _(data: Message):
 _效果用于示例，相信你可以写出更为美观的页面。_
 
 ::: tip 小建议 <br>
-html 制图旨在不使用 PIL 也能制作出美观的图片，但不建议你滥用。在仅渲染文字和少量图案时，PIL 的效率会比 html 高得多。
+html 制图的目的旨在不使用 PIL 也能制作出美观的图片，但不建议你滥用。在仅渲染文字和少量图案时，PIL 的效率会比 html 高得多。
 :::
 
 ## **通过网站URL制图**
 
-支持直接使用网站URL生成图片
+支持直接使用网站URL生成图片。
 
 ::: danger 注意 <br>
 在页面加载完毕后，默认预留200ms的渲染时间。如果页面有部分元素是异步渲染的，将有可能不显示在图片内。可通过参数 `render_time`
