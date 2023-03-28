@@ -40,7 +40,7 @@ asyncio.run(bot.start())
 
 3. 运行代码，在频道里输入 `@机器人 hello`，你预期会看到如下输出。
 
-<img style="width: 220px" src="../../assets/examples/hello2.png" alt="image">
+<img style="width: 220px" src="../../assets/examples/hello.png" alt="image">
 
 那么恭喜你，你的 QQ 机器人已经可以正常运作了。
 
@@ -62,4 +62,4 @@ bot.set_prefix_keywords(['amiya', 'amy'])
 
 使用前缀触发词唤醒机器人
 
-<img style="width: 220px" src="../../assets/examples/hello.png" alt="image">
+<img style="width: 220px" src="../../assets/examples/hello2.png" alt="image">
