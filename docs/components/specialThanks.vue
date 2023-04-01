@@ -68,6 +68,7 @@ export default {
 
 .avatar {
     width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: 1px solid #b74ec9;
     margin-left: 5px;
@@ -75,6 +76,7 @@ export default {
 
 .small .avatar {
     width: 40px;
+    height: 40px;
 }
 
 .user-name {
