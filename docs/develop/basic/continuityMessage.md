@@ -6,6 +6,9 @@ Message 对象内置了连续对话支持。
 
 ## Message.wait()
 
+> 或 Message.wait_callback()，此方法能够返回消息回调，用于撤回消息等操作。<br>
+> 详见：[撤回消息](/develop/basic/recallMessage.md)
+
 **参数列表**
 
 | 参数名         | 类型       | 释义          | 默认值   |
@@ -62,6 +65,9 @@ async def _(data: Message):
 
 ## Message.wait_channel()
 
+> 或 Message.wait_channel_callback()，此方法能够返回消息回调，用于撤回消息等操作。<br>
+> 详见：[撤回消息](/develop/basic/recallMessage.md)
+
 ::: danger 注意<br>
 该方法不可用于支持私信的功能里
 :::
@@ -76,7 +82,7 @@ async def _(data: Message):
 | max_time    | Int      | 最长等待时间（秒数）  | 30    |
 | data_filter | Callable | Message 过滤器 |       |
 
-wait_channel 方法是 wait 概念的延伸，用于等待**子频道全体用户的回复**。
+wait_channel 方法用于等待**子频道全体成员的回复**。
 
 与 wait 方法不同的是，wait_channel 返回的不是 Message 对象，而是 **ChannelMessagesItem** 对象。内含等待事件的实例，和该次返回的消息。
 
@@ -118,8 +124,7 @@ async def _(data: Message):
 
 关闭等待事件
 
-wait_channel 与 wait 的用法是**大致相同**的，但是 wait_channel 在接收到有效消息并返回后，不会像 wait
-那样关闭事件，而是保持接收子频道的消息。在你的业务逻辑正常结束时，你**必须**使用
+wait_channel 与 wait 的用法是**大致相同**的，但是 wait_channel 在接收到有效消息并返回后，不会像 wait 那样关闭事件，而是保持接收子频道的消息。在你的业务逻辑正常结束时，你**必须**使用
 `close_event` 关闭它。
 
 ::: warning 请注意<br>

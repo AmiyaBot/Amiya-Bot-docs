@@ -8,7 +8,7 @@
 公招图片识别功能需要申请并配置相应的百度智能云 API
 :::
 
-在 `plugins/amiyabot-arknights-recruit-*/baiduCloud.yaml` 中，需要将 `enable` 改为 `true`
+请根据插件文档配置相关信息。
 
 > 我不知道如何申请百度云 api
 
@@ -18,7 +18,7 @@
 
 + 对应的文件位置在 `plugins/amiyabot-user*/face` 下，直接将图片文件扔到文件夹内即可。
 
-## 代码部署后 只有抽卡/个人信息/干员查询/敌人查询/材料查询功能无法正常产生图片
+## 代码部署后部分插件无法正常产生图片
 
 + 在安装完依赖后 需要额外安装playwright的chromium及其依赖
     + 对于windows：
