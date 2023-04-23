@@ -1,5 +1,7 @@
 # 发送At
 
+发送 `@XXX`
+
 ## Chain().at()
 
 ::: tip 提示<br>
@@ -15,4 +17,4 @@
 Chain(data).at(12345678).text('hello, world')
 ```
 
-Chain 对象在实例化的时候，默认会在消息体头部添加 `@用户`。
+Chain 对象在实例化的时候，默认会在消息体头部添加 `@XXX`。

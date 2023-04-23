@@ -6,9 +6,9 @@
 
 HTML制图需要使用 playwright 模块，所以仅支持以下操作系统：
 
-- Windows 10 及以上系统
-- MacOS 10.14 Mojave 及以上系统
-- Linux 系统官方支持 Ubuntu 18.04 及 Ubuntu 20.04（不完全测试）
+- Windows 10、Windows Subsystem for Linux (WSL) 或 Windows Server 2012 及以上系统
+- MacOS 11 (Big Sur) 及以上系统
+- Linux 系统官方支持 Debian 11、Ubuntu 18.04 以及 Ubuntu 20.04
 
 :::
 
@@ -16,15 +16,10 @@ HTML制图需要使用 playwright 模块，所以仅支持以下操作系统：
 
 命令行执行以下命令安装 Chromium 内核：
 
-#### Windows or MacOS
-
 ```bash
+# Windows or MacOS
 playwright install chromium
-```
-
-#### Ubuntu（Linux）
-
-```bash
+# Linux
 playwright install --with-deps chromium
 ```
 

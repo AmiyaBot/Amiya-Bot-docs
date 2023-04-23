@@ -61,8 +61,6 @@ pip install -r requirements.txt
 
 默认为 Chromium
 
-**Windows or MacOS**
-
 ```bash
 # Windows or MacOS
 playwright install chromium

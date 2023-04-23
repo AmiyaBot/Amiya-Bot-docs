@@ -51,7 +51,7 @@ await bot.instance.recall_message(message_id='......', target_id='......')
 
 ## 撤回 Bot 发送的消息
 
-如果是通过在消息响应器里面返回 `Chain` 对象或等待函数 `Message.wait()` 发送的消息，**是无法撤回的**。
+如果是通过在消息响应器里面返回 `Chain` 对象或等待函数 `Message.wait()` 发送的消息，**是无法撤回的**，但后者可以通过另外的方法达到撤回效果。
 
 | 发送消息的方法                | 是否可撤回  |
 |------------------------|--------|
@@ -69,8 +69,8 @@ async def _(data: Message):
     if callback:
         await callback.recall() # 使用回调对象撤回
 
-    wait = await data.wait(chain)  # ❌ 无法撤回，需要撤回可参照下文
-    event = await data.wait_channel(chain)  # ❌ 无法撤回，需要撤回可参照下文
+    wait = await data.wait(chain)  # ❌ 无法撤回
+    event = await data.wait_channel(chain)  # ❌ 无法撤回
 
     return chain  # ❌ 无法撤回
 ```
