@@ -6,9 +6,6 @@ Message 对象内置了连续对话支持。
 
 ## Message.wait()
 
-> 或 Message.wait_callback()，此方法能够返回消息回调，用于撤回消息等操作。<br>
-> 详见：[撤回消息](/develop/basic/recallMessage.md)
-
 **参数列表**
 
 | 参数名         | 类型       | 释义          | 默认值   |
@@ -17,6 +14,7 @@ Message 对象内置了连续对话支持。
 | force       | Bool     | 使用强制等待      | False |
 | max_time    | Int      | 最长等待时间（秒数）  | 30    |
 | data_filter | Callable | Message 过滤器 |       |
+| level       | Int      | 优先级         | 0     |
 
 使用 wait 方法实现一个简单的连续对话
 
@@ -34,8 +32,9 @@ async def _(data: Message):
 
 ### force 强制等待
 
-等待通常不会影响消息分配器运作，也就是说 **仅在不能触发任何其他功能（也包括本功能的初始触发方式）**
-的时候，消息才会返回到当前等待处。<br>
+等待通常不会影响消息分配器运作，也就是说 **仅在不能触发任何其他功能**
+的时候，消息才会返回到当前等待处。**（也包括本功能的初始触发方式，一般功能的优先级默认为 1，比等待事件的默认优先级高）**
+
 如果你不希望如此，使用参数 `force=True`，可以忽略分配器让消息强制返回到等待处。
 
 ### data_filter 消息过滤器
@@ -65,9 +64,6 @@ async def _(data: Message):
 
 ## Message.wait_channel()
 
-> 或 Message.wait_channel_callback()，此方法能够返回消息回调，用于撤回消息等操作。<br>
-> 详见：[撤回消息](/develop/basic/recallMessage.md)
-
 ::: danger 注意<br>
 该方法不可用于支持私信的功能里
 :::
@@ -81,6 +77,7 @@ async def _(data: Message):
 | clean       | Bool     | 是否清空消息列表    | True  |
 | max_time    | Int      | 最长等待时间（秒数）  | 30    |
 | data_filter | Callable | Message 过滤器 |       |
+| level       | Int      | 优先级         | 0     |
 
 wait_channel 方法用于等待**子频道全体成员的回复**。
 
@@ -124,8 +121,8 @@ async def _(data: Message):
 
 关闭等待事件
 
-wait_channel 与 wait 的用法是**大致相同**的，但是 wait_channel 在接收到有效消息并返回后，不会像 wait 那样关闭事件，而是保持接收子频道的消息。在你的业务逻辑正常结束时，你**必须**使用
-`close_event` 关闭它。
+wait_channel 与 wait 的用法是**大致相同**的，但是 wait_channel 在接收到有效消息并返回后，不会像 wait
+那样关闭事件，而是保持接收子频道的消息。在你的业务逻辑正常结束时，你**必须**使用 `close_event` 关闭它。
 
 ::: warning 请注意<br>
 **请务必让你的业务逻辑有机会关闭等待事件**，否则等待事件没有被正常关闭时，它可能会**持续拦截子频道消息**直至超时自动关闭。
