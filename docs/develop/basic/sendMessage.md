@@ -32,16 +32,19 @@ Chain(data).text('hello, world')
 
 ## 构建消息的方法
 
+### 普通消息
+
 Chain 对象支持链式语法，用于构建复杂的消息结构。以下方法均返回 Chain 对象自身。
 
-- [发送文字](/develop/basic/chainBuild/text.md)
+- [发送 At](/develop/basic/chainBuild/at.md)
 - [发送表情](/develop/basic/chainBuild/face.md)
+- [发送文字](/develop/basic/chainBuild/text.md)
 - [发送图片](/develop/basic/chainBuild/image.md)
 - [发送文字生成的图片](/develop/basic/chainBuild/textImage.md)
-- [发送html生成的图片](/develop/basic/chainBuild/html.md)
-- [发送markdown生成的图片](/develop/basic/chainBuild/markdown.md)
+- [发送 html 生成的图片](/develop/basic/chainBuild/html.md)
+- [发送 markdown 生成的图片](/develop/basic/chainBuild/markdown.md)
 - [发送语音](/develop/basic/chainBuild/voice.md)
-- [发送At](/develop/basic/chainBuild/at.md)
+- [发送原生模板 & CQ码](/develop/basic/chainBuild/extend.md)
 
 只需要按顺序以链式使用上述方法，即可拼接出内容丰富的消息。Chain 在最终构建消息的时候，会优化图片与文字的组成，减少消息的请求数量。
 
@@ -52,6 +55,12 @@ Chain(data).text(...).image(...).text(...).html(...)
 ::: warning 关于语音<br>
 voice 方法并不参与构建消息体，因为 QQ 无法在发送的文字消息中间镶嵌语音，语音将会单独发送。
 :::
+
+### 合并转发消息
+
+合并转发消息需要使用独立的工具类创建
+
+- [发送合并转发消息](/develop/basic/chainBuild/forward.md)
 
 ## 空 Chain
 

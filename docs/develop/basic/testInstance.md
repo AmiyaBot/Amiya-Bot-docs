@@ -8,7 +8,9 @@ import asyncio
 from amiyabot import AmiyaBot, Message, Chain
 from amiyabot.adapters.test import test_instance
 
-bot = AmiyaBot(appid='123456', token='', adapter=test_instance('127.0.0.1', 32001))
+bot = AmiyaBot(appid='123456',
+               token='',
+               adapter=test_instance('127.0.0.1', 32001))
 
 
 @bot.on_message(keywords='hello', check_prefix=False)

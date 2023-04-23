@@ -31,7 +31,7 @@ export default {
     },
     methods: {
         get_sponsors: function () {
-            axios.get('https://server.amiyabot.com:9000/get_sponsors').then(res => {
+            axios.get('https://server.amiyabot.com:8000/get_sponsors').then(res => {
                 this.data = JSON.parse(res.data)
                 this.data.sort((a, b) => {
                     return b.all_sum_amount - a.all_sum_amount
@@ -68,6 +68,7 @@ export default {
 
 .avatar {
     width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: 1px solid #b74ec9;
     margin-left: 5px;
@@ -75,6 +76,7 @@ export default {
 
 .small .avatar {
     width: 40px;
+    height: 40px;
 }
 
 .user-name {

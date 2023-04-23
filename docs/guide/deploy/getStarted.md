@@ -6,9 +6,9 @@ import download from '../../components/download.vue'
 
 ::: danger 操作系统支持<br>
 
-- Windows 10 以上系统
-- MacOS 10.14 Mojave 以上系统
-- Linux 系统官方支持 Ubuntu 18.04 以及 Ubuntu 20.04（不完全测试）
+- Windows 10、Windows Subsystem for Linux (WSL) 或 Windows Server 2012 及以上系统
+- MacOS 11 (Big Sur) 及以上系统
+- Linux 系统官方支持 Debian 11、Ubuntu 18.04 以及 Ubuntu 20.04
 
 :::
 
@@ -57,19 +57,72 @@ git clone https://github.com/AmiyaBot/Amiya-Bot.git
 pip install -r requirements.txt
 ```
 
-3. 安装 Chromium
+3. 安装浏览器内核
+
+默认为 Chromium
 
 **Windows or MacOS**
 
 ```bash
+# Windows or MacOS
 playwright install chromium
-```
-
-**Ubuntu（Linux）**
-
-```bash
+# Linux
 playwright install --with-deps chromium
 ```
+
+部分系统由于版本过低（如 Windows Server 2012），可能不支持 chromium 内核。推荐修改为火狐（firefox）内核启动。
+
+```bash
+# Windows or MacOS
+playwright install firefox
+# Linux
+playwright install --with-deps firefox
+```
+
+::: details 使用火狐内核需要修改入口程序 `amiya.py`，点击查看代码
+
+```python {6,16,21,31}
+import os
+import sys
+import asyncio
+import core.frozen
+
+from amiyabot import BrowserLaunchConfig  # 导入浏览器启动配置类
+from core import app, bot, init_task, load_resource, load_plugins
+
+sys.path += [
+    os.path.dirname(sys.executable),
+    os.path.dirname('resource/env/python-dlls'),
+    os.path.dirname('resource/env/python-standard-lib.zip'),
+]
+
+
+# 创建新启动类
+class Launcher(BrowserLaunchConfig):
+    def __init__(self):
+        super().__init__()
+
+        self.browser_type = 'firefox'  # 修改浏览器属性
+
+
+if __name__ == '__main__':
+    try:
+        load_resource()
+        asyncio.run(
+            asyncio.wait(
+                [
+                    *init_task,
+                    bot.start(launch_browser=Launcher()),  # 使用新启动类启动浏览器
+                    app.serve(),
+                    load_plugins()
+                ]
+            )
+        )
+    except KeyboardInterrupt:
+        pass
+```
+
+:::
 
 4. 运行代码
 

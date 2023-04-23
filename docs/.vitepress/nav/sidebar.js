@@ -101,6 +101,7 @@ export default {
                 {text: '创建&编写插件', link: '/develop/plugin/create.md'},
                 {text: '插件生命周期', link: '/develop/plugin/life.md'},
                 {text: '添加插件文档', link: '/develop/plugin/addDoc.md'},
+                {text: '对接控制台', link: '/develop/plugin/consoleConfig.md'},
                 {text: '调试插件', link: '/develop/plugin/debug.md'},
             ]
         },
