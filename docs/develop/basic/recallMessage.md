@@ -111,6 +111,4 @@ async def _(data: Message):
 
 ### 撤回合并转发的消息
 
-::: warning 温馨提示<br>
-合并转发暂不支持撤回，请关注后续更新！
-:::
+[撤回合并转发](/develop/basic/chainBuild/forward.html#发送-撤回)

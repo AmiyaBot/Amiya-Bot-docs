@@ -62,6 +62,7 @@ export default {
                 {text: '说明', link: '/develop/advanced/index.md'},
                 {text: '生命周期', link: '/develop/advanced/lifeCycle.md'},
                 {text: '定时任务', link: '/develop/advanced/timedTask.md'},
+                {text: '事件总线', link: '/develop/advanced/eventBus.md'},
                 {text: '日志模块', link: '/develop/advanced/logger.md'},
                 {text: '加载插件', link: '/develop/advanced/loadPlugins.md'}
             ]

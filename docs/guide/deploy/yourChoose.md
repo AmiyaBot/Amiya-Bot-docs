@@ -23,13 +23,13 @@ QQ 机器人目前分为两种，一种是由腾讯官方运营的 [频道机器
 
 选择其中一个进行部署即可。
 
-### 使用 go-cqhttp
+## 使用 go-cqhttp
 
 推荐你直接在 [go-cqhttp 官网](https://docs.go-cqhttp.org/) 按照说明进行部署。如果你能力有限，可以点击下面的链接，下载已经配置好的一键包。
 
 https://cos.amiyabot.com/tools/go-cqhttp.zip
 
-该一键包为 go-cqhttp 的 [v1.0.0-rc3](https://github.com/Mrs4s/go-cqhttp/releases/tag/v1.0.0-rc3)
+该一键包为 go-cqhttp 的 [v1.0.0](https://github.com/Mrs4s/go-cqhttp/releases/tag/v1.0.0)
 版本，省去了首次启动后生成配置文件和启动批处理脚本的步骤，并修改了配置文件。
 
 ::: tip 提示<br>
@@ -54,7 +54,7 @@ HTTP端口：8080
 WS端口：8060
 ```
 
-### 使用 mirai-api-http
+## 使用 mirai-api-http
 
 mirai-api-http 有一定的部署难度，需要你拥有一定的计算机科学基础。但对比其他第三方服务，mirai 在很多方面都占有优势。
 

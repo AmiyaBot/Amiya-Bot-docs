@@ -74,10 +74,10 @@ async def _(data: Message):
     await forward2.send()
 ```
 
-## 发送
-
-**send**
+## 发送 & 撤回
 
 ```python
-await forward.send()
+callback = await forward.send()  # 发送
+if callback:
+    await callback.recall()  # 撤回
 ```
