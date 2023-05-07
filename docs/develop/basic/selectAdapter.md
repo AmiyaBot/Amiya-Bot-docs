@@ -37,8 +37,8 @@ class AmiyaBot(BotHandlerFactory):
 ```python
 from amiyabot.adapters.mirai import mirai_api_http
 
-qq = '******'       // 机器人的 QQ 号
-auth_key = '******' // mah 的 verifyKey
+qq = '******'       # 机器人的 QQ 号
+auth_key = '******' # mah 的 verifyKey
 
 adapter_service = mirai_api_http('127.0.0.1', 8060, 8080)
 
@@ -64,7 +64,7 @@ bot = AmiyaBot(appid=qq, token=auth_key, adapter=adapter_service)
 ```python
 from amiyabot.adapters.cqhttp import cq_http
 
-qq = '******' // 机器人的 QQ 号
+qq = '******' # 机器人的 QQ 号
 
 adapter_service = cq_http('127.0.0.1', 8080, 5700)
 
