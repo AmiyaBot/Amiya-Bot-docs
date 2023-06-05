@@ -31,7 +31,7 @@ export default {
     },
     methods: {
         get_sponsors: function () {
-            axios.get('https://server.amiyabot.com:8000/get_sponsors').then(res => {
+            axios.get('http://119.29.87.110:8000/get_sponsors').then(res => {
                 this.data = JSON.parse(res.data)
                 this.data.sort((a, b) => {
                     return b.all_sum_amount - a.all_sum_amount
