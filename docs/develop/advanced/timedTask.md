@@ -120,7 +120,7 @@ async def _():
 bot = AmiyaBot(...)
 
 @bot.timed_task(each=60, sub_tag='once')
-async def _():
+async def _(instance: BotHandlerFactory):
     ...
     bot.remove_timed_task('once')
 ```
