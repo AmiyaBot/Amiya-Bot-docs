@@ -49,23 +49,11 @@ async def _(data: Message):
 | verify        | [Verify 对象](/develop/basic/messageHandler.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A3%80%E6%9F%A5) | 自定义检查的结果            |
 | time          | Int                                                                                           | 消息时间                |
 
-::: danger 请注意<br>
-1.2.8 以后移除或修改了以下属性
-
-| 属性           | 释义                        | 变动       |
-|--------------|---------------------------|----------|
-| text         | 消息文本（去字符处理、中间件处理）         | 取消了去字符处理 |
-| text_digits  | 消息文本（去字符处理、中间件处理、中文转数字处理） | 取消了去字符处理 |
-| text_origin  | 消息文本（中间件处理）               | 已移除      |
-| text_initial | 消息文本（原始文本）                | 已移除      |
-
-:::
-
 ### 方法
 
-| 方法名          | 参数                                     | 释义      | 异步  |
-|--------------|----------------------------------------|---------|-----|
-| send         | reply                                  | 发送一条消息  | 是   |
-| wait         | reply,force,max_time,data_filter       | 等待用户消息  | 是   |
-| wait_channel | reply,force,clean,max_time,data_filter | 等待子频道消息 | 是   |
-| recall       |                                        | 撤回消息    | 是   |
+| 方法名          | 参数                                     | 释义      | 异步 |
+|--------------|----------------------------------------|---------|----|
+| send         | reply                                  | 发送一条消息  | 是  |
+| wait         | reply,force,max_time,data_filter       | 等待用户消息  | 是  |
+| wait_channel | reply,force,clean,max_time,data_filter | 等待子频道消息 | 是  |
+| recall       |                                        | 撤回消息    | 是  |

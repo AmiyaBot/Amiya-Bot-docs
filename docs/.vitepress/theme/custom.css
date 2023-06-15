@@ -12,8 +12,10 @@
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Harmony', sans-serif;
     --vp-c-brand: #ba68c8;
     --vp-c-brand-dark: #b74ec9;
+    --vp-c-brand-darker: #b74ec9;
     --vp-c-brand-light: #ce93d8;
-    /*--vp-c-text-light-1: #213547;*/
+    --vp-c-brand-lighter: #ce93d8;
+    --vp-c-text-light-1: #213547;
 }
 
 .vp-doc table {
@@ -53,6 +55,10 @@ img {
 i.red {
     font-style: normal;
     color: red;
+}
+
+.VPLink.link.link > .text {
+    line-height: 20px;
 }
 
 /*.VPContent.is-home {*/
