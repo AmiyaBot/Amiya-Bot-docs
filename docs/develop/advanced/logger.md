@@ -16,11 +16,19 @@ log.warning(...)
 log.critical(...)
 ```
 
-日志的固有格式如下所示，分别为`时间`、`日志模块名`、`日志等级`和`日志内容`。
+日志的固有格式如下所示，分别为`时间`、`日志模块名`、`日志等级`和`日志内容`。DEBUG 模式下会显示日志的输出文件名和位置。
 
 ```
+normal:
 2022-11-02 18:22:40,425 [     Bot][    INFO] initialize completed.
+
+debug mode:
+2022-11-02 18:22:40,425 [     Bot][    INFO][test.py:5] initialize completed.
 ```
+
+::: tip 提示<br>
+使用启动参数 `--debug` 开启 DEBUG 模式。
+:::
 
 ## 输出异常日志
 
@@ -51,17 +59,19 @@ TypeError: unsupported operand type(s) for +=: 'int' and 'str'
 | ignore  | List[]   | 仅捕获但不输出的异常列表 | None |
 | handler | Callable | 捕获异常后执行的方法   | None |
 
-```python {5,9}
+```python
 async def err_handler(err: Exception):
-    ...
+    print(err)
 
 # 异步方式
 async with log.catch('calc error:', ignore=[TypeError, ...], handler=err_handler):
-    ...
+    a = 0
+    a += '1'
 
 # 同步方式
 with log.sync_catch(...):
-    ...
+    a = 0
+    a += '1'
 ```
 
 ## 创建日志模块
@@ -77,13 +87,15 @@ logger.info('this is a log.')
 # 2022-11-02 18:32:05,053 [MyLogger][    INFO] this is a log.
 ```
 
-## 保存的日志文件
+**LoggerManager**
 
-保存的日志文件默认为 running.log，LoggerManager 的所有等级输出方法内，都有一个 `filename` 参数，可用于指定输出的文件名。
-
-```python
-log.info('some text.', filename='other') # 将输出到 log/other.log 文件
-```
+| 参数名           | 类型     | 释义          | 默认值                                                  |
+|---------------|--------|-------------|------------------------------------------------------|
+| name          | String | logger 模块名称 |                                                      |
+| level         | Int    | 日志等级        | logging.INFO                                         |
+| formatter     | String | 日志格式        | `%(asctime)s [%(name)8s][%(levelname)8s]%(message)s` |
+| save_path     | String | 日志文件保存目录    | log                                                  |
+| save_filename | String | 日志文件名       | running                                              |
 
 ## 自定义全局日志模块
 
