@@ -57,6 +57,12 @@ i.red {
     color: red;
 }
 
+.VPHome .tagline:after {
+    content: '适配器现已支持 QQ 频道机器人、KOOK 机器人、Mirai-Http-API 以及 Go-CQHttp。';
+    display: block;
+    margin-top: 15px;
+}
+
 .VPLink.link.link > .text {
     line-height: 20px;
 }

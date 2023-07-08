@@ -15,20 +15,12 @@ AmiyaBot 也给你带去了快乐吧。
 的认可就已经是最大的支持了。如果可以的话，恳请你在 [Github](https://github.com/AmiyaBot/Amiya-Bot) 为 AmiyaBot 点上一颗小小的️
 ⭐ star。
 
-打赏请前往[爱发电主页](https://afdian.net/a/amiyabot)
-
-::: details 主页二维码<br>
-<img style="width: 400px" src="./assets/5a4a07cc67f556288d3df2e9029fc14.jpg" alt="image">
-:::
-
 ## 特别鸣谢
 
 你们的鼎力支持让我们感到创作 AmiyaBot 项目是值得的。感谢有你，让 AmiyaBot 秉承初衷。❤️
 
-<specialThanks :min="20" :displayUserName="true"/>
+<specialThanks :min="0" :displayUserName="true"/>
 
-## 鸣谢
+打赏请前往[爱发电主页](https://afdian.net/a/amiyabot)。
 
-支持是无分轻重的，有你们的认可，让 AmiyaBot 的创作更有动力。🌹
-
-<specialThanks :max="20"/>
+<img style="width: 400px" src="./assets/5a4a07cc67f556288d3df2e9029fc14.jpg" alt="image">
