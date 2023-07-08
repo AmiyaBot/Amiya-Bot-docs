@@ -67,6 +67,19 @@ bot = AmiyaBot(appid=qq, token=auth_key, adapter=adapter_service)
 理论上只要遵循 OneBot 标准的实现都可以使用本适配器。目前本框架仅使用了 go-cqhttp 进行测试开发。
 :::
 
+::: danger 注意<br>
+go-cq 的配置中，`post-format` 需更改为 `array`。
+
+```yaml
+# config.yml
+message:
+    # 上报数据类型
+    # 可选: string, array
+    post-format: array
+```
+
+:::
+
 ### cq_http
 
 | 参数名       | 类型     | 释义                      | 默认值 |

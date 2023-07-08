@@ -10,11 +10,18 @@
 
 ## 填写配置表
 
-### 腾讯频道机器人
+### QQ 频道机器人
 
 > 适配器类型：**QQ-Bot**
 
 填写你注册的频道机器人信息，表单字段就是对应内容。
+
+### KOOK 机器人
+
+> 适配器类型：**KOOK**
+
+填写你创建的机器人应用的 `Token` 即可。KOOK 机器人不需要 appid，但你仍然需要在配置里随便填写一个 appid，推荐使用 KOOK
+应用的 `Client Id`。
 
 ### go-cqhttp支持的群聊机器人
 
@@ -28,9 +35,9 @@
 
 ```yaml {4}
 message:
-  # 上报数据类型
-  # 可选: string,array
-  post-format: array
+    # 上报数据类型
+    # 可选: string,array
+    post-format: array
 ```
 
 access-token 可在 go-cqhttp 目录下的文件 `config.yml` 找到
@@ -65,22 +72,22 @@ AuthKey 可在 mirai-console 目录下的文件 `config/net.mamoe.mirai-api-http
 
 ```yaml {6}
 adapters:
-  - http
-  - ws
+    - http
+    - ws
 debug: false
 enableVerify: true
 verifyKey: ******* # 此处即是 AuthKey
 singleMode: false
 cacheSize: 4096
 adapterSettings:
-  http:
-    host: 0.0.0.0
-    port: 8080
-    cors: [ * ]
-  ws:
-    host: 0.0.0.0
-    port: 8060
-    reservedSyncId: -1
+    http:
+        host: 0.0.0.0
+        port: 8080
+        cors: [ * ]
+    ws:
+        host: 0.0.0.0
+        port: 8060
+        reservedSyncId: -1
 ```
 
 ### 点击“保存并启动”运行实例。
