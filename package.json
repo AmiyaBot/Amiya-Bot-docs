@@ -4,7 +4,7 @@
     "description": "pypi project amiyabot's docs",
     "main": "index.js",
     "scripts": {
-        "docs:dev": "vitepress dev docs --host",
+        "docs:dev": "vitepress dev docs --host --port 8080",
         "docs:build": "vitepress build docs",
         "docs:serve": "vitepress serve docs"
     },
