@@ -15,7 +15,6 @@ import download from './components/download.vue'
 ## AmiyaBot-demo-v6
 
 <download version="master" text="正式版" />
-<download version="dev" text="测试版" />
 
 ## Git
 
