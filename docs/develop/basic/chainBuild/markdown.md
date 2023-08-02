@@ -9,10 +9,11 @@
 
 ## Chain().markdown()
 
-| 参数名         | 类型     | 释义          | 默认值 |
-|-------------|--------|-------------|-----|
-| content     | String | markdown 文本 |     |
-| render_time | Int    | 渲染时间（毫秒）    | 200 |
+| 参数名         | 类型     | 释义          | 默认值   |
+|-------------|--------|-------------|-------|
+| content     | String | markdown 文本 |       |
+| render_time | Int    | 渲染时间（毫秒）    | 200   |
+| is_dark     | Bool   | 是否使用暗黑样式    | False |
 
 ```python
 Chain(data).markdown(text)
