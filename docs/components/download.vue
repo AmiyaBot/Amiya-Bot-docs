@@ -1,7 +1,5 @@
 <template>
-    <div>
-        {{ text }}：<a @click="download">{{ latest }}-{{ version }}.zip</a>
-    </div>
+    <a @click="download">AmiyaBot-{{ latest }}-{{ version }}.zip</a>
 </template>
 
 <script>
@@ -26,7 +24,7 @@ export default {
         }
     },
     mounted() {
-        axios.get(`${cos}/latest-V6-${this.version}.txt?time=${new Date().getTime()}`).then(response => {
+        axios.get(`${cos}/latest-${this.version}.txt?time=${new Date().getTime()}`).then(response => {
             this.latest = response.data.toString().replace(/\r\n/g, '').replace(/\n/g, '')
         })
     }
