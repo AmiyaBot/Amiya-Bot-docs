@@ -73,7 +73,7 @@ async def _(instance: BotHandlerFactory):
 
 ### 自定义执行时机
 
-使用 `scheduler.add_job` 参数定义任务，可以使任务的实现时机更加灵活。
+使用 `scheduler.add_job` 参数定义任务，可以使任务的执行时机更加灵活。
 
 ```python
 from amiyabot import PluginInstance
