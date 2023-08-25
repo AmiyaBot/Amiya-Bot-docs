@@ -142,11 +142,11 @@ ImportError: attempted relative import with no known parent package
 
 **install_plugin** 里提供了参数解决这一问题。先看看这个方法的参数列表。
 
-| 参数名                 | 类型     | 释义                     | 默认值   |
-|---------------------|--------|------------------------|-------|
-| plugin              | Union  | 插件                     |       |
-| extract_plugin      | Bool   | 是否解压插件                 | False |
-| extract_plugin_dest | String | 插件解压后的目录名（默认为 zip 文件名） |       |
+| 参数名                 | 类型    | 释义                     | 默认值   |
+|---------------------|-------|------------------------|-------|
+| plugin              | Union | 插件                     |       |
+| extract_plugin      | bool  | 是否解压插件                 | False |
+| extract_plugin_dest | str   | 插件解压后的目录名（默认为 zip 文件名） |       |
 
 解决上述问题，我们只需要添加参数 `extract_plugin=True`，将 zip 导入转换为 Package 目录导入。
 
@@ -164,10 +164,10 @@ bot.install_plugin('myPlugin.zip', extract_plugin=True)
 
 **uninstall_plugin**
 
-| 参数名       | 类型     | 释义         | 默认值   |
-|-----------|--------|------------|-------|
-| plugin_id | String | 插件 ID      |       |
-| remove    | Bool   | 是否删除插件的原文件 | False |
+| 参数名       | 类型   | 释义         | 默认值   |
+|-----------|------|------------|-------|
+| plugin_id | str  | 插件 ID      |       |
+| remove    | bool | 是否删除插件的原文件 | False |
 
 ```python
 bot.uninstall_plugin('my-plugin')

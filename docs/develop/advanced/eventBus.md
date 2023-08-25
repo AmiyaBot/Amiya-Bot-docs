@@ -10,10 +10,10 @@ from amiyabot import event_bus
 
 **publish**
 
-| 参数名        | 类型     | 释义   | 默认值  |
-|------------|--------|------|------|
-| event_name | String | 事件名  |      |
-| data       | Any    | 事件数据 | None |
+| 参数名        | 类型  | 释义   | 默认值  |
+|------------|-----|------|------|
+| event_name | str | 事件名  |      |
+| data       | Any | 事件数据 | None |
 
 ```python
 event_bus.publish('myEvent', data=...)
@@ -25,7 +25,7 @@ event_bus.publish('myEvent', data=...)
 
 | 参数名        | 类型       | 释义       | 默认值  |
 |------------|----------|----------|------|
-| event_name | String   | 事件名      |      |
+| event_name | str      | 事件名      |      |
 | method     | Callable | 响应方法（可选） | None |
 
 ::: tip 提示<br>
@@ -57,7 +57,7 @@ event_bus.subscribe('myEvent', event_handler)
 
 | 参数名        | 类型       | 释义   | 默认值  |
 |------------|----------|------|------|
-| event_name | String   | 事件名  |      |
+| event_name | str      | 事件名  |      |
 | method     | Callable | 响应方法 | None |
 
 ```python

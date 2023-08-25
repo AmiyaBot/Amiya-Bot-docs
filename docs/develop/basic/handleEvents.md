@@ -30,11 +30,11 @@ async def _(event: Event, instance: BotAdapterProtocol):
 
 ### Event 对象
 
-| 属性         | 类型     | 释义               |
-|------------|--------|------------------|
-| appid      | String | 发生该事件的 Bot AppId |
-| event_name | String | 事件名              |
-| data       | Dict   | 事件的内容字典          |
+| 属性         | 类型   | 释义               |
+|------------|------|------------------|
+| appid      | str  | 发生该事件的 Bot AppId |
+| event_name | str  | 事件名              |
+| data       | Dict | 事件的内容字典          |
 
 ## 频道事件
 

@@ -38,12 +38,12 @@ bot.start(launch_browser=True)
 
 | 参数名         | 类型         | 释义           | 默认值  |
 |-------------|------------|--------------|------|
-| path        | String     | 模板文件路径或网站URL |      |
+| path        | str        | 模板文件路径或网站URL |      |
 | data        | Dict, List | 传入模板文件的数据    |      |
 | width       | int        | 浏览器视窗宽度      | 1280 |
 | height      | int        | 浏览器视窗高度      | 720  |
-| is_template | Bool       | 是否为模板文件      | True |
-| render_time | Int        | 渲染时间（毫秒）     | 200  |
+| is_template | bool       | 是否为模板文件      | True |
+| render_time | int        | 渲染时间（毫秒）     | 200  |
 
 ```python
 Chain(data).html('template.html', {...})

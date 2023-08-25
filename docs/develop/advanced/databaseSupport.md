@@ -1,7 +1,8 @@
 # 数据库支持
 
 AmiyaBot 提供了 Sqlite 和 MySQL 数据库的 ORM
-支持。基于 [peewee](https://github.com/coleifer/peewee)，封装了部分表结构管理以及查询转换。日常使用的查询操作详见 [peewee文档](http://docs.peewee-orm.com/)
+支持。基于 [peewee](https://github.com/coleifer/peewee)
+，封装了部分表结构管理以及查询转换。日常使用的查询操作详见 [peewee文档](http://docs.peewee-orm.com/)
 
 ::: warning 温馨提示<br>
 AmiyaBot 仅能提供有限的数据库支持，**推荐你使用自己的更优的数据库解决方案**。
@@ -74,7 +75,7 @@ class TableName(BotBaseModel):
 | 参数名        | 类型          | 释义     | 默认值 |
 |------------|-------------|--------|-----|
 | rows       | List\[dict] | 数据列表   |     |
-| chunk_size | Int         | 分片插入大小 | 200 |
+| chunk_size | int         | 分片插入大小 | 200 |
 
 ```python
 data = [
@@ -132,8 +133,8 @@ data = query_to_list(TableName.select())
 | 参数名       | 类型          | 释义          | 默认值 |
 |-----------|-------------|-------------|-----|
 | model     | ModelSelect | peewee 查询对象 |     |
-| page      | Int         | 当前页         |     |
-| page_size | Int         | 页行数         |     |
+| page      | int         | 当前页         |     |
+| page_size | int         | 页行数         |     |
 
 ```python
 data = select_for_paginate(TableName.select(), 1, 10)

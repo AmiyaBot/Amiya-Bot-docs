@@ -42,11 +42,11 @@ bot = AmiyaBot(token=ws_token, adapter=KOOKBotInstance)
 
 ### mirai_api_http
 
-| 参数名       | 类型     | 释义                   | 默认值 |
-|-----------|--------|----------------------|-----|
-| host      | String | 访问 mah 的 ip 地址       |     |
-| ws_port   | Int    | mah 的 websocket 服务端口 |     |
-| http_port | Int    | mah 的 http 服务端口      |     |
+| 参数名       | 类型  | 释义                   | 默认值 |
+|-----------|-----|----------------------|-----|
+| host      | str | 访问 mah 的 ip 地址       |     |
+| ws_port   | int | mah 的 websocket 服务端口 |     |
+| http_port | int | mah 的 http 服务端口      |     |
 
 ```python
 from amiyabot.adapters.mirai import mirai_api_http
@@ -82,11 +82,11 @@ message:
 
 ### cq_http
 
-| 参数名       | 类型     | 释义                      | 默认值 |
-|-----------|--------|-------------------------|-----|
-| host      | String | 访问 cqhttp 的 ip 地址       |     |
-| ws_port   | Int    | cqhttp 的 websocket 服务端口 |     |
-| http_port | Int    | cqhttp 的 http 服务端口      |     |
+| 参数名       | 类型  | 释义                      | 默认值 |
+|-----------|-----|-------------------------|-----|
+| host      | str | 访问 cqhttp 的 ip 地址       |     |
+| ws_port   | int | cqhttp 的 websocket 服务端口 |     |
+| http_port | int | cqhttp 的 http 服务端口      |     |
 
 ```python
 from amiyabot.adapters.cqhttp import cq_http

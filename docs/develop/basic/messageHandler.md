@@ -28,13 +28,13 @@ async def _(data: Message):
 
 | 参数名          | 类型       | 释义                             | 默认值   |
 |--------------|----------|--------------------------------|-------|
-| group_id     | String   | 功能组ID                          |       |
+| group_id     | str      | 功能组ID                          |       |
 | keywords     | Union    | 触发关键字                          |       |
 | verify       | Callable | 自定义校验方法，当该参数被赋值时，keywords 将会失效 |       |
-| check_prefix | Bool     | 是否校验前缀或指定需要校验的前缀               | True  |
-| allow_direct | Bool     | 是否支持通过私信使用该功能                  | False |
-| direct_only  | Bool     | 是否仅支持私信                        | False |
-| level        | Int      | 关键字校验成功后函数的候选默认等级              | 0     |
+| check_prefix | bool     | 是否校验前缀或指定需要校验的前缀               | True  |
+| allow_direct | bool     | 是否支持通过私信使用该功能                  | False |
+| direct_only  | bool     | 是否仅支持私信                        | False |
+| level        | int      | 关键字校验成功后函数的候选默认等级              | 0     |
 
 ## 功能组
 
@@ -42,12 +42,12 @@ async def _(data: Message):
 
 实例化 **GroupConfig** 对象创建一个功能组，并将其设置到 bot 实例内。
 
-| 参数名          | 类型     | 释义               | 默认值   |
-|--------------|--------|------------------|-------|
-| group_id     | String | 功能组ID            |       |
-| check_prefix | Bool   | 是否校验前缀或指定需要校验的前缀 | True  |
-| allow_direct | Bool   | 是否支持通过私信使用该功能    | False |
-| direct_only  | Bool   | 是否仅支持私信          | False |
+| 参数名          | 类型   | 释义               | 默认值   |
+|--------------|------|------------------|-------|
+| group_id     | str  | 功能组ID            |       |
+| check_prefix | bool | 是否校验前缀或指定需要校验的前缀 | True  |
+| allow_direct | bool | 是否支持通过私信使用该功能    | False |
+| direct_only  | bool | 是否仅支持私信          | False |
 
 ```python
 from amiyabot import GroupConfig
@@ -189,8 +189,8 @@ async def _(data: Message):
 
 | 属性       | 类型   | 释义    |
 |----------|------|-------|
-| result   | Bool | 检查结果  |
-| weight   | Int  | 优先级   |
+| result   | bool | 检查结果  |
+| weight   | int  | 优先级   |
 | keypoint | Any  | 关键值信息 |
 
 ### 动态输出优先级的值

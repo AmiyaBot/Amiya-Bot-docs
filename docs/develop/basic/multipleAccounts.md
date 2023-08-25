@@ -37,7 +37,8 @@ asyncio.run(
 
 **MultipleAccounts**
 
-`MultipleAccounts` 可以创建一个多账号实例，参数是多个 **AmiyaBot 实例**。它拥有与 AmiyaBot 一样的所有方法，所以你可以像 AmiyaBot 一样使用它来注册你的功能。<br>
+`MultipleAccounts` 可以创建一个多账号实例，参数是多个 **AmiyaBot 实例**。它拥有与 AmiyaBot 一样的所有方法，所以你可以像
+AmiyaBot 一样使用它来注册你的功能。<br>
 通过 MultipleAccounts 注册的功能，将被所有包含的 AmiyaBot 共享。而其中的 AmiyaBot 实例，仍能单独注册属于自己的私有功能。
 
 ```python {8}
@@ -77,8 +78,8 @@ asyncio.run(bot.start())
 | 参数名             | 类型       | 释义             | 默认值   |
 |-----------------|----------|----------------|-------|
 | item            | AmiyaBot | AmiyaBot 实例    |       |
-| enable_chromium | Bool     | 启动时开启 chromium | False |
-| start_up        | Bool     | 插入后立即启动        | True  |
+| enable_chromium | bool     | 启动时开启 chromium | False |
+| start_up        | bool     | 插入后立即启动        | True  |
 
 示例
 

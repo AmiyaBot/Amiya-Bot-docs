@@ -17,8 +17,8 @@ async def _(data: Message):
 | 参数名           | 类型           | 释义           | 默认值            |
 |---------------|--------------|--------------|----------------|
 | data          | Message      | Message 对象   | None           |
-| at            | Bool         | 是否 @ 用户      | True           |
-| reference     | Bool         | 是否回复用户（引用消息） | False          |
+| at            | bool         | 是否 @ 用户      | True           |
+| reference     | bool         | 是否回复用户（引用消息） | False          |
 | chain_builder | ChainBuilder | Chain 辅助构建实例 | ChainBuilder() |
 
 `Chain` 对象是构建你的消息体的工具类。任何需要发送消息的时候，消息都必须由 Chain 类创建。<br>

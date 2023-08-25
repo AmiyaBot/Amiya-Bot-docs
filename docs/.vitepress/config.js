@@ -14,7 +14,7 @@ export default {
             text: '在 GitHub 上编辑此页'
         },
         socialLinks: [
-            {icon: 'github', link: 'https://github.com/AmiyaBot'}
+            { icon: 'github', link: 'https://github.com/AmiyaBot' }
         ],
         footer: {
             message: 'MIT & CC BY-NC-SA 4.0 Licensed. More Info <a href="https://github.com/AmiyaBot/Amiya-Bot-docs/blob/master/README.md#%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF" target="_blank">Click Here</a>.',

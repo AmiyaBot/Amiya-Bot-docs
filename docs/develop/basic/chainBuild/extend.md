@@ -19,7 +19,8 @@
 
 ### 示例
 
-使用 [mirai-api-http 消息类型 Dice](https://docs.mirai.mamoe.net/mirai-api-http/api/MessageType.html#dice) 发送一个点数 6 的骰子魔法表情
+使用 [mirai-api-http 消息类型 Dice](https://docs.mirai.mamoe.net/mirai-api-http/api/MessageType.html#dice) 发送一个点数
+6 的骰子魔法表情
 
 ```python
 Chain(data).extend(

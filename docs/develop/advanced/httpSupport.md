@@ -51,7 +51,8 @@ server = HttpServer(..., auth_key='my_auth_key')
 
 ## FastApi 扩展
 
-AmiyaBot 仅对 FastApi 的路由注册做了简易的封装。如需要扩展其用法，可获取 app 实例后参考[官方文档](https://fastapi.tiangolo.com/)进一步使用。
+AmiyaBot 仅对 FastApi 的路由注册做了简易的封装。如需要扩展其用法，可获取 app
+实例后参考[官方文档](https://fastapi.tiangolo.com/)进一步使用。
 
 ```python
 server = HttpServer()

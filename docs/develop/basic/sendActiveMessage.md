@@ -13,12 +13,12 @@ send_message 是发送主动消息的方法，它的第一个参数 chain 需要
 message = Chain().text('hello')
 ```
 
-| 参数名                 | 类型     | 释义       | 默认值 |
-|---------------------|--------|----------|-----|
-| chain               | Chain  | Chain 对象 |     |
-| user_id             | String | 用户ID     |     |
-| channel_id          | String | 子频道ID    |     |
-| direct_src_guild_id | String | 来源频道ID   |     |
+| 参数名                 | 类型    | 释义       | 默认值 |
+|---------------------|-------|----------|-----|
+| chain               | Chain | Chain 对象 |     |
+| user_id             | str   | 用户ID     |     |
+| channel_id          | str   | 子频道ID    |     |
+| direct_src_guild_id | str   | 来源频道ID   |     |
 
 #### 发送一条主动子频道消息
 

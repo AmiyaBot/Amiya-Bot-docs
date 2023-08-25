@@ -55,7 +55,7 @@ TypeError: unsupported operand type(s) for +=: 'int' and 'str'
 
 | 参数名     | 类型       | 释义           | 默认值  |
 |---------|----------|--------------|------|
-| desc    | String   | 异常标题         |      |
+| desc    | str      | 异常标题         |      |
 | ignore  | List[]   | 仅捕获但不输出的异常列表 | None |
 | handler | Callable | 捕获异常后执行的方法   | None |
 
@@ -89,13 +89,13 @@ logger.info('this is a log.')
 
 **LoggerManager**
 
-| 参数名           | 类型     | 释义          | 默认值                                                  |
-|---------------|--------|-------------|------------------------------------------------------|
-| name          | String | logger 模块名称 |                                                      |
-| level         | Int    | 日志等级        | logging.INFO                                         |
-| formatter     | String | 日志格式        | `%(asctime)s [%(name)8s][%(levelname)8s]%(message)s` |
-| save_path     | String | 日志文件保存目录    | log                                                  |
-| save_filename | String | 日志文件名       | running                                              |
+| 参数名           | 类型  | 释义          | 默认值                                                  |
+|---------------|-----|-------------|------------------------------------------------------|
+| name          | str | logger 模块名称 |                                                      |
+| level         | int | 日志等级        | logging.INFO                                         |
+| formatter     | str | 日志格式        | `%(asctime)s [%(name)8s][%(levelname)8s]%(message)s` |
+| save_path     | str | 日志文件保存目录    | log                                                  |
+| save_filename | str | 日志文件名       | running                                              |
 
 ## 自定义全局日志模块
 

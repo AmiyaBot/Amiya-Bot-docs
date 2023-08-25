@@ -40,10 +40,10 @@ async def _(err: Exception,
 
 **AmiyaBot.instance.recall_message()**
 
-| 参数名        | 类型     | 释义                                 | 默认值  |
-|------------|--------|------------------------------------|------|
-| message_id | String | 消息ID（通常可以在 Message.message_id 获取到） |      |
-| target_id  | String | 频道号（群号） 或好友ID                      | None |
+| 参数名        | 类型  | 释义                                 | 默认值  |
+|------------|-----|------------------------------------|------|
+| message_id | str | 消息ID（通常可以在 Message.message_id 获取到） |      |
+| target_id  | str | 频道号（群号） 或好友ID                      | None |
 
 ```python
 await bot.instance.recall_message(message_id='......', target_id='......')

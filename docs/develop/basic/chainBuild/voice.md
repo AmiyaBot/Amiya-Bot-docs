@@ -8,10 +8,10 @@ QQ 频道机器人暂时不支持发送语音，目前仅支持 `mirai-api-http`
 
 ## Chain().voice()
 
-| 参数名   | 类型     | 释义          | 默认值   |
-|-------|--------|-------------|-------|
-| file  | String | 语音 wav 文件路径 |       |
-| title | String | 语音标题        | voice |
+| 参数名   | 类型  | 释义          | 默认值   |
+|-------|-----|-------------|-------|
+| file  | str | 语音 wav 文件路径 |       |
+| title | str | 语音标题        | voice |
 
 ```python
 Chain(data).voice(file)

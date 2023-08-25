@@ -51,7 +51,8 @@ async def _(data: Message, waiter: Waiter, instance: BotAdapterProtocol):
 
 ### message_before_handle
 
-当消息分配器有返回，在执行消息响应器前执行此钩子。存在多个此钩子时，按加载顺序逐个调用。全部执行完成后当有其中一个返回 False，则不往下继续执行并结束生命周期。
+当消息分配器有返回，在执行消息响应器前执行此钩子。存在多个此钩子时，按加载顺序逐个调用。全部执行完成后当有其中一个返回
+False，则不往下继续执行并结束生命周期。
 
 ```python
 @bot.message_before_handle
@@ -63,7 +64,8 @@ async def _(data: Message, factory_name: str, instance: BotAdapterProtocol):
 
 ### message_before_send
 
-当消息响应器执行完毕且存在返回时，在发送其返回前执行此钩子。可以在此阶段修改 Chain 对象并返回。存在多个此钩子时，按加载顺序逐个调用，参数接受的 Chain 对象受上一个执行的影响。
+当消息响应器执行完毕且存在返回时，在发送其返回前执行此钩子。可以在此阶段修改 Chain 对象并返回。存在多个此钩子时，按加载顺序逐个调用，参数接受的
+Chain 对象受上一个执行的影响。
 
 ```python
 @bot.message_before_send

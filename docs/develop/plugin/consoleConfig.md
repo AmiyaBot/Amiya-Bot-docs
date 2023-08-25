@@ -6,7 +6,8 @@
 
 ## AmiyaBotPluginInstance
 
-对接控制台需要在创建插件实例类时使用或继承 [AmiyaBot-demo](/guide/deploy/) 项目中的 **AmiyaBotPluginInstance** 类而不是上文的 PluginInstance
+对接控制台需要在创建插件实例类时使用或继承 [AmiyaBot-demo](/guide/deploy/) 项目中的 **AmiyaBotPluginInstance** 类而不是上文的
+PluginInstance
 
 在 demo 项目里导入 `AmiyaBotPluginInstance`
 
@@ -30,13 +31,13 @@ AmiyaBotPluginInstance 继承了 PluginInstance，并且拥有以下新参数和
 
 ### 参数
 
-| 参数名                           | 类型     | 释义                   | 默认值  |
-|-------------------------------|--------|----------------------|------|
-| channel_config_default        | String | 频道级别配置默认值            | None |
-| channel_config_schema         | String | 频道级别配置表单的 JsonSchema | None |
-| global_config_default         | String | 全局级别配置默认值            | None |
-| global_config_schema          | String | 全局级别配置表单的 JsonSchema | None |
-| deprecated_config_delete_days | Int    | 旧配置项失效的天数            | 7    |
+| 参数名                           | 类型  | 释义                   | 默认值  |
+|-------------------------------|-----|----------------------|------|
+| channel_config_default        | str | 频道级别配置默认值            | None |
+| channel_config_schema         | str | 频道级别配置表单的 JsonSchema | None |
+| global_config_default         | str | 全局级别配置默认值            | None |
+| global_config_schema          | str | 全局级别配置表单的 JsonSchema | None |
+| deprecated_config_delete_days | int | 旧配置项失效的天数            | 7    |
 
 - 默认值和 JsonSchema 传入的值均为字符串，可以是 JSON 字符串或 `json` 文件路径。（默认值允许使用 `yaml` 文件路径）
 - 在控制台中点击 `重置为默认` 时会使用默认值的 JSON 数据覆盖，创建新配置项时使用默认值的 JSON 数据填充。
@@ -54,12 +55,13 @@ bot = AmiyaBotPluginInstance(
 
 **get_config**
 
-读取一个指定名称的配置项，如果没有频道级别的配置则返回同名全局配置，如果也没有全局配置，返回 `None`。传入 `channel_id=None` 可以直接读取全局配置。
+读取一个指定名称的配置项，如果没有频道级别的配置则返回同名全局配置，如果也没有全局配置，返回 `None`。传入 `channel_id=None`
+可以直接读取全局配置。
 
-| 参数名         | 类型     | 释义   | 默认值  |
-|-------------|--------|------|------|
-| config_name | String | 配置名称 |      |
-| channel_id  | String | 频道ID | None |
+| 参数名         | 类型  | 释义   | 默认值  |
+|-------------|-----|------|------|
+| config_name | str | 配置名称 |      |
+| channel_id  | str | 频道ID | None |
 
 ```python
 config_value = bot.get_config('name', channel_id='...')
@@ -69,11 +71,11 @@ config_value = bot.get_config('name', channel_id='...')
 
 写入配置，传入 `channel_id=None` 可以强制指定写入全局配置。
 
-| 参数名          | 类型     | 释义                     | 默认值  |
-|--------------|--------|------------------------|------|
-| config_name  | String | 配置名称                   |      |
-| config_value | Any    | 配置值，仅支持可被 JSON 序列化的值类型 |      |
-| channel_id   | String | 频道ID                   | None |
+| 参数名          | 类型  | 释义                     | 默认值  |
+|--------------|-----|------------------------|------|
+| config_name  | str | 配置名称                   |      |
+| config_value | Any | 配置值，仅支持可被 JSON 序列化的值类型 |      |
+| channel_id   | str | 频道ID                   | None |
 
 ```python
 bot.set_config('name', 'value', channel_id='...')
