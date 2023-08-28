@@ -43,7 +43,7 @@ TableName.select()  # ORM 操作详见 peewee 文档
 ```python
 from amiyabot.database import *
 
-db = connect_database('database_name', mysql=True, config=MysqlConfig(
+db = connect_database('database_name', is_mysql=True, config=MysqlConfig(
     host='127.0.0.1',
     port=3306,
     user='root',
