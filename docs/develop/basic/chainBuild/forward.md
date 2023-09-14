@@ -1,4 +1,4 @@
-# 发送合并转发消息 <span class="beta-tag">Beta</span>
+# 合并转发消息 <span class="beta-tag">Beta</span>
 
 合并转发消息不是 Chain 对象的方法，需要使用适配器提供的工具类构建。
 

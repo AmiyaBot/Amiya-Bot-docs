@@ -23,19 +23,21 @@ export default {
             ]
         },
         {
-            text: '消息的构建',
+            text: '消息构建元素',
             collapsible: true,
             items: [
-                { text: '发送 At', link: '/develop/basic/chainBuild/at.md' },
-                { text: '发送表情', link: '/develop/basic/chainBuild/face.md' },
-                { text: '发送文字', link: '/develop/basic/chainBuild/text.md' },
-                { text: '发送图片', link: '/develop/basic/chainBuild/image.md' },
-                { text: '发送文字生成的图片', link: '/develop/basic/chainBuild/textImage.md' },
-                { text: '发送 html 生成的图片', link: '/develop/basic/chainBuild/html.md' },
-                { text: '发送 markdown 生成的图片', link: '/develop/basic/chainBuild/markdown.md' },
-                { text: '发送语音', link: '/develop/basic/chainBuild/voice.md' },
-                { text: '发送合并转发消息', link: '/develop/basic/chainBuild/forward.md' },
-                { text: '发送原生模板 & CQ码', link: '/develop/basic/chainBuild/extend.md' }
+                { text: 'At', link: '/develop/basic/chainBuild/at.md' },
+                { text: 'At 所有人', link: '/develop/basic/chainBuild/atAll.md' },
+                { text: '频道跳转超链接', link: '/develop/basic/chainBuild/tag.md' },
+                { text: '文字', link: '/develop/basic/chainBuild/text.md' },
+                { text: '表情', link: '/develop/basic/chainBuild/face.md' },
+                { text: '图片', link: '/develop/basic/chainBuild/image.md' },
+                { text: '文字生成的图片', link: '/develop/basic/chainBuild/textImage.md' },
+                { text: 'HTML 生成的图片', link: '/develop/basic/chainBuild/html.md' },
+                { text: 'Markdown 生成的图片', link: '/develop/basic/chainBuild/markdown.md' },
+                { text: '语音', link: '/develop/basic/chainBuild/voice.md' },
+                { text: '合并转发消息', link: '/develop/basic/chainBuild/forward.md' },
+                { text: '原生模板 & CQ码', link: '/develop/basic/chainBuild/extend.md' }
             ]
         },
         {

@@ -3,8 +3,8 @@ layout: home
 
 hero:
     name: AmiyaBot
-    text: Python's Progressive Bot Framework
-    tagline: 简洁、易用且灵活的 Python 异步渐进式机器人框架。
+    text: Progressive Python QQ Bot Framework
+    tagline: 渐进式 Python QQ 频道机器人框架。
     actions:
         -   theme: brand
             text: 开始使用
@@ -21,10 +21,10 @@ features:
         title: 多账号 & 热插拔
         details: 支持同时创建多个机器人实例，为所有实例注册共享的消息处理方法，以及在多账号实例内动态增删机器人。
     -   icon: 🧩
-        title: 适配器与插件支持
-        details: 支持使用适配器更改机器人的服务来源，以及提供插件开发方案令业务和主程序分离，让机器人更加生态化。
+        title: 适配器 & 插件支持
+        details: 通过适配器来更改机器人的服务来源，提供更大的灵活性和可扩展性。支持插件开发方案，将业务和主程序分离，使机器人更加生态化和可定制化。
     -   icon: 🎉
         title: 丰富的消息类型
-        details: 内置的 PIL 图像合成模块以及 HTML 转换器，支持自动合成文字图片或渲染 WEB 合成图片，实现你的绝佳创意。
+        details: 内置的 PIL 图像合成模块以及 HTML 转换器，支持自动合成文字图片或渲染 WEB 或 Markdown 合成图片，轻松实现你的绝佳创意。
 
 ---

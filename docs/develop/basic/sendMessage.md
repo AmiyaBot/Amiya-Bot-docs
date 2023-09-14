@@ -36,15 +36,17 @@ Chain(data).text('hello, world')
 
 Chain 对象支持链式语法，用于构建复杂的消息结构。以下方法均返回 Chain 对象自身。
 
-- [发送 At](/develop/basic/chainBuild/at.md)
-- [发送表情](/develop/basic/chainBuild/face.md)
-- [发送文字](/develop/basic/chainBuild/text.md)
-- [发送图片](/develop/basic/chainBuild/image.md)
-- [发送文字生成的图片](/develop/basic/chainBuild/textImage.md)
-- [发送 html 生成的图片](/develop/basic/chainBuild/html.md)
-- [发送 markdown 生成的图片](/develop/basic/chainBuild/markdown.md)
-- [发送语音](/develop/basic/chainBuild/voice.md)
-- [发送原生模板 & CQ码](/develop/basic/chainBuild/extend.md)
+- [At](/develop/basic/chainBuild/at.md)
+- [At 所有人](/develop/basic/chainBuild/atAll.md)
+- [频道跳转超链接](/develop/basic/chainBuild/tag.md)
+- [文字](/develop/basic/chainBuild/text.md)
+- [表情](/develop/basic/chainBuild/face.md)
+- [图片](/develop/basic/chainBuild/image.md)
+- [文字生成的图片](/develop/basic/chainBuild/textImage.md)
+- [HTML 生成的图片](/develop/basic/chainBuild/html.md)
+- [Markdown 生成的图片](/develop/basic/chainBuild/markdown.md)
+- [语音](/develop/basic/chainBuild/voice.md)
+- [原生模板 & CQ码](/develop/basic/chainBuild/extend.md)
 
 只需要按顺序以链式使用上述方法，即可拼接出内容丰富的消息。Chain 在最终构建消息的时候，会优化图片与文字的组成，减少消息的请求数量。
 

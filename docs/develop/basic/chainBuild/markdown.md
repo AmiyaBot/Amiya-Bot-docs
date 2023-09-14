@@ -1,4 +1,4 @@
-# 发送 markdown 生成的图片
+# Markdown 生成的图片
 
 添加一张由 markdown 文本渲染的图片，直接传入 md 格式的文本，使用 html
 模式渲染。建议先阅读[发送 html 生成的图片](/develop/basic/chainBuild/html.md) 了解如何启动 Chromium。
