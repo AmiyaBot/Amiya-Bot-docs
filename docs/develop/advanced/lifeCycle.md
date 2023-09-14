@@ -12,17 +12,6 @@ AmiyaBot 接收的消息和事件，都会历经一个完整的生命周期。�
 
 通过 AmiyaBot 对象或 PluginInstance 对象注册周期钩子函数。
 
-::: danger 注意<br>
-在 1.3.8 版本后，移除了原本的生命周期钩子，但可以在新的钩子里找到替代。
-
-| OLD                | NEW                   |
-|--------------------|-----------------------|
-| handler_middleware | message_created       |
-| before_bot_reply   | message_before_handle |
-| after_bot_reply    | message_after_handle  |
-
-:::
-
 > 所有钩子均可以同时存在多个，按加载顺序逐个调用。
 
 ### message_created
