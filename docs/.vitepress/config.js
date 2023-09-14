@@ -18,7 +18,10 @@ export default {
         ],
         footer: {
             message: 'MIT & CC BY-NC-SA 4.0 Licensed. More Info <a href="https://github.com/AmiyaBot/Amiya-Bot-docs/blob/master/README.md#%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF" target="_blank">Click Here</a>.',
-            copyright: 'Copyright © 2022-present vivien8261 <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2021107697号-1</a>'
+            copyright: 'Copyright © 2023-present vivien8261 <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2021107697号-1</a>'
+        },
+        search: {
+            provider: 'local'
         }
     },
     lastUpdated: true

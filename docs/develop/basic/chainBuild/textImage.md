@@ -66,3 +66,13 @@ async def _(data: Message):
 你可以收到如下的回复
 
 <img style="width: 220px" src="../../../assets/examples/hello6.png" alt="image">
+
+## 更换字体
+
+可以使用自己的 ttf 字体文件更换字体
+
+```python
+from amiyabot.builtin.lib.imageCreator import FontStyle
+
+FontStyle.file = './font.ttf'
+```
