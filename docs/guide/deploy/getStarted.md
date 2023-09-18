@@ -51,6 +51,8 @@ chmod 777 ./AmiyaBot-v6.x.x-linux
 
 ## 通过代码部署
 
+请根据操作系统按顺序执行以下命令。
+
 ::: warning 注意<br>
 推荐使用 Python 3.8 ~ 3.9 运行本项目代码，并参照可执行文件的系统支持选择部署的操作系统。
 :::
@@ -59,15 +61,30 @@ chmod 777 ./AmiyaBot-v6.x.x-linux
 
 ```bash
 git clone --depth 1 https://github.com/AmiyaBot/Amiya-Bot.git
+cd Amiya-Bot
 ```
 
-2. 安装依赖
+2. 使用 [virtualenv](https://virtualenv.pypa.io/en/latest/) 创建虚拟环境（非必须，或根据个人习惯选择虚拟环境）
+
+```bash
+# Windows
+python -m venv venv
+call venv/Scripts/activate.bat
+```
+
+```bash
+# Linux or MacOS
+python -m venv venv
+source venv/bin/activate
+```
+
+3. 安装依赖
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. 安装浏览器内核
+4. 安装浏览器内核
 
 默认为 Chromium
 
@@ -100,7 +117,7 @@ class Launcher(BrowserLaunchConfig):
     def __init__(self):
         super().__init__()
 
-        self.browser_type = 'firefox'  # 修改浏览器属性
+        self.browser_type = 'firefox'  # 设定浏览器属性
 
 
 def run_amiya(*tasks: Coroutine):
@@ -109,7 +126,7 @@ def run_amiya(*tasks: Coroutine):
 
 if __name__ == '__main__':
     run_amiya(
-        bot.start(launch_browser=Launcher()),  # 使用新启动类启动浏览器
+        bot.start(launch_browser=Launcher()),  # 更改为使用新启动类启动浏览器
         app.serve(),
         load_plugins()
     )
@@ -117,7 +134,7 @@ if __name__ == '__main__':
 
 :::
 
-4. 运行代码
+5. 运行代码
 
 ```bash
 python amiya.py

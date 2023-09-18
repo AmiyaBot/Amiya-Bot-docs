@@ -4,28 +4,39 @@
 
 ## 添加一个 markdown 文档
 
-```text {6}
+```text {6,7}
 Amiya-Bot
 ├── pluginsDev
 │   ├── myPlugin
 │   │   ├── __init__.py
 │   │   ├── main.py
-│   │   └── README.md
+│   │   ├── README.md
+│   │   └── HOWTOUSE.md
 │   ...
 ...
 ```
 
-demo 允许直接使用 markdown 文件路径作为文档，只需要把路径传入到 PluginInstance 对象的 `document` 参数。
+demo 允许直接使用 markdown 文件路径作为文档，只需要把路径传入到 **PluginInstance** 对象的 `document` 参数。
+
+若使用了 [AmiyaBotPluginInstance](/develop/plugin/consoleConfig.html#amiyabotplugininstance)
+对象创建插件，可使用参数 `instruction`，其作用是当 bot 的用户在使用 “查看功能指引”
+类的指令时，向其展示 `instruction` 的内容。`document` 更偏向于提供给 bot
+的部署者查看的文档。在没有配置 `instruction` 时，“查看功能指引” 将返回 `document` 的内容。
 
 ```python
 import os
 
-from amiyabot import PluginInstance
+from amiyabot import PluginInstance, AmiyaBotPluginInstance
 
 plugin_dir = os.path.dirname(__file__)
 
 bot = PluginInstance(
     document=f'{plugin_dir}/README.md'
+)
+# 或
+bot = AmiyaBotPluginInstance(
+    document=f'{plugin_dir}/README.md',
+    instruction=f'{plugin_dir}/HOWTOUSE.md'
 )
 ```
 

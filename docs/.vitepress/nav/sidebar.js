@@ -103,8 +103,14 @@ export default {
             items: [
                 { text: '创建&编写插件', link: '/develop/plugin/create.md' },
                 { text: '插件生命周期', link: '/develop/plugin/life.md' },
-                { text: '添加插件文档', link: '/develop/plugin/addDoc.md' },
                 { text: '对接控制台', link: '/develop/plugin/consoleConfig.md' },
+                { text: '添加插件文档', link: '/develop/plugin/addDoc.md' },
+            ]
+        },
+        {
+            text: '调试',
+            collapsible: true,
+            items: [
                 { text: '调试插件', link: '/develop/plugin/debug.md' },
             ]
         },
@@ -114,6 +120,13 @@ export default {
             items: [
                 { text: '打包插件', link: '/develop/plugin/build.md' },
                 { text: '发布到插件商店', link: '/develop/plugin/publish.md' },
+            ]
+        },
+        {
+            text: '其他',
+            collapsible: true,
+            items: [
+                { text: 'JsonSchema 解释', link: '/develop/plugin/jsonSchema.md' },
             ]
         },
     ],

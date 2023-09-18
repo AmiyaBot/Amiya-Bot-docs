@@ -60,12 +60,12 @@ export default [
             {
                 text: '常见问题',
                 link: '/guide/deploy/faq/commonProblem'
-            },
-            {
-                text: '插件开发',
-                link: '/develop/plugin/'
             }
         ]
+    },
+    {
+        text: '插件开发',
+        link: '/develop/plugin/'
     },
     {
         text: '下载',

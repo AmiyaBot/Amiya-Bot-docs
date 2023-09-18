@@ -45,15 +45,19 @@ AmiyaBotPluginInstance 继承了 PluginInstance，并且拥有以下新参数和
 - 如果提供了 JsonSchema，必须同时提供默认值数据。
 
 ```python
+plugin_dir = os.path.dirname(__file__)
+
 bot = AmiyaBotPluginInstance(
-    channel_config_default='./config.yaml',
-    channel_config_schema='./jsonSchema.json'
+    channel_config_default=f'{plugin_dir}/config.yaml',
+    channel_config_schema=f'{plugin_dir}/jsonSchema.json'
 )
 ```
 
-### 方法
+## [JsonSchema](/develop/plugin/jsonSchema)
 
-**get_config**
+请阅读 [介绍文档](/develop/plugin/jsonSchema) 了解如何编辑 jsonSchema.json 文件。
+
+## get_config
 
 读取一个指定名称的配置项，如果没有频道级别的配置则返回同名全局配置，如果也没有全局配置，返回 `None`。传入 `channel_id=None`
 可以直接读取全局配置。
@@ -67,7 +71,7 @@ bot = AmiyaBotPluginInstance(
 config_value = bot.get_config('name', channel_id='...')
 ```
 
-**set_config**
+## set_config
 
 写入配置，传入 `channel_id=None` 可以强制指定写入全局配置。
 

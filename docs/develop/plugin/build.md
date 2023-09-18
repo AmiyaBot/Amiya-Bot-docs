@@ -8,11 +8,11 @@
 
 ### 示例
 
-如在插件内使用了库 `numpy`，在本地 python 环境内找到 **numpy 文件夹**，并拷贝进 zip 包内。
+如在插件内使用了库 `pypyodbc`，在本地 python 环境内找到 **pypyodbc.py**（有时候会是 package 文件夹），并拷贝进 zip 包内。
 
 ```python
 # main.py
-import numpy
+import pypyodbc
 
 ...
 ```
@@ -21,12 +21,16 @@ import numpy
 myPlugin.zip
 ├── __init__.py
 ├── main.py
-└── numpy
+└── pypyodbc.py
 ```
 
-当 `main.py` 内的导入语句 `import numpy` 被执行时，可以优先使用插件内的 numpy 包。
+当 `main.py` 内的导入语句 `import pypyodbc` 被执行时，优先使用插件内的 pypyodbc 包。
 
-这是良好的做法，因为主体程序必会缺少其不必要的库，你应该保持将第三方库手动加进插件的习惯。
+::: warning 注意<br>
+若无法通过上述手段将第三方包添加进插件包，你的插件将可能不支持
+[可执行文件部署](/guide/deploy/getStarted.html#通过可执行文件部署)
+。你可以在你的插件文档内注明，并让代码部署的用户使用 `pip install xxx` 安装第三方依赖。
+:::
 
 ## 使用脚本打包
 
