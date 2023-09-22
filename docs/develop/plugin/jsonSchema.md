@@ -118,9 +118,7 @@
 ## 日期时间选择器
 
 当 `type` 配置为 `string` 时，若配置了对应的 `format` 字段，可更改为日期时间选择器。<br>
-默认值 `default` 的类型为**字符串或数值**，且符合 ISO 8601 标准格式。
-
-如 **2023-05-20T16:00:00.000Z**
+默认值 `default` 的类型为**字符串或数值**
 
 ```json
 {
@@ -137,19 +135,19 @@
 
 配置相应的 format 以使用不同种类的选择器
 
-- `date`：日期
-- `time`：时间
-- `datetime`：日期时间
-- `date-range`：日期范围
-- `time-range`：时间范围
-- `datetime-range`：日期时间范围
+- **date**：日期 `YYYY-MM-DD`
+- **time**：时间 `HH:mm:ss`
+- **datetime**：日期时间 `YYYY-MM-DD HH:mm:ss`
+- **date-range**：日期范围 `[ YYYY-MM-DD, YYYY-MM-DD ]`
+- **time-range**：时间范围 `[ HH:mm:ss, HH:mm:ss ]`
+- **datetime-range**：日期时间范围 `[ YYYY-MM-DD HH:mm:ss, YYYY-MM-DD HH:mm:ss ]`
 
 当使用范围选择器时，数据为数组类型，代表范围，如
 
 ```json
 [
-    "2023-05-20T08:00:00.000Z",
-    "2023-05-21T16:00:00.000Z"
+    "2023-05-20 08:00:00",
+    "2023-05-21 16:00:00"
 ]
 ```
 
