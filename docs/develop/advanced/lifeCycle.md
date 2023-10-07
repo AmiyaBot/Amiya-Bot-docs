@@ -16,7 +16,14 @@ AmiyaBot 接收的消息和事件，都会历经一个完整的生命周期。�
 
 ### message_created
 
-消息创建完毕阶段，可以在此阶段修改 Message 对象并返回。存在多个此钩子时，按加载顺序逐个调用，参数接受的 Message 对象受上一个执行的影响。
+消息创建完毕阶段，可以在此阶段修改 Message 对象并返回。存在多个此钩子时，按加载顺序逐个调用，参数接受的 Message
+对象受上一个函数的执行结果影响。
+
+该钩子函数可返回三种结果：
+
+- **None**：对后续不产生影响
+- **Message**：修改 Message 对象，将影响后续所有周期进程的参数
+- **False**：布尔值仅可返回 False，将结束生命周期（包括此周期后续的钩子函数）
 
 ```python
 @bot.message_created
@@ -54,7 +61,7 @@ async def _(data: Message, factory_name: str, instance: BotAdapterProtocol):
 ### message_before_send
 
 当消息响应器执行完毕且存在返回时，在发送其返回前执行此钩子。可以在此阶段修改 Chain 对象并返回。存在多个此钩子时，按加载顺序逐个调用，参数接受的
-Chain 对象受上一个执行的影响。
+Chain 对象受上一个函数的执行结果影响。
 
 ```python
 @bot.message_before_send
