@@ -1,7 +1,7 @@
 # JsonSchema 解释
 
 本篇介绍如何使用 [draft-07](http://json-schema.org) 版本的 JsonSchema
-规范编辑 [插件对接控制台的配置文件](/develop/plugin/consoleConfig)。
+规范编辑 [插件对接控制台的配置文件](/develop/plugin/amiyaBotPluginInstance)。
 
 ```json
 {
@@ -19,7 +19,7 @@
 
 字段定义在 **properties** 对象里：
 
-- `<config_name>`：**配置名称**，是使用 [get_config](/develop/plugin/consoleConfig.html#get-config) 方法时的参数
+- `<config_name>`：**配置名称**，是使用 [get_config](/develop/plugin/amiyaBotPluginInstance.html#get-config) 方法时的参数
 - `<config_name>.type`：类型
 - `<config_name>.title`（可选）：表单标题，不配置则使用 **config_name**
 - `<config_name>.description`（可选）：表单tips，鼠标移动到页面的问号图标时显示的内容

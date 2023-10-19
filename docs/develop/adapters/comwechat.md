@@ -1,6 +1,6 @@
-# ComWeChatBot Client
+# ComWeChatBot Client <span class="beta-tag">Beta</span>
 
-[ComWeChatBot Client](https://justundertaker.github.io/ComWeChatBotClient/) 是 PC hook微信的协议端。
+[ComWeChatBot Client](https://justundertaker.github.io/ComWeChatBotClient/) 是 PC hook 微信的协议端。
 
 需在服务配置开启 [正向 websocket](https://justundertaker.github.io/ComWeChatBotClient/guide/#websocekt-type)。
 

@@ -1,4 +1,4 @@
-# OneBot v12
+# OneBot v12 <span class="beta-tag">Beta</span>
 
 [OneBot 12](https://onebot.dev/) 以下简称 **ob12**
 。是一个聊天机器人应用接口标准，旨在统一不同聊天平台上的机器人应用开发接口，使开发者只需编写一次业务逻辑代码即可应用到多种机器人平台。<br>

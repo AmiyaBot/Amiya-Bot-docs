@@ -1,4 +1,4 @@
-# OneBot v11
+# OneBot v11 <span class="beta-tag">Beta</span>
 
 [OneBot 11](https://github.com/botuniverse/onebot-11) 以下简称 **ob11**。该标准是从原 CKYU 平台的 CQHTTP
 插件接口修改而来的通用聊天机器人应用接口标准。<br>
