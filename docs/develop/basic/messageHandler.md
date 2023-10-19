@@ -29,7 +29,7 @@ async def _(data: Message):
 | 参数名          | 类型       | 释义                             | 默认值   |
 |--------------|----------|--------------------------------|-------|
 | group_id     | str      | 功能组ID                          |       |
-| keywords     | Union    | 触发关键字                          |       |
+| keywords     |          | 触发关键字，支持多种类型，详见本章文档            |       |
 | verify       | Callable | 自定义校验方法，当该参数被赋值时，keywords 将会失效 |       |
 | check_prefix | bool     | 是否校验前缀或指定需要校验的前缀               | True  |
 | allow_direct | bool     | 是否支持通过私信使用该功能                  | False |

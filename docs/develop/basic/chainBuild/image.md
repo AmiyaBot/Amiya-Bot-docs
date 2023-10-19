@@ -4,10 +4,10 @@
 
 ## Chain().image()
 
-| 参数名    | 类型            | 释义              | 默认值 |
-|--------|---------------|-----------------|-----|
-| target | String, Bytes | 图片文件路径或图片 bytes |     |
-| url    | str           | 网络图片的URL        |     |
+| 参数名    | 类型         | 释义              | 默认值 |
+|--------|------------|-----------------|-----|
+| target | str, bytes | 图片文件路径或图片 bytes |     |
+| url    | str        | 网络图片的URL        |     |
 
 ```python
 Chain(data).image(target)

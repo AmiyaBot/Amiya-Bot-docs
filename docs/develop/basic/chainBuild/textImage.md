@@ -4,13 +4,13 @@
 
 ## Chain().text_image()
 
-| 参数名     | 类型               | 释义    | 默认值     |
-|---------|------------------|-------|---------|
-| text    | str              | 内容文本  |         |
-| images  | List\[ImageElem] | 插入图片  | None    |
-| width   | int              | 图片宽度  | None    |
-| height  | int              | 图片高度  | None    |
-| bgcolor | str              | 图片背景色 | #F5F5F5 |
+| 参数名     | 类型              | 释义    | 默认值     |
+|---------|-----------------|-------|---------|
+| text    | str             | 内容文本  |         |
+| images  | List[ImageElem] | 插入图片  | None    |
+| width   | int             | 图片宽度  | None    |
+| height  | int             | 图片高度  | None    |
+| bgcolor | str             | 图片背景色 | #F5F5F5 |
 
 ```python
 Chain(data).text_image('hello, world')
@@ -46,7 +46,7 @@ async def _(data: Message):
 |------|------------|---------------|-----|
 | path | str        | 图片路径          |     |
 | size | int        | 图片大小          |     |
-| pos  | (Int, Int) | 图片渲染位置 (x, y) |     |
+| pos  | (int, int) | 图片渲染位置 (x, y) |     |
 
 简单尝试一下，发送一张 `hello, world` 的文字图片，并在里面插入一张图片。<br>
 需要注意的是，因为 `hello, world` 文字只有一行，所以需要指定一下**图片高度**。否则插入的图片可能会显示不全。<br>

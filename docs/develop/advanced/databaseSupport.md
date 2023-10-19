@@ -93,10 +93,10 @@ TableName.batch_insert(data)
 
 | 参数名             | 类型   | 释义                 | 默认值  |
 |-----------------|------|--------------------|------|
-| insert          | Dict | 如果是插入的数据           |      |
-| update          | Dict | 如果是更新的数据           | None |
-| conflict_target | List | 构成约束的列（仅Sqlite需要）  | None |
-| preserve        | List | 一个列的列表，其值应从原始插入中保留 | None |
+| insert          | dict | 如果是插入的数据           |      |
+| update          | dict | 如果是更新的数据           | None |
+| conflict_target | list | 构成约束的列（仅Sqlite需要）  | None |
+| preserve        | list | 一个列的列表，其值应从原始插入中保留 | None |
 
 ## 查询转换工具
 
@@ -119,7 +119,7 @@ data = convert_model(TableName.get_or_none())
 
 | 参数名          | 类型     | 释义          | 默认值 |
 |--------------|--------|-------------|-----|
-| query        | List   | peewee 查询结果 |     |
+| query        | list   | peewee 查询结果 |     |
 | select_model | Select | peewee 查询对象 |     |
 
 ```python

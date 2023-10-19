@@ -34,7 +34,7 @@ async def _(event: Event, instance: BotAdapterProtocol):
 |------------|------|------------------|
 | appid      | str  | 发生该事件的 Bot AppId |
 | event_name | str  | 事件名              |
-| data       | Dict | 事件的内容字典          |
+| data       | dict | 事件的内容字典          |
 
 ## 频道事件
 

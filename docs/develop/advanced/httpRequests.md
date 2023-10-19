@@ -43,12 +43,12 @@ post 方法默认在请求头内添加 `'Content-Type': 'application/json'`，�
 res: str = await http_requests.post()
 ```
 
-| 参数名       | 类型                 | 释义                                                                                   | 默认值 |
-|-----------|--------------------|--------------------------------------------------------------------------------------|-----|
-| interface | str                | 请求地址                                                                                 |     |
-| payload   | Union\[Dict, List] | 请求体                                                                                  |     |
-| headers   | Dict               | 追加的请求头                                                                               |     |
-| **kwargs  |                    | [request 参数](https://github.com/aio-libs/aiohttp/blob/master/aiohttp/client.py#L316) |     |
+| 参数名       | 类型         | 释义                                                                                   | 默认值 |
+|-----------|------------|--------------------------------------------------------------------------------------|-----|
+| interface | str        | 请求地址                                                                                 |     |
+| payload   | dict, list | 请求体                                                                                  |     |
+| headers   | dict       | 追加的请求头                                                                               |     |
+| **kwargs  |            | [request 参数](https://github.com/aio-libs/aiohttp/blob/master/aiohttp/client.py#L316) |     |
 
 ## 发送 form 表单请求
 
@@ -61,8 +61,8 @@ res: str = await http_requests.post_form()
 | 参数名       | 类型   | 释义                                                                                   | 默认值 |
 |-----------|------|--------------------------------------------------------------------------------------|-----|
 | interface | str  | 请求地址                                                                                 |     |
-| payload   | Dict | 请求体                                                                                  |     |
-| headers   | Dict | 追加的请求头                                                                               |     |
+| payload   | dict | 请求体                                                                                  |     |
+| headers   | dict | 追加的请求头                                                                               |     |
 | **kwargs  |      | [request 参数](https://github.com/aio-libs/aiohttp/blob/master/aiohttp/client.py#L316) |     |
 
 ## 文件上传
@@ -76,10 +76,10 @@ res: str = await http_requests.post_upload()
 | 参数名        | 类型    | 释义                                                                                   | 默认值  |
 |------------|-------|--------------------------------------------------------------------------------------|------|
 | interface  | str   | 请求地址                                                                                 |      |
-| file       | Bytes | 文件 bytes                                                                             |      |
+| file       | bytes | 文件 bytes                                                                             |      |
 | file_field | str   | 表单数据中存放文件的字段名                                                                        | file |
-| payload    | Dict  | 请求体                                                                                  |      |
-| headers    | Dict  | 追加的请求头                                                                               |      |
+| payload    | dict  | 请求体                                                                                  |      |
+| headers    | dict  | 追加的请求头                                                                               |      |
 | **kwargs   |       | [request 参数](https://github.com/aio-libs/aiohttp/blob/master/aiohttp/client.py#L316) |      |
 
 ## 自定义请求
@@ -93,8 +93,8 @@ res: str = await http_requests.request()
 | 参数名          | 类型   | 释义                                                                                   | 默认值  |
 |--------------|------|--------------------------------------------------------------------------------------|------|
 | url          | str  | 请求地址                                                                                 |      |
-| method       | Dict | 请求方法                                                                                 | post |
-| request_name | Dict | 请求过程的 LOG 标识                                                                         |      |
+| method       | dict | 请求方法                                                                                 | post |
+| request_name | dict | 请求过程的 LOG 标识                                                                         |      |
 | **kwargs     |      | [request 参数](https://github.com/aio-libs/aiohttp/blob/master/aiohttp/client.py#L316) |      |
 
 ## 下载文件
@@ -108,7 +108,7 @@ file: bytes = await download_async()
 | 参数名       | 类型   | 释义                                                                                   | 默认值   |
 |-----------|------|--------------------------------------------------------------------------------------|-------|
 | url       | str  | 请求地址                                                                                 |       |
-| headers   | Dict | 追加的请求头                                                                               |       |
+| headers   | dict | 追加的请求头                                                                               |       |
 | stringify | bool | 是否返回字符串结果                                                                            | False |
 | **kwargs  |      | [request 参数](https://github.com/aio-libs/aiohttp/blob/master/aiohttp/client.py#L316) |       |
 
@@ -125,7 +125,7 @@ file: bytes = download_sync()
 | 参数名       | 类型   | 释义                                                                          | 默认值   |
 |-----------|------|-----------------------------------------------------------------------------|-------|
 | url       | str  | 请求地址                                                                        |       |
-| headers   | Dict | 追加的请求头                                                                      |       |
+| headers   | dict | 追加的请求头                                                                      |       |
 | stringify | bool | 是否返回字符串结果                                                                   | False |
 | progress  | bool | 是否显示进度条                                                                     | False |
 | **kwargs  |      | [request 参数](https://github.com/psf/requests/blob/main/requests/api.py#L14) |       |

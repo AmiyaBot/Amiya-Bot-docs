@@ -27,12 +27,12 @@ async def _(data: Message):
 
 **add_message**
 
-| 参数名      | 类型                  | 释义                                                            | 默认值 |
-|----------|---------------------|---------------------------------------------------------------|-----|
-| chain    | Union\[Chain, List] | Chain 对象，可为[空 Chain](/develop/basic/sendMessage.html#空-chain) |     |
-| user_id  | int                 | 用户 ID                                                         |     |
-| nickname | str                 | 用户昵称（可自定义）                                                    |     |
-| time     | int                 | 发送时间                                                          | 0   |
+| 参数名      | 类型          | 释义                                                            | 默认值 |
+|----------|-------------|---------------------------------------------------------------|-----|
+| chain    | Chain, list | Chain 对象，可为[空 Chain](/develop/basic/sendMessage.html#空-chain) |     |
+| user_id  | int         | 用户 ID                                                         |     |
+| nickname | str         | 用户昵称（可自定义）                                                    |     |
+| time     | int         | 发送时间                                                          | 0   |
 
 - `user_id` 为实际 QQ 用户的 QQ 号，可以是任意人，在合并消息内显示其头像。
 - `nickname` 为自定义的昵称。

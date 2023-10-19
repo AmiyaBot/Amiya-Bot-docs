@@ -53,11 +53,11 @@ TypeError: unsupported operand type(s) for +=: 'int' and 'str'
 
 如果你并不需要处理异常，仅仅希望异常不会终止你的程序，log 模块提供了上下文管理的方式，来捕获并输出在上下文中产出的异常。
 
-| 参数名     | 类型       | 释义           | 默认值  |
-|---------|----------|--------------|------|
-| desc    | str      | 异常标题         |      |
-| ignore  | List[]   | 仅捕获但不输出的异常列表 | None |
-| handler | Callable | 捕获异常后执行的方法   | None |
+| 参数名     | 类型                    | 释义           | 默认值  |
+|---------|-----------------------|--------------|------|
+| desc    | str                   | 异常标题         |      |
+| ignore  | List[Type[Exception]] | 仅捕获但不输出的异常列表 | None |
+| handler | Callable              | 捕获异常后执行的方法   | None |
 
 ```python
 async def err_handler(err: Exception):
