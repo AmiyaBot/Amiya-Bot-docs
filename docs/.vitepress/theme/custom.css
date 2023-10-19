@@ -57,13 +57,13 @@ i.red {
     color: red;
 }
 
-.VPHome .tagline:after {
-    content: '适配器已兼容 KOOK 机器人、Mirai-Http-API 以及 Go-CQHttp。';
-    display: block;
-    margin-top: 15px;
-    font-size: 18px;
-    color: #b74ec9;
-}
+/*.VPHome .tagline:after {*/
+/*    content: '';*/
+/*    display: block;*/
+/*    margin-top: 15px;*/
+/*    font-size: 18px;*/
+/*    color: var(--vp-c-text-1);*/
+/*}*/
 
 .VPLink.link.link > .text {
     line-height: 20px;

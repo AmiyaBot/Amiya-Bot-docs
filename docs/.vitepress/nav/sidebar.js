@@ -1,11 +1,10 @@
 export default {
     '/develop/basic/': [
         {
-            text: '开始使用',
+            text: '起步',
             collapsible: true,
             items: [
-                { text: '起步', link: '/develop/basic/index.md' },
-                { text: '适配器选择', link: '/develop/basic/selectAdapter.md' },
+                { text: '开始使用', link: '/develop/basic/index.md' },
                 { text: '多账号', link: '/develop/basic/multipleAccounts.md' }
             ]
         },
@@ -36,8 +35,8 @@ export default {
                 { text: 'HTML 生成的图片', link: '/develop/basic/chainBuild/html.md' },
                 { text: 'Markdown 生成的图片', link: '/develop/basic/chainBuild/markdown.md' },
                 { text: '语音', link: '/develop/basic/chainBuild/voice.md' },
-                { text: '合并转发消息', link: '/develop/basic/chainBuild/forward.md' },
-                { text: '原生模板 & CQ码', link: '/develop/basic/chainBuild/extend.md' }
+                { text: '原生模板 & CQ码', link: '/develop/basic/chainBuild/extend.md' },
+                { text: '合并转发消息', link: '/develop/basic/chainBuild/forward.md' }
             ]
         },
         {
@@ -53,6 +52,22 @@ export default {
             collapsible: true,
             items: [
                 { text: '使用测试实例调试', link: '/develop/basic/testInstance.md' }
+            ]
+        }
+    ],
+    '/develop/adapters/': [
+        {
+            text: '选择适配器',
+            collapsible: true,
+            items: [
+                { text: '说明', link: '/develop/adapters/index.md' },
+                { text: 'QQ频道机器人', link: '/develop/adapters/qqChannel.md' },
+                { text: 'KOOK机器人', link: '/develop/adapters/kook.md' },
+                { text: 'Mirai-Api-Http', link: '/develop/adapters/mah.md' },
+                { text: 'Go-CQHttp', link: '/develop/adapters/gocq.md' },
+                { text: 'ComWeChatBot Client', link: '/develop/adapters/comwechat.md' },
+                { text: 'OneBot 11', link: '/develop/adapters/onebot11.md' },
+                { text: 'OneBot 12', link: '/develop/adapters/onebot12.md' },
             ]
         }
     ],
