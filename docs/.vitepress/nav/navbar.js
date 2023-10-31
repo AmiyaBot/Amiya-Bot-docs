@@ -25,6 +25,13 @@ export default [
                 ]
             },
             {
+                text: 'API',
+                items: [
+                    { text: '使用说明', link: '/develop/basic/api/index.md' },
+                    { text: 'QQ 频道', link: '/develop/basic/api/qqbot.md' }
+                ]
+            },
+            {
                 text: '适配器',
                 items: [
                     { text: 'QQ频道机器人', link: '/develop/adapters/qqChannel.md' },

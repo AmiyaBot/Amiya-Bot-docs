@@ -62,3 +62,13 @@ bot.set_prefix_keywords(['amiya', 'amy'])
 使用前缀触发词唤醒机器人
 
 <img style="width: 220px" src="../../assets/examples/hello2.png" alt="image">
+
+## 沙箱环境
+
+使用 `TencentSandboxBotInstance` 适配器将 API 调用更改为沙箱环境。沙箱环境只会收到测试频道的事件，且调用 openapi 仅能操作测试频道。
+
+```python
+from amiyabot.adapters.tencent import TencentSandboxBotInstance
+
+bot = AmiyaBot(..., adapter=TencentSandboxBotInstance)
+```

@@ -2,7 +2,7 @@
 
 在消息响应器内返回 Chain 对象，或使用 Message 对象的 send 方法，均可发送消息。
 
-```python {4}
+```python {3,5}
 @bot.on_message(keywords='hello')
 async def _(data: Message):
     await data.send(Chain(data).text('hello'))
@@ -30,24 +30,13 @@ Chain 对象提供丰富的消息构建方式，可以让你发送多彩的文�
 Chain(data).text('hello, world')
 ```
 
+更多类型请查看左侧导航**消息构建元素**。
+
 ## 构建消息的方法
 
 ### 普通消息
 
-Chain 对象支持链式语法，用于构建复杂的消息结构。以下方法均返回 Chain 对象自身。
-
-- [At](/develop/basic/chainBuild/at.md)
-- [At 所有人](/develop/basic/chainBuild/atAll.md)
-- [频道跳转超链接](/develop/basic/chainBuild/tag.md)
-- [文字](/develop/basic/chainBuild/text.md)
-- [表情](/develop/basic/chainBuild/face.md)
-- [图片](/develop/basic/chainBuild/image.md)
-- [文字生成的图片](/develop/basic/chainBuild/textImage.md)
-- [HTML 生成的图片](/develop/basic/chainBuild/html.md)
-- [Markdown 生成的图片](/develop/basic/chainBuild/markdown.md)
-- [语音](/develop/basic/chainBuild/voice.md)
-- [原生模板 & CQ码](/develop/basic/chainBuild/extend.md)
-
+Chain 对象支持链式语法，用于构建复杂的消息结构。<br>
 只需要按顺序以链式使用上述方法，即可拼接出内容丰富的消息。Chain 在最终构建消息的时候，会优化图片与文字的组成，减少消息的请求数量。
 
 ```python

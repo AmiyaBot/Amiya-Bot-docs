@@ -1,6 +1,6 @@
 # go-cqhttp
 
-[go-cqhttp](https://docs.go-cqhttp.org/) 以下简称 **cqhttp**。它是基于 Mirai 以及 MiraiGo 的 OneBot Golang 原生实现。
+[go-cqhttp](https://docs.go-cqhttp.org/) 以下简称 **gocq**。它是基于 Mirai 以及 MiraiGo 的 OneBot Golang 原生实现。
 
 ::: danger 注意<br>
 go-cq 的配置中，`post-format` 需更改为 `array`。
@@ -15,13 +15,13 @@ message:
 
 :::
 
-### cq_http
+## 连接 gocq
 
-| 参数名       | 类型  | 释义                      | 默认值 |
-|-----------|-----|-------------------------|-----|
-| host      | str | cqhttp 服务的 ip 地址        |     |
-| ws_port   | int | cqhttp 服务的 websocket 端口 |     |
-| http_port | int | cqhttp 服务的 http 端口      |     |
+| 参数名       | 类型  | 释义                    | 默认值 |
+|-----------|-----|-----------------------|-----|
+| host      | str | gocq 服务的 ip 地址        |     |
+| ws_port   | int | gocq 服务的 websocket 端口 |     |
+| http_port | int | gocq 服务的 http 端口      |     |
 
 ```python
 from amiyabot.adapters.cqhttp import cq_http

@@ -7,7 +7,7 @@ AmiyaBot 功能开发的关键模块一共有三个，分别是 `AmiyaBot`、`Me
   Message 对象。
 - `Chain` 为机器人消息的创建工具。任何需要发送消息的时候，消息都必须由 Chain 类创建。核心会调用 Chain 类的 build 方法生成消息链。
 
-首先需要知道的是，如何注册消息响应。
+首先需要知道的是，**如何注册消息响应**。
 
 ## on_message 装饰器
 
@@ -135,10 +135,14 @@ async def _(data: Message):
 keywords 支持由 `字符串、正则、Equal` 构成的列表，组合中包含 `Equal` 时，`Equal` 依然会无视前缀检查。
 
 ```python
-@bot.on_message(keywords=['hello',
-                          'hey',
-                          Equal('hello, amiya'),
-                          re.compile(r'hello，(\d+)')])
+@bot.on_message(
+    keywords=[
+        'hello',
+        'hey',
+        Equal('hello, amiya'),
+        re.compile(r'hello，(\d+)'),
+    ]
+)
 async def _(data: Message):
     return Chain(data).text(f'hello, {data.nickname}')
 ```

@@ -4,7 +4,7 @@
 
 需在服务配置开启 [正向 websocket](https://justundertaker.github.io/ComWeChatBotClient/guide/#websocekt-type)。
 
-### com_wechat
+## 连接 ComWeChatBot
 
 | 参数名       | 类型  | 释义               | 默认值 |
 |-----------|-----|------------------|-----|

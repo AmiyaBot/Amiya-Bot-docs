@@ -1,7 +1,9 @@
 # 接收消息
 
-`Message` 对象是接收到对话之后预处理化的一个消息数据对象。内含这则消息相关的各项属性，以及针对这则消息的一些操作API。
+在上一节 [注册消息响应](/develop/basic/messageHandler)
+中讲述了如何注册一个接收指定消息的函数，当接收到消息时，函数被执行时，参数 `data: Message` 就是接收到的消息的内容。
 
+`Message` 对象是接收到消息之后预处理化的一个消息数据对象。内含这则消息相关的各项属性，以及针对这则消息的一些操作API。<br>
 该对象主要应用在功能函数和自定义检查中。建议在开发时引入 Message 对象并注解在对应地方。
 
 ```python {1}
@@ -57,3 +59,5 @@ async def _(data: Message):
 | wait         | reply,force,max_time,data_filter       | 等待用户消息  | 是  |
 | wait_channel | reply,force,clean,max_time,data_filter | 等待子频道消息 | 是  |
 | recall       |                                        | 撤回消息    | 是  |
+
+接下来，使用 Message 对象提供的属性完成业务逻辑，并[发送消息](/develop/basic/sendMessage)。

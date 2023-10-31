@@ -84,7 +84,7 @@ async def _(data: Message):
 
 wait_channel 方法用于等待**子频道全体成员的回复**。
 
-与 wait 方法不同的是，wait_channel 返回的不是 Message 对象，而是 **ChannelMessagesItem** 对象。内含等待事件的实例，和该次返回的消息。
+与 wait 方法不同的是，wait_channel 返回的不是 Message 对象，而是 `ChannelMessagesItem` 对象。内含等待事件的实例，和该次返回的消息。
 
 **ChannelMessagesItem**
 

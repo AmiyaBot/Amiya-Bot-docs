@@ -14,8 +14,8 @@ export default {
             items: [
                 { text: '声明', link: '/develop/basic/statement.md' },
                 { text: '注册消息响应', link: '/develop/basic/messageHandler.md' },
-                { text: '接收消息（Message 对象）', link: '/develop/basic/recvMessage.md' },
-                { text: '发送消息（Chain 对象）', link: '/develop/basic/sendMessage.md' },
+                { text: '接收消息', link: '/develop/basic/recvMessage.md' },
+                { text: '发送消息', link: '/develop/basic/sendMessage.md' },
                 { text: '发送主动消息', link: '/develop/basic/sendActiveMessage.md' },
                 { text: '创建连续对话', link: '/develop/basic/continuityMessage.md' },
                 { text: '撤回消息', link: '/develop/basic/recallMessage.md' }
@@ -28,6 +28,8 @@ export default {
                 { text: 'At', link: '/develop/basic/chainBuild/at.md' },
                 { text: 'At 所有人', link: '/develop/basic/chainBuild/atAll.md' },
                 { text: '频道跳转超链接', link: '/develop/basic/chainBuild/tag.md' },
+                { text: 'Embed', link: '/develop/basic/chainBuild/embed.md' },
+                { text: 'Ark', link: '/develop/basic/chainBuild/ark.md' },
                 { text: '文字', link: '/develop/basic/chainBuild/text.md' },
                 { text: '表情', link: '/develop/basic/chainBuild/face.md' },
                 { text: '图片', link: '/develop/basic/chainBuild/image.md' },
@@ -37,6 +39,13 @@ export default {
                 { text: '语音', link: '/develop/basic/chainBuild/voice.md' },
                 { text: '原生模板 & CQ码', link: '/develop/basic/chainBuild/extend.md' },
                 { text: '合并转发消息', link: '/develop/basic/chainBuild/forward.md' }
+            ]
+        },
+        {
+            text: 'API',
+            collapsible: true,
+            items: [
+                { text: '调用 API', link: '/develop/basic/api/qqbot.md' },
             ]
         },
         {
@@ -52,6 +61,22 @@ export default {
             collapsible: true,
             items: [
                 { text: '使用测试实例调试', link: '/develop/basic/testInstance.md' }
+            ]
+        }
+    ],
+    '/develop/basic/api/': [
+        {
+            text: 'API',
+            collapsible: true,
+            items: [
+                { text: '使用说明', link: '/develop/basic/api/index.md' },
+            ]
+        },
+        {
+            text: '适配器',
+            collapsible: true,
+            items: [
+                { text: 'QQ 频道', link: '/develop/basic/api/qqbot.md' }
             ]
         }
     ],
