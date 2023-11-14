@@ -4,10 +4,10 @@
 
 ## 沙箱环境
 
-使用 `TencentSandboxBotInstance` 适配器将 API 调用更改为沙箱环境。沙箱环境只会收到测试频道的事件，且调用 openapi 仅能操作测试频道。
+使用 `QQGuildSandboxBotInstance` 适配器将 API 调用更改为沙箱环境。沙箱环境只会收到测试频道的事件，且调用 openapi 仅能操作测试频道。
 
 ```python
-from amiyabot.adapters.tencent import TencentSandboxBotInstance
+from amiyabot.adapters.tencent.qqGuild import QQGuildSandboxBotInstance
 
-bot = AmiyaBot(..., adapter=TencentSandboxBotInstance)
+bot = AmiyaBot(..., adapter=QQGuildSandboxBotInstance)
 ```

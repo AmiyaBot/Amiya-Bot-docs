@@ -7,13 +7,13 @@
 ## 适配器参数 adapter
 
 AmiyaBot 对象拥有一个适配器参数 adapter，接受一个 `BotAdapterProtocol` 的子类。默认值为 QQ
-频道机器人的适配器 `TencentBotInstance`。
+频道机器人的适配器 `QQGuildBotInstance`。
 
 ```python
 class AmiyaBot(BotHandlerFactory):
     def __init__(self,
                  ...
-                 adapter: Type[BotAdapterProtocol] = TencentBotInstance):
+                 adapter: Type[BotAdapterProtocol] = QQGuildBotInstance):
         ...
 ```
 
