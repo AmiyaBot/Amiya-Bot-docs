@@ -4,6 +4,18 @@ AmiyaBot 内置了基于 [FastApi](https://fastapi.tiangolo.com/) 的HTTP服务�
 
 ## 创建服务
 
+### HttpServer 类
+
+| 参数名             | 类型   | 释义                      | 默认值                      |
+|-----------------|------|-------------------------|--------------------------|
+| host            | str  | 服务监听地址                  |                          |
+| port            | int  | 服务监听端口                  |                          |
+| title           | str  | swagger 页面标题            | AmiyaBot                 |
+| description     | str  | swagger 页面注释            | https://www.amiyabot.com |
+| auth_key        | str  | 请求头密钥                   |                          |
+| fastapi_options | dict | FastAPI **kwargs        |                          |
+| uvicorn_options | dict | uvicorn.Config **kwargs |                          |
+
 ```python
 from amiyabot import HttpServer
 
@@ -24,7 +36,7 @@ class Bot:
 asyncio.run(server.serve())
 ```
 
-运行代码，访问 http://0.0.0.0:8088/docs 页面，即可看到生成了如下两个接口。
+运行代码，访问 http://127.0.0.1:8088/docs 即可看到生成了如下两个接口。
 
 ```
 /bot/getName

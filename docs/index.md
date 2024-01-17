@@ -4,13 +4,13 @@ layout: home
 hero:
     name: AmiyaBot
     text: Progressive Python QQ Bot Framework
-    tagline: 渐进式 Python QQ 频道机器人框架，可使用适配器搭建 OneBot v11/12、KOOK 等机器人。
+    tagline: 渐进式 QQ 频道机器人框架，可使用内置适配器对接 QQ 群、OneBot v11/12、KOOK 等机器人平台。
     actions:
         -   theme: brand
             text: 开始使用
             link: /develop/basic/
         -   theme: alt
-            text: 部署《明日方舟》机器人 AmiyaBot-demo-V6
+            text: 部署《明日方舟》机器人 兔兔-V6
             link: /guide/deploy/
 
 features:

@@ -22,9 +22,41 @@ await http_requests.request()
 await download_async()
 ```
 
-`http_requests` 的请求均返回**字符串**的请求结果。`download_async` 方法则默认返回 **bytes** 结果。
+## 返回值
 
-## GET
+`http_requests` 的请求均返回**字符串**的请求结果（如果请求失败会返回空字符串），但有些不一样。这个 “字符串” 可以使用一些额外的属性。
+
+### json
+
+调用这个属性会尝试返回 json 格式化的 `responseText` 内容。
+
+```python
+res = await http_requests.post('/interface', {...})
+if res:
+    data = res.json['data']
+```
+
+### response
+
+调用这个属性可以返回请求结果（`aiohttp.ClientResponse` 的实例），可以获取请求的状态码和其他信息。
+
+```python
+res = await http_requests.post('/interface', {...})
+
+status = res.response.status
+```
+
+### error
+
+如果请求失败，可以调用这个属性获取异常（`Exception` 的实例）。
+
+```python
+res = await http_requests.post('/interface', {...})
+
+error = res.error
+```
+
+## GET 请求
 
 ```python
 res: str = await http_requests.get()
@@ -35,7 +67,7 @@ res: str = await http_requests.get()
 | interface | str | 请求地址                                                                                 |     |
 | **kwargs  |     | [request 参数](https://github.com/aio-libs/aiohttp/blob/master/aiohttp/client.py#L316) |     |
 
-## POST
+## POST 请求
 
 post 方法默认在请求头内添加 `'Content-Type': 'application/json'`，请求体**仅接受字典或列表类型数据**。
 
@@ -50,7 +82,7 @@ res: str = await http_requests.post()
 | headers   | dict       | 追加的请求头                                                                               |     |
 | **kwargs  |            | [request 参数](https://github.com/aio-libs/aiohttp/blob/master/aiohttp/client.py#L316) |     |
 
-## 发送 form 表单请求
+## FORM 表单请求
 
 post_form 方法类似 post 方法。唯一不同的是请求体仅接受**字典类型**，发送请求时会被构建为 form data 表单数据。
 

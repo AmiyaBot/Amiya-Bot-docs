@@ -59,45 +59,5 @@ Chain().text(...).image(...)
 
 ## 使用辅助类扩展构建
 
-Chain 在构建时，可使用辅助类介入图片或浏览器的构建过程。
-
-### 创建辅助类
-
-```python
-from typing import Union
-from amiyabot import Chain, ChainBuilder
-from playwright.async_api import Page
-
-
-# 继承 ChainBuilder
-class MyBuilder(ChainBuilder):
-    @classmethod
-    async def get_image(cls, image: Union[str, bytes]):
-        ...
-        return image
-
-    @classmethod
-    async def on_page_rendered(cls, page: Page):
-        ...
-
-
-# 在构造参数里使用辅助类
-chain = Chain(..., chain_builder=MyBuilder())
-
-# 为属性赋值使用辅助类
-chain.builder = MyBuilder()
-```
-
-### get_image 函数
-
-该函数会在 chain 构建图片消息时调用，每张图片会调用一次。传入一个参数 `image` ，类型为 `str`（path 或 url） 或
-`bytes`（图片字节数据）。该函数必须拥有返回值，同样是以上两种类型，chain 会根据返回的类型做进一步处理。
-
-### on_page_rendered 函数
-
-该函数会在 chain 构建浏览器渲染的图片并打开了页面时调用，提供了浏览器的 `Page` 对象，可在此对 `Page` 进行操作（如对页面进行
-JS 注入等）。
-
-::: tip 提示
-构建浏览器渲染的图片同样也会调用一次 `get_image` 函数。
-:::
+Chain
+对象在构建消息时，可使用辅助类介入媒体消息或浏览器的构建过程。请移步 [进阶指南 - 介入媒体消息](/develop/advanced/chainBuilder.md)

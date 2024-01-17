@@ -19,12 +19,12 @@ await bot.instance.api.get_me()
 我们强烈建议在使用不同的适配器时，引入相应的 API 类注解 api 属性。它们通常在适配器模块的 `api` 模块下。
 
 ```python
-from amiyabot.adapters.tencent.api import TencentAPI
+from amiyabot.adapters.tencent.qqGuild.api import QQGuildAPI
 # from amiyabot.adapters.cqhttp.api import CQHttpAPI
 # from amiyabot.adapters.kook.api import KOOKAPI
 
 
-api: TencentAPI = bot.instance.api
+api: QQGuildAPI = bot.instance.api
 await api.get_me()
 ```
 
@@ -72,34 +72,4 @@ res = await bot.instance.api.post('/interface', {...})
 
 ## api 的返回
 
-所有 api 的返回都是 `responseText` **字符串**（如果请求失败会返回空），但有些不一样。这个 “字符串” 可以使用一些额外的属性。
-
-### json
-
-调用这个属性会尝试返回 json 格式化的 `responseText` 内容。
-
-```python
-res = await bot.instance.api.post('/interface', {...})
-if res:
-    data = res.json['data']
-```
-
-### response
-
-调用这个属性可以返回请求结果（`aiohttp.ClientResponse` 的实例），可以获取请求的状态码和其他信息。
-
-```python
-res = await bot.instance.api.post('/interface', {...})
-
-status = res.response.status
-```
-
-### error
-
-如果请求失败，可以调用这个属性获取异常（`Exception` 的实例）。
-
-```python
-res = await bot.instance.api.post('/interface', {...})
-
-error = res.error
-```
+参考 [进阶指南 - HTTP 请求 - 返回值](/develop/advanced/httpRequests.html#返回值)

@@ -1,3 +1,5 @@
+import { adapters } from './sidebar'
+
 export default [
     {
         text: '主页',
@@ -11,80 +13,25 @@ export default [
         ]
     },
     {
-        text: '基础指南',
+        text: '开发指南',
         items: [
-            {
-                text: '起步',
-                items: [
-                    { text: '开始使用', link: '/develop/basic/index.md' },
-                    { text: '注册消息响应', link: '/develop/basic/messageHandler.md' },
-                    { text: '构建回复消息', link: '/develop/basic/sendMessage.html#构建消息的方法' },
-                    { text: '事件监听', link: '/develop/basic/handleEvents.md' },
-                    { text: '异常监听', link: '/develop/basic/handleException.md' },
-                    { text: '测试', link: '/develop/basic/testInstance.md' }
-                ]
-            },
-            {
-                text: 'API',
-                items: [
-                    { text: '使用说明', link: '/develop/basic/api/index.md' },
-                    { text: 'QQ 频道', link: '/develop/basic/api/qqbot.md' }
-                ]
-            },
-            {
-                text: '适配器',
-                items: [
-                    { text: 'QQ频道机器人', link: '/develop/adapters/qqChannel.md' },
-                    { text: 'KOOK机器人', link: '/develop/adapters/kook.md' },
-                    { text: 'Mirai-Api-Http', link: '/develop/adapters/mah.md' },
-                    { text: 'Go-CQHttp', link: '/develop/adapters/gocq.md' },
-                    { text: 'ComWeChatBot Client', link: '/develop/adapters/comwechat.md' },
-                    { text: 'OneBot 11', link: '/develop/adapters/onebot11.md' },
-                    { text: 'OneBot 12', link: '/develop/adapters/onebot12.md' },
-                ]
-            }
+            { text: '基础指南', link: '/develop/basic/index.md' },
+            { text: '进阶指南', link: '/develop/advanced/' },
+            { text: '插件开发', link: '/develop/plugin/' },
         ]
     },
     {
-        text: '进阶指南',
-        items: [
-            {
-                text: '进阶开发',
-                items: [
-                    { text: '生命周期', link: '/develop/advanced/lifeCycle.md' },
-                    { text: '定时任务', link: '/develop/advanced/timedTask.md' },
-                    { text: '事件总线', link: '/develop/advanced/eventBus.md' },
-                    { text: '日志模块', link: '/develop/advanced/logger.md' },
-                    { text: '加载插件', link: '/develop/advanced/loadPlugins.md' }
-                ]
-            },
-            {
-                text: '辅助',
-                items: [
-                    { text: 'HTTP 请求', link: '/develop/advanced/httpRequests.md' },
-                    { text: '处理 IO 阻塞的操作', link: '/develop/advanced/blockingIO.md' },
-                    { text: '改变 Playwright 启动', link: '/develop/advanced/playwright.md' },
-                    { text: '启动参数', link: '/develop/advanced/startupParameter.md' }
-                ]
-            },
-            {
-                text: '额外支持',
-                items: [
-                    { text: 'HTTP 服务器', link: '/develop/advanced/httpSupport.md' },
-                    { text: '数据库', link: '/develop/advanced/databaseSupport.md' }
-                ]
-            }
-        ]
+        text: '适配器',
+        items: adapters
     },
     {
-        text: '插件开发',
-        link: '/develop/plugin/'
-    },
-    {
-        text: 'AmiyaBot-demo-V6',
+        text: '兔兔-V6',
         items: [
-            { text: '部署', link: '/guide/deploy/' },
-            { text: '常见问题', link: '/guide/deploy/faq/commonProblem' }
+            { text: '开始部署', link: '/guide/deploy/' },
+            { text: '常见问题', link: '/guide/deploy/faq/commonProblem' },
+            { text: '连接控制台', link: '/guide/deploy/console/index.md' },
+            { text: '如何更新', link: '/guide/deploy/maintain/upgrade.md' },
+            { text: '高级使用', link: '/guide/deploy/advanced/index.md' },
         ]
     },
     {

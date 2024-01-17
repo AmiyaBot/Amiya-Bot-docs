@@ -1,6 +1,6 @@
 # AmiyaBotPluginInstance
 
-AmiyaBotPluginInstance 是 [AmiyaBot-demo](/guide/deploy/) 项目中的对插件类 PluginInstance 的扩展实现。使用该类创建插件时，能够获得更多的能力。
+AmiyaBotPluginInstance 是 [兔兔-v6](/guide/deploy/) 项目中的对插件类 PluginInstance 的扩展实现。使用该类创建插件时，能够获得更多的能力。
 
 在 demo 项目里导入 `AmiyaBotPluginInstance` 创建插件。
 

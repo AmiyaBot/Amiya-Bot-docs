@@ -1,3 +1,15 @@
+export const adapters = [
+    { text: 'QQ频道机器人', link: '/develop/adapters/qqChannel.md' },
+    { text: 'QQ群机器人', link: '/develop/adapters/qqGroup.md' },
+    { text: 'KOOK机器人', link: '/develop/adapters/kook.md' },
+    { text: 'Mirai-Api-Http', link: '/develop/adapters/mah.md' },
+    { text: 'Go-CQHttp', link: '/develop/adapters/gocq.md' },
+    { text: 'ComWeChatBot Client', link: '/develop/adapters/comwechat.md' },
+    { text: 'OneBot 11', link: '/develop/adapters/onebot11.md' },
+    { text: 'OneBot 12', link: '/develop/adapters/onebot12.md' },
+
+]
+
 export default {
     '/develop/basic/': [
         {
@@ -86,13 +98,7 @@ export default {
             collapsible: true,
             items: [
                 { text: '说明', link: '/develop/adapters/index.md' },
-                { text: 'QQ频道机器人', link: '/develop/adapters/qqChannel.md' },
-                { text: 'KOOK机器人', link: '/develop/adapters/kook.md' },
-                { text: 'Mirai-Api-Http', link: '/develop/adapters/mah.md' },
-                { text: 'Go-CQHttp', link: '/develop/adapters/gocq.md' },
-                { text: 'ComWeChatBot Client', link: '/develop/adapters/comwechat.md' },
-                { text: 'OneBot 11', link: '/develop/adapters/onebot11.md' },
-                { text: 'OneBot 12', link: '/develop/adapters/onebot12.md' },
+                ...adapters
             ]
         }
     ],
@@ -106,7 +112,8 @@ export default {
                 { text: '定时任务', link: '/develop/advanced/timedTask.md' },
                 { text: '事件总线', link: '/develop/advanced/eventBus.md' },
                 { text: '日志模块', link: '/develop/advanced/logger.md' },
-                { text: '加载插件', link: '/develop/advanced/loadPlugins.md' }
+                { text: '加载插件', link: '/develop/advanced/loadPlugins.md' },
+                { text: '介入媒体消息', link: '/develop/advanced/chainBuilder.md' },
             ]
         },
         {
@@ -175,8 +182,8 @@ export default {
             text: '准备',
             collapsible: true,
             items: [
-                { text: '部署AmiyaBot-demo-v6', link: '/guide/deploy/index.md' },
-                { text: '选择你的运营方', link: '/guide/deploy/yourChoose.md' },
+                { text: '部署兔兔-v6', link: '/guide/deploy/index.md' },
+                // { text: '选择你的运营方', link: '/guide/deploy/yourChoose.md' },
                 { text: '开始部署', link: '/guide/deploy/getStarted.md' },
             ]
         },

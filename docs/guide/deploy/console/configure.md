@@ -8,24 +8,21 @@
 
 ![](../../../assets/console/addBot.png)
 
-## 填写配置表
+## QQ频道机器人（官方）
 
-### QQ 频道机器人
+在 [QQ 开放平台](https://q.qq.com/#/) 查看并在实例配置填写你注册的频道机器人信息，表单字段就是对应内容。
 
-> 适配器类型：**QQ-Bot**
+## QQ群机器人（官方）
 
-填写你注册的频道机器人信息，表单字段就是对应内容。
+在 [QQ 开放平台](https://q.qq.com/#/) 查看并在实例配置填写你注册的群机器人信息，表单字段就是对应内容。
 
-### KOOK 机器人
+## KOOK机器人
 
-> 适配器类型：**KOOK**
-
-填写你创建的机器人应用的 `Token` 即可。KOOK 机器人不需要 appid，但你仍然需要在配置里随便填写一个 appid，推荐使用 KOOK
+在 [KOOK 开发者平台](https://developer.kookapp.cn/app/index) 查看并在实例配置填写你创建的机器人应用的 `Token` 即可。KOOK
+机器人不需要 appid，但你仍然需要在配置里随便填写一个 appid，推荐使用 KOOK
 应用的 `Client Id`。
 
-### go-cqhttp支持的群聊机器人
-
-> 适配器类型：**CQ-Http**
+## CQ-Http QQ群机器人
 
 `APP ID` 为登录在 go-cqhttp 的 **QQ 号**。<br>
 `TOKEN` 填写配置的 access-token，没有配置则不需要填写。<br>
@@ -60,9 +57,7 @@ default-middlewares: &default
         bucket: 1     # 令牌桶大小
 ```
 
-### mirai-api-http支持的群聊机器人
-
-> 适配器类型：**Mirai-api-http**
+## Mirai-api-http QQ群机器人
 
 `APP ID` 为登录在 mirai-api-http 的 **QQ 号**。<br>
 `TOKEN` 为 mirai-api-http 的 **AuthKey**。<br>
@@ -90,9 +85,9 @@ adapterSettings:
         reservedSyncId: -1
 ```
 
-### 点击“保存并启动”运行实例。
+## 运行实例
 
-当实例状态为在线时，即启动成功。
+点击“保存并启动”运行实例，当实例状态为在线时，即启动成功。
 
 <img style="width: 400px" src="../../../assets/console/online.png" alt="image">
 

@@ -7,7 +7,7 @@ demo 项目以及插件仓库的代码。
 
 ## 克隆仓库
 
-克隆 AmiyaBot-demo
+克隆 兔兔-v6
 
 ```bash
 git clone https://github.com/AmiyaBot/Amiya-Bot.git
@@ -30,7 +30,7 @@ Amiya-Bot
 ...
 ```
 
-建议安装 AmiyaBot-demo 的依赖，如果**不需要使用 demo 的内置模块**或是你在自己的目录内开发插件。那么只需要安装 amiyabot 即可。
+建议安装 兔兔-v6 的依赖，如果**不需要使用 demo 的内置模块**或是你在自己的目录内开发插件。那么只需要安装 amiyabot 即可。
 
 ```bash
 pip install amiyabot

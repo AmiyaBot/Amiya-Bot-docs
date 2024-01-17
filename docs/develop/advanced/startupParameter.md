@@ -11,7 +11,7 @@
 | --text-max-length        | 是     | 100  | Chain 对象转换文字图片的文字长度最大值  |
 | --browser-page-not-close | 否     |      | 取消自动关闭 playwright 的网页窗口 |
 
-## 在 AmiyaBot-demo 下使用
+## 在 兔兔-v6 下使用
 
 代码部署
 

@@ -24,7 +24,3 @@ asyncio.run(bot.start())
 运行实例，访问 https://console.amiyabot.com/#/test 并输入配置的地址和 appid 连接测试服务，即可模拟测试对话。
 
 ![test.png](../../assets/console/test.png)
-
-::: warning 提示<br>
-暂不支持播放语音
-:::
