@@ -55,7 +55,7 @@ bot = AmiyaBot(
 
 通过自定义默认的 `ChainBuilder`，来实现上传文件到托管服务以及返回生成的 url。
 
-普通 ChainBuilder 可参考 [进阶指南 - 介入媒体消息](/develop/advanced/chainBuilder.md)
+普通 ChainBuilder 可参考 [进阶指南 - 介入媒体消息的构建过程](/develop/advanced/chainBuilder.md)
 ，但在这里更推荐继承适配器中的 `QQGroupChainBuilder`。
 
 ### 普通 ChainBuilder

@@ -40,15 +40,17 @@ export default {
                 { text: 'At', link: '/develop/basic/chainBuild/at.md' },
                 { text: 'At 所有人', link: '/develop/basic/chainBuild/atAll.md' },
                 { text: '频道跳转超链接', link: '/develop/basic/chainBuild/tag.md' },
-                { text: 'Embed', link: '/develop/basic/chainBuild/embed.md' },
-                { text: 'Ark', link: '/develop/basic/chainBuild/ark.md' },
                 { text: '文字', link: '/develop/basic/chainBuild/text.md' },
                 { text: '表情', link: '/develop/basic/chainBuild/face.md' },
                 { text: '图片', link: '/develop/basic/chainBuild/image.md' },
+                { text: '语音', link: '/develop/basic/chainBuild/voice.md' },
+                { text: '视频', link: '/develop/basic/chainBuild/video.md' },
                 { text: '文字生成的图片', link: '/develop/basic/chainBuild/textImage.md' },
                 { text: 'HTML 生成的图片', link: '/develop/basic/chainBuild/html.md' },
                 { text: 'Markdown 生成的图片', link: '/develop/basic/chainBuild/markdown.md' },
-                { text: '语音', link: '/develop/basic/chainBuild/voice.md' },
+                { text: 'Markdown 模版', link: '/develop/basic/chainBuild/mdTemplate.md' },
+                { text: 'Embed 消息', link: '/develop/basic/chainBuild/embed.md' },
+                { text: 'Ark 模版', link: '/develop/basic/chainBuild/ark.md' },
                 { text: '原生模板 & CQ码', link: '/develop/basic/chainBuild/extend.md' },
                 { text: '合并转发消息', link: '/develop/basic/chainBuild/forward.md' }
             ]
@@ -113,7 +115,7 @@ export default {
                 { text: '事件总线', link: '/develop/advanced/eventBus.md' },
                 { text: '日志模块', link: '/develop/advanced/logger.md' },
                 { text: '加载插件', link: '/develop/advanced/loadPlugins.md' },
-                { text: '介入媒体消息', link: '/develop/advanced/chainBuilder.md' },
+                { text: '介入媒体消息的构建过程', link: '/develop/advanced/chainBuilder.md' },
             ]
         },
         {

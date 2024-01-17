@@ -51,51 +51,19 @@ Chain(data).html('template.html', {...})
 
 ## **创建html模板文件**
 
+创建文件 hello.html 并定义全局的 init 方法。
+
 ```html
-<!-- index.html -->
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>template</title>
-</head>
-<body>
-<div id="template">
-    <div>你好，{{ data.username }}</div>
-</div>
-</body>
-<!-- 引入 vue.js -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<!-- hello.html -->
+<div id="content"></div>
+
 <script>
-    const template = new Vue({
-        el: '#template',
-        methods: {
-            init(data) {
-                this.$set(this, 'data', data)
-            }
-        },
-        data() {
-            return {
-                data: {}
-            }
-        },
-        mounted() {
-            // 暴露 init 方法供核心调用
-            window.init = this.init
-        }
-    })
+    // 必须定义全局的 init 方法，接收一个 data 参数
+    window.init = (data) => {
+        document.querySelector('#content').innerText = data.username
+    }
 </script>
-</html>
 ```
-
-#### **Vue.js**
-
-模板文件建议使用 [Vue.js](https://cn.vuejs.org/)（以下简称 `vue`）编写，vue 可以有效提高模板渲染速度以及代码可读性。
-
-当然这里只是示例，你也可以使用自己惯用的方法。
 
 将需要渲染的数据传入模板：
 
@@ -106,16 +74,15 @@ async def _(data: Message):
 ```
 
 示例在触发会话并开始发送消息时，Chain 对象将会调用 Chromium 无头浏览器，渲染 `hello.html` 并在页面内执行 JavaScript
-语句 `init({'username': 'vivien8261'})`
-。<br>
+语句 `init({'username': 'vivien8261'})`。<br>
 渲染结束后，无头浏览器截图生成图片，然后执行常规的图片发送方法。
 
-<img style="width: 220px" src="../../../assets/examples/hello7.png" alt="image">
+<img src="../../../assets/examples/hello7.png" alt="image">
 
-_效果用于示例，相信你可以写出更为美观的页面。_
+_发挥你的想象，写出更美观的页面！_
 
-::: tip 小建议 <br>
-html 制图的目的旨在不使用 PIL 也能制作出美观的图片，但不建议你滥用。在仅渲染文字和少量图案时，PIL 的效率会比 html 高得多。
+::: details 兔兔-v6 效果<br>
+<img src="../../../assets/examples/awesome1.png" alt="image">
 :::
 
 ## **通过网站URL制图**

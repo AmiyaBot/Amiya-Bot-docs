@@ -1,11 +1,12 @@
 # Markdown 生成的图片
 
 添加一张由 Markdown 文本渲染的图片，直接传入 md 格式的文本，使用 HTML
-模式渲染。建议先阅读[发送 html 生成的图片](/develop/basic/chainBuild/html.md) 了解如何启动 Chromium。
+模式渲染。建议先阅读 [发送 html 生成的图片](/develop/basic/chainBuild/html.md) 了解如何启动 Chromium。
 
 ::: danger 注意<br>
 这并非 QQ
-机器人官方提供的[发送markdown消息](https://bot.q.qq.com/wiki/develop/api/openapi/message/post_markdown_messages.html)
+机器人官方提供的 [发送 markdown 消息](https://bot.q.qq.com/wiki/develop/api/openapi/message/post_markdown_messages.html)
+，要发送官方的 Markdown 模版消息请查看 [Markdown 模版](/develop/basic/chainBuild/mdTemplate.md)。
 :::
 
 ## Chain().markdown()

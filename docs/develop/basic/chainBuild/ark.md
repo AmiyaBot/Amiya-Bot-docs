@@ -1,7 +1,7 @@
 # Ark 消息
 
 发送 QQ 频道 ARK
-模板消息，详情请查看[官方API文档](https://bot.q.qq.com/wiki/develop/api/openapi/message/post_ark_messages.html)
+模板消息，详情请查看[发送 ark 消息](https://bot.q.qq.com/wiki/develop/api/openapi/message/post_ark_messages.html)。
 
 ## Chain().ark()
 

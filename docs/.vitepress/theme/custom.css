@@ -57,6 +57,10 @@ i.red {
     color: red;
 }
 
+.custom-block a {
+    text-decoration: underline !important;
+}
+
 /*.VPHome .tagline:after {*/
 /*    content: '';*/
 /*    display: block;*/

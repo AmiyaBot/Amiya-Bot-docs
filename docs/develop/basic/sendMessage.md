@@ -60,4 +60,4 @@ Chain().text(...).image(...)
 ## 使用辅助类扩展构建
 
 Chain
-对象在构建消息时，可使用辅助类介入媒体消息或浏览器的构建过程。请移步 [进阶指南 - 介入媒体消息](/develop/advanced/chainBuilder.md)
+对象在构建消息时，可使用辅助类介入媒体消息或浏览器的构建过程。请移步 [进阶指南 - 介入媒体消息的构建过程](/develop/advanced/chainBuilder.md)

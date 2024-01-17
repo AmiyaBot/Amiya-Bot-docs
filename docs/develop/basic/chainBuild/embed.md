@@ -1,7 +1,7 @@
 # Embed 消息
 
 发送 QQ
-频道卡片消息，详情请查看[官方API文档](https://bot.q.qq.com/wiki/develop/api/openapi/message/template/embed_message.html)
+频道卡片消息，详情请查看 [embed 消息](https://bot.q.qq.com/wiki/develop/api/openapi/message/template/embed_message.html)
 
 ## Chain().embed()
 
