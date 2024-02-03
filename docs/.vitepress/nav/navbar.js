@@ -27,11 +27,17 @@ export default [
     {
         text: '兔兔-V6',
         items: [
-            { text: '开始部署', link: '/guide/deploy/' },
-            { text: '常见问题', link: '/guide/deploy/faq/commonProblem' },
-            { text: '连接控制台', link: '/guide/deploy/console/index.md' },
-            { text: '如何更新', link: '/guide/deploy/maintain/upgrade.md' },
-            { text: '高级使用', link: '/guide/deploy/advanced/index.md' },
+            {
+                text: '部署',
+                items: [
+                    { text: '开始部署', link: '/guide/deploy/' },
+                    { text: '常见问题', link: '/guide/deploy/faq/commonProblem' },
+                    { text: '连接控制台', link: '/guide/deploy/console/index.md' },
+                    { text: '如何更新', link: '/guide/deploy/maintain/upgrade.md' },
+                    { text: '高级使用', link: '/guide/deploy/advanced/index.md' },
+                ]
+            },
+            { text: '使用官方版 🎉', link: '/guide/deploy/#官方版兔兔' },
         ]
     },
     {
