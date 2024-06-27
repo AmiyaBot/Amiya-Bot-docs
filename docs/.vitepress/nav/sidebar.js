@@ -1,6 +1,7 @@
 export const adapters = [
     { text: 'QQ频道机器人', link: '/develop/adapters/qqChannel.md' },
     { text: 'QQ群机器人', link: '/develop/adapters/qqGroup.md' },
+    { text: 'QQ全域机器人', link: '/develop/adapters/qqGlobal.md' },
     { text: 'KOOK机器人', link: '/develop/adapters/kook.md' },
     { text: 'Mirai-Api-Http', link: '/develop/adapters/mah.md' },
     { text: 'Go-CQHttp', link: '/develop/adapters/gocq.md' },
