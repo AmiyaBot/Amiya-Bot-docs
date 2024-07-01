@@ -48,18 +48,23 @@ asyncio.run(bot.start())
 ## 创建私域机器人
 
 如果你在平台创建的是**私域机器人**，在 `AmiyaBot` 的参数里设置 `private=True`
-来开启私域模式，私域机器人支持接收非 `@机器人` 的消息，你可以使机器人以更灵活的方式触发功能。<br>
-但我们不希望机器人的唤起出现非预期的效果，所以建议在私域模式下，**添加前缀触发词**来唤起机器人。
+来开启私域模式，私域机器人支持接收非 `@机器人` 的消息，你可以使机器人以更灵活的方式触发功能。
 
 ```python
 # 配置 private=True 让实例改为私域
 bot = AmiyaBot(appid='******', token='******', private=True)
+```
 
-# 添加前缀触发词（非必须）
+## 使用前缀触发词唤醒机器人
+
+```python
+bot = AmiyaBot(...)
+
+# 添加前缀触发词
 bot.set_prefix_keywords(['amiya', 'amy'])
 ```
 
-使用前缀触发词唤醒机器人
+此时机器人只能接收指定前缀的对话
 
 <img style="width: 220px" src="../../assets/examples/hello2.png" alt="image">
 

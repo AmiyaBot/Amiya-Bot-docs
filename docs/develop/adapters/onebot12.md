@@ -13,7 +13,7 @@
 | http_port | int | ob12 服务的 http 端口      |     |
 
 ```python
-from amiyabot.adapters.onebot12 import onebot12
+from amiyabot.adapters.onebot.v12 import onebot12
 
 appid = '******'    # 机器人的账号（如需要）
 token = '******' # access-token
