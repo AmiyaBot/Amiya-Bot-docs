@@ -16,9 +16,43 @@ client_secret = '******' # 密钥
 bot = AmiyaBot(appid='******', token='******', adapter=qq_group(client_secret))
 ```
 
+`qq_group` 参数
+
+| 参数名                           | 类型                         | 释义          | 默认值                          |
+|-------------------------------|----------------------------|-------------|------------------------------|
+| client_secret                 | str                        | 机器人密钥       |                              |
+| default_chain_builder         | ChainBuilder               | 默认消息构建器     | None                         |
+| default_chain_builder_options | QQGroupChainBuilderOptions | 默认消息构建器参数   | QQGroupChainBuilderOptions() |
+| shard_index                   | int                        | 分片下标，从 0 开始 | 0                            |
+| shards                        | int                        | 分片总数        | 1                            |
+
 - 在机器人启动时，资源服务也会一同启动。
 - 默认的资源服务是端口单例的，实例化多个 QQ 群聊适配器 AmiyaBot 或使用 [多账号](/develop/basic/multipleAccounts.html)
   时，同一个端口的资源服务会相互共享。
+
+## 事件分片
+
+考虑到开发者事件接收时可以实现负载均衡，QQ
+提供了分片逻辑，事件通知会落在不同的分片上，可参考官方文档 [分片连接LoadBalance](https://bot.q.qq.com/wiki/develop/api-v2/dev-prepare/interface-framework/event-emit.html#%E5%88%86%E7%89%87%E8%BF%9E%E6%8E%A5loadbalance)
+了解分片机制。
+
+```python
+bot1 = AmiyaBot(appid='...', token='...', adapter=qq_group(client_secret, shard_index=0, shards=2))
+bot2 = AmiyaBot(appid='...', token='...', adapter=qq_group(client_secret, shard_index=1, shards=2))
+```
+
+::: danger 注意<br>
+每个分片的启动应当**按顺序缓慢进行**，切勿同时启动，以免 gateway 返回的信息一致造成连接失败。
+
+```python
+# 仅作示意，实际上每个分片应当是独立的服务。
+def start():
+    asyncio.create_task(bot1.start())
+    time.sleep(2)
+    asyncio.create_task(bot2.start())
+```
+
+:::
 
 ### 修改资源服务配置
 

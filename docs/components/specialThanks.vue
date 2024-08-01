@@ -1,69 +1,58 @@
 <template>
     <div class="user-list">
-        <template v-for="item in data">
-            <div class="user" :class="{ small: !displayUserName }"
-                 v-if="item['all_sum_amount'] >= min && item['all_sum_amount'] < max">
-                <img class="avatar" :src="item.user.avatar" :alt="item.user.name">
-                <div class="user-name" v-if="displayUserName">
-                    <span class="name">{{ item.user.name }}</span>
-                    <span class="amount">￥{{ item.all_sum_amount }}</span>
-                </div>
+        <div class="user">
+            <img class="avatar" src="https://q1.qlogo.cn/g?b=qq&nk=1391939232&s=640" alt="">
+            <div class="user-name">
+                <span class="name" style="color: #f44336; font-size: 18px">幕后大佬</span>
+                <span class="desc">顶级的存在！支撑兔兔的所有！</span>
             </div>
-        </template>
+        </div>
+        <div class="user">
+            <img class="avatar" src="https://q1.qlogo.cn/g?b=qq&nk=3061243068&s=640" alt="">
+            <div class="user-name">
+                <span class="name">Initial heart</span>
+                <span class="desc">社区风纪委员、Logo 贡献者</span>
+            </div>
+        </div>
+        <div class="user">
+            <img class="avatar" src="https://q1.qlogo.cn/g?b=qq&nk=457586001&s=640" alt="">
+            <div class="user-name">
+                <span class="name">hsyhhssyy</span>
+                <span class="desc">插件作者、兔兔 AI 维护人</span>
+            </div>
+        </div>
+        <div class="user">
+            <img class="avatar" src="https://q1.qlogo.cn/g?b=qq&nk=2300652404&s=640" alt="">
+            <div class="user-name">
+                <span class="name">天基</span>
+                <span class="desc">插件作者、插件服务器贡献者</span>
+            </div>
+        </div>
+        <div class="user">
+            <img class="avatar" src="https://q1.qlogo.cn/g?b=qq&nk=1961411984&s=640" alt="">
+            <div class="user-name">
+                <span class="name">.Tdp</span>
+                <span class="desc">插件作者、百度图像识别接口贡献者</span>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
-    name: 'specialThanks',
-    props: {
-        displayUserName: Boolean,
-        min: {
-            type: Number,
-            default: 0
-        },
-        max: {
-            type: Number,
-            default: Infinity
-        }
-    },
-    methods: {
-        get_sponsors: function () {
-            axios.get('https://server.amiyabot.com:8020/get_sponsors').then(res => {
-                this.data = JSON.parse(res.data)
-                this.data.sort((a, b) => {
-                    return b.all_sum_amount - a.all_sum_amount
-                })
-            })
-        }
-    },
-    data() {
-        return {
-            data: []
-        }
-    },
-    mounted() {
-        this.get_sponsors()
-    }
+    name: 'specialThanks'
 }
 </script>
 
 <style scoped>
 .user-list {
-    display: flex;
-    flex-wrap: wrap;
+
 }
 
 .user {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
-}
-
-.user:not(.small) {
-    width: 25%;
 }
 
 .avatar {
@@ -92,9 +81,8 @@ export default {
     white-space: nowrap;
 }
 
-.amount {
-    font-size: 12px;
+.desc {
     font-weight: bold;
-    color: #ff9800;
+    color: #b74ec9;
 }
 </style>
