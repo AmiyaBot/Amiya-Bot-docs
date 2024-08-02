@@ -18,13 +18,13 @@ bot = AmiyaBot(appid='******', token='******', adapter=qq_group(client_secret))
 
 `qq_group` 参数
 
-| 参数名                           | 类型                         | 释义          | 默认值                          |
-|-------------------------------|----------------------------|-------------|------------------------------|
-| client_secret                 | str                        | 机器人密钥       |                              |
-| default_chain_builder         | ChainBuilder               | 默认消息构建器     | None                         |
-| default_chain_builder_options | QQGroupChainBuilderOptions | 默认消息构建器参数   | QQGroupChainBuilderOptions() |
-| shard_index                   | int                        | 分片下标，从 0 开始 | 0                            |
-| shards                        | int                        | 分片总数        | 1                            |
+| 参数名                           | 类型  | 释义          | 默认值                          |
+|-------------------------------|-----|-------------|------------------------------|
+| client_secret                 | str | 机器人密钥       |                              |
+| default_chain_builder         |     | 默认消息构建器     | None                         |
+| default_chain_builder_options |     | 默认消息构建器参数   | QQGroupChainBuilderOptions() |
+| shard_index                   | int | 分片下标，从 0 开始 | 0                            |
+| shards                        | int | 分片总数        | 1                            |
 
 - 在机器人启动时，资源服务也会一同启动。
 - 默认的资源服务是端口单例的，实例化多个 QQ 群聊适配器 AmiyaBot 或使用 [多账号](/develop/basic/multipleAccounts.html)
