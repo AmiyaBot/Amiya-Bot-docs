@@ -1,12 +1,12 @@
 # QQ 群机器人 <span class="beta-tag">Beta</span>
 
-在 [QQ 开放平台](https://bot.q.qq.com/wiki/#_2-%E4%BC%81%E4%B8%9A%E4%B8%BB%E4%BD%93%E5%85%A5%E9%A9%BB) 完成企业主体入驻，即可创建可在
+在 [QQ 开放平台](https://bot.q.qq.com/wiki/#_2-%E4%BC%81%E4%B8%9A%E4%B8%BB%E4%BD%93%E5%85%A5%E9%A9%BB) 完成主体入驻，即可创建可在
 QQ 群聊里使用的 QQ 群机器人。
 
 ## 在公网下使用
 
 QQ
-群聊适配器需要在本地启动资源服务让腾讯端能够访问媒体资源，默认在公网下使用。如果无法在公网下部署，请参考[自定义资源服务](#自定义资源服务)。
+群聊适配器默认在本地启动资源服务让腾讯服务器能够访问媒体资源，需要在公网下使用。如果无法在公网下部署，请参考[自定义资源服务](#自定义资源服务)。
 
 ```python
 from amiyabot.adapters.tencent.qqGroup import qq_group
@@ -37,8 +37,16 @@ bot = AmiyaBot(appid='******', token='******', adapter=qq_group(client_secret))
 了解分片机制。
 
 ```python
-bot1 = AmiyaBot(appid='...', token='...', adapter=qq_group(client_secret, shard_index=0, shards=2))
-bot2 = AmiyaBot(appid='...', token='...', adapter=qq_group(client_secret, shard_index=1, shards=2))
+bot1 = AmiyaBot(
+    appid='...',
+    token='...',
+    adapter=qq_group(client_secret='...', shard_index=0, shards=2),
+)
+bot2 = AmiyaBot(
+    appid='...',
+    token='...',
+    adapter=qq_group(client_secret='...', shard_index=1, shards=2),
+)
 ```
 
 ::: danger 注意<br>
@@ -85,12 +93,44 @@ bot = AmiyaBot(
 
 ## 自定义资源服务
 
+非公网部署下的资源服务难题解决途径非常多，这里列举两个比较常见的解决办法。
+
+### 使用内网穿透
+
+使用一些内网穿透工具代理本地地址 http://127.0.0.1:8086（视配置而定）后，通常会得到一个新的地址。继承 `QQGroupChainBuilder`
+并覆盖 **domain** 方法，即可使用内网穿透让腾讯服务器访问资源。
+
+示例：
+
+> **http://<span style="color: red">3913rc56vl17.vicp.fun:40229</span>/resource**
+
+红色高亮部分即为内网穿透地址，`/resource` 为固定的路由值。
+
+```python
+from amiyabot.adapters.tencent.qqGroup import qq_group, QQGroupChainBuilder, QQGroupChainBuilderOptions
+
+class PenetrationChainBuilder(QQGroupChainBuilder):
+    @property
+    def domain(self):
+        return 'http://3913rc56vl17.vicp.fun:40229/resource'
+
+
+bot = AmiyaBot(
+    ...,
+    adapter=qq_group(
+        ...,
+        default_chain_builder=PenetrationChainBuilder(
+            QQGroupChainBuilderOptions(),
+        ),
+    ),
+)
+```
+
+### 继承 ChainBuilder 并实现相关方法使用第三方托管服务。
+
 多数情况下我们推荐使用第三方托管服务来搭建资源服务，如 [腾讯云COS](https://www.baidu.com/s?wd=%E8%85%BE%E8%AE%AF%E4%BA%91COS)
-或 [阿里云OSS](https://www.baidu.com/s?wd=%E9%98%BF%E9%87%8C%E4%BA%91OSS) 等。
-
-通过自定义默认的 `ChainBuilder`，来实现上传文件到托管服务以及返回生成的 url。
-
-### 继承 ChainBuilder 并实现相关方法。
+或 [阿里云OSS](https://www.baidu.com/s?wd=%E9%98%BF%E9%87%8C%E4%BA%91OSS) 等。通过自定义默认的 `ChainBuilder`
+，来实现上传文件到托管服务以及返回生成的 url。
 
 可参考 [进阶指南 - 介入媒体消息的构建过程](/develop/advanced/chainBuilder.md)
 
@@ -99,7 +139,7 @@ from typing import Union
 from graiax import silkcoder
 from amiyabot import ChainBuilder
 
-class MyBuilder(ChainBuilder):
+class ThirdPartyChainBuilder(ChainBuilder):
     @classmethod
     async def get_image(cls, image: Union[str, bytes]) -> Union[str, bytes]:
         # 上传图片到第三方托管服务
@@ -120,5 +160,11 @@ class MyBuilder(ChainBuilder):
         return url # 返回访问资源的 URL
 
 
-bot = AmiyaBot(..., adapter=qq_group(default_chain_builder=MyBuilder()))
+bot = AmiyaBot(
+    ...,
+    adapter=qq_group(
+        ...,
+        default_chain_builder=ThirdPartyChainBuilder(),
+    ),
+)
 ```
