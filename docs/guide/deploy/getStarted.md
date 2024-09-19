@@ -8,7 +8,7 @@ import download from '../../components/download.vue'
 
 - Windows 10、Windows Subsystem for Linux (WSL) 或 Windows Server 2012 及以上系统
 - MacOS 11 (Big Sur) 及以上系统
-- Linux 系统官方支持 Debian 11、Ubuntu 18.04 及以上
+- Linux 系统官方支持 Debian 11、Ubuntu 18.04 及更新版本
 
 :::
 
@@ -25,22 +25,22 @@ import download from '../../components/download.vue'
 代码部署</span> 或 <span style="color: red">Docker部署</span> 三种方式<span style="color: red">其一</span>。
 
 - Windows 系统推荐使用**可执行文件部署**，可执行文件部署是一键部署的模式，部署难度低。
-- Linux 系统推荐使用**Docker部署**，Docker部署可以解决不同Linux发行版的系统依赖问题，支持一键升级，推荐云服务器使用该种方式部署。
+- Linux 系统推荐使用 **Docker 部署**，Docker 部署可以解决不同 Linux 发行版的系统依赖问题，支持一键升级，推荐云服务器使用该种方式部署。
 
 ## 相关链接
 
 | 操作系统    | 下载                           | 备注                                       |
 |---------|------------------------------|------------------------------------------|
 | Windows | <download version="win32" /> | 仅支持 Windows 10、Windows Server 2016 及以上系统 |
-| Linux   | [Docker一键部署脚本](https://github.com/AmiyaBot/Amiya-Bot/blob/V6-master/install.sh) | 建议提前安装好Docker并配置镜像 |
+| Linux   | [Docker 一键部署脚本](https://github.com/AmiyaBot/Amiya-Bot/blob/V6-master/install.sh) | 建议提前安装好 Docker 并配置镜像 |
 
-### Windows可执行文件部署
+### Windows 可执行文件部署
 
 下载并解压，运行 `AmiyaBot-v6.x.x-win32.exe`，如下图成功运行后可以进入[下一节](/guide/deploy/console/)。
 
 ![img.png](../../assets/deploy/running.png)
 
-### Linux Docker部署
+### Linux Docker 部署
 
 进入控制台，执行以下命令一键安装
 
