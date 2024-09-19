@@ -21,11 +21,12 @@ import download from '../../components/download.vue'
 
 ## 部署
 
-根据你的设备系统或习惯，你可以选择 <span style="color: red">可执行文件部署</span> , <span style="color: red">
-代码部署</span> 或 <span style="color: red">Docker部署</span> 三种方式<span style="color: red">其一</span>。
+根据你的设备系统或习惯，你可以选择 <span style="color: red">(for Windows)可执行文件部署</span> , <span style="color: red">
+代码部署</span> 或 <span style="color: red">(for Linux)Docker 部署</span> 三种方式<span style="color: red">其一</span>。
 
 - Windows 系统推荐使用**可执行文件部署**，可执行文件部署是一键部署的模式，部署难度低。
 - Linux 系统推荐使用 **Docker 部署**，Docker 部署可以解决不同 Linux 发行版的系统依赖问题，支持一键升级，推荐云服务器使用该种方式部署。
+- 理论上，Windows 亦可使用 Docker 部署，但并不推荐您使用该方式。请注意，我们不会就特定于在 Windows 上使用 Docker 部署相关的任何问题提供支持。
 
 ## 相关链接
 
