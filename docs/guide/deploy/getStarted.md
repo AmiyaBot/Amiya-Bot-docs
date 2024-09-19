@@ -8,7 +8,7 @@ import download from '../../components/download.vue'
 
 - Windows 10、Windows Subsystem for Linux (WSL) 或 Windows Server 2012 及以上系统
 - MacOS 11 (Big Sur) 及以上系统
-- Linux 系统官方支持 Debian 11、Ubuntu 18.04 以及 Ubuntu 20.04
+- Linux 系统官方支持 Debian 11、Ubuntu 18.04 及以上
 
 :::
 
@@ -21,41 +21,32 @@ import download from '../../components/download.vue'
 
 ## 部署
 
-根据你的设备系统或习惯，你可以选择 <span style="color: red">可执行文件部署</span> 或 <span style="color: red">
-代码部署</span> 两种方式<span style="color: red">其一</span>。
+根据你的设备系统或习惯，你可以选择 <span style="color: red">可执行文件部署</span> , <span style="color: red">
+代码部署</span> 或 <span style="color: red">Docker部署</span> 三种方式<span style="color: red">其一</span>。
 
-Windows 系统推荐使用**可执行文件部署**，可执行文件部署是一键部署的模式，部署难度低。
+- Windows 系统推荐使用**可执行文件部署**，可执行文件部署是一键部署的模式，部署难度低。
+- Linux 系统推荐使用**Docker部署**，Docker部署可以解决不同Linux发行版的系统依赖问题，支持一键升级，推荐云服务器使用该种方式部署。
 
-## 通过可执行文件部署
+## 相关链接
 
 | 操作系统    | 下载                           | 备注                                       |
 |---------|------------------------------|------------------------------------------|
 | Windows | <download version="win32" /> | 仅支持 Windows 10、Windows Server 2016 及以上系统 |
-| Linux   | <del>AmiyaBot-v6.4.6-linux.zip</del> | 不再继续提供支持，请使用代码部署         |
+| Linux   | [Docker一键部署脚本](https://github.com/AmiyaBot/Amiya-Bot/blob/V6-master/install.sh) | 建议提前安装好Docker并配置镜像 |
 
-### Windows
+### Windows可执行文件部署
 
 下载并解压，运行 `AmiyaBot-v6.x.x-win32.exe`，如下图成功运行后可以进入[下一节](/guide/deploy/console/)。
 
 ![img.png](../../assets/deploy/running.png)
 
-### Linux
+### Linux Docker部署
 
-不再继续提供支持，**请使用代码部署**。
-
-<details>
-<summary>原内容</summary>
-
-不支持 Centos，目前在 Ubuntu 20.04 测试可用。
-
-下载并解压，进入 `package/dist` 目录，运行 `AmiyaBot-v6.x.x-linux`。
+进入控制台，执行以下命令一键安装
 
 ```bash
-cd package/dist/
-chmod 777 ./AmiyaBot-v6.x.x-linux
-./AmiyaBot-v6.x.x-linux
+bash <(curl -fsSL https://raw.githubusercontent.com/AmiyaBot/Amiya-Bot/V6-master/install.sh)
 ```
-</details>
 
 ## 通过代码部署
 
