@@ -21,7 +21,7 @@ import download from '../../components/download.vue'
 
 ## 部署
 
-根据你的设备系统或习惯，你可以选择 <span style="color: red">(for Windows)可执行文件部署</span> , <span style="color: red">
+根据你的设备系统或习惯，你可以选择 <span style="color: red">(for Windows)可执行文件部署</span> ， <span style="color: red">
 代码部署</span> 或 <span style="color: red">(for Linux)Docker 部署</span> 三种方式<span style="color: red">其一</span>。
 
 - Windows 系统推荐使用**可执行文件部署**，可执行文件部署是一键部署的模式，部署难度低。
@@ -33,7 +33,7 @@ import download from '../../components/download.vue'
 | 操作系统    | 下载                           | 备注                                       |
 |---------|------------------------------|------------------------------------------|
 | Windows | <download version="win32" /> | 仅支持 Windows 10、Windows Server 2016 及以上系统 |
-| Linux   | [Docker 一键部署脚本](https://github.com/AmiyaBot/Amiya-Bot/blob/V6-master/install.sh) | 建议提前安装好 Docker 并配置镜像 |
+| Linux   | [Docker 一键部署脚本](https://github.com/AmiyaBot/Amiya-Bot/blob/V6-master/dockersh/install.sh) | 建议提前安装好 Docker 并配置镜像 |
 
 ### Windows 可执行文件部署
 
@@ -46,7 +46,7 @@ import download from '../../components/download.vue'
 进入控制台，执行以下命令一键安装
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/AmiyaBot/Amiya-Bot/V6-master/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/AmiyaBot/Amiya-Bot/V6-master/dockersh/install.sh)
 ```
 
 ## 通过代码部署
