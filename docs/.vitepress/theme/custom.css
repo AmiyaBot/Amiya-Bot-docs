@@ -61,16 +61,20 @@ i.red {
     text-decoration: underline !important;
 }
 
-/*.VPHome .tagline:after {*/
-/*    content: '';*/
-/*    display: block;*/
-/*    margin-top: 15px;*/
-/*    font-size: 18px;*/
-/*    color: var(--vp-c-text-1);*/
-/*}*/
-
 .VPLink.link.link > .text {
     line-height: 20px;
+}
+
+.main-container {
+    width: 1152px;
+    margin: auto;
+    padding: 30px 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .main-container {
+        width: calc(100% - 20px);
+    }
 }
 
 /*.VPContent.is-home {*/

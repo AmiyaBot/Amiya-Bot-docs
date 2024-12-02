@@ -1,6 +1,7 @@
 export const adapters = [
     { text: 'QQ频道机器人', link: '/develop/adapters/qqChannel.md' },
     { text: 'QQ群机器人', link: '/develop/adapters/qqGroup.md' },
+    { text: 'QQ全域机器人', link: '/develop/adapters/qqGlobal.md' },
     { text: 'KOOK机器人', link: '/develop/adapters/kook.md' },
     { text: 'Mirai-Api-Http', link: '/develop/adapters/mah.md' },
     { text: 'Go-CQHttp', link: '/develop/adapters/gocq.md' },
@@ -13,7 +14,7 @@ export const adapters = [
 export default {
     '/develop/basic/': [
         {
-            text: '起步',
+            text: '创建实例',
             collapsible: true,
             items: [
                 { text: '开始使用', link: '/develop/basic/index.md' },
@@ -21,7 +22,7 @@ export default {
             ]
         },
         {
-            text: '基础开发',
+            text: '接收&发送消息',
             collapsible: true,
             items: [
                 { text: '声明', link: '/develop/basic/statement.md' },
@@ -31,6 +32,14 @@ export default {
                 { text: '发送主动消息', link: '/develop/basic/sendActiveMessage.md' },
                 { text: '创建连续对话', link: '/develop/basic/continuityMessage.md' },
                 { text: '撤回消息', link: '/develop/basic/recallMessage.md' }
+            ]
+        },
+        {
+            text: '事件&异常',
+            collapsible: true,
+            items: [
+                { text: '事件监听', link: '/develop/basic/handleEvents.md' },
+                { text: '异常监听', link: '/develop/basic/handleException.md' }
             ]
         },
         {
@@ -63,15 +72,7 @@ export default {
             ]
         },
         {
-            text: '监听',
-            collapsible: true,
-            items: [
-                { text: '事件监听', link: '/develop/basic/handleEvents.md' },
-                { text: '异常监听', link: '/develop/basic/handleException.md' }
-            ]
-        },
-        {
-            text: '测试',
+            text: '调试',
             collapsible: true,
             items: [
                 { text: '使用测试实例调试', link: '/develop/basic/testInstance.md' }

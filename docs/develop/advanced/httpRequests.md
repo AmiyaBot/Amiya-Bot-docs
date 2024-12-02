@@ -109,6 +109,7 @@ res: str = await http_requests.post_upload()
 |------------|-------|--------------------------------------------------------------------------------------|------|
 | interface  | str   | 请求地址                                                                                 |      |
 | file       | bytes | 文件 bytes                                                                             |      |
+| filename   | str   | 文件名                                                                                  | file |
 | file_field | str   | 表单数据中存放文件的字段名                                                                        | file |
 | payload    | dict  | 请求体                                                                                  |      |
 | headers    | dict  | 追加的请求头                                                                               |      |
