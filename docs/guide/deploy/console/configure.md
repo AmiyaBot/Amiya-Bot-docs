@@ -49,21 +49,26 @@ secret_key: Uky7BB8zxxxxxxxxigQzVt64oLgnn
 ## LLOneBot机器人（推荐）
 
 当前环境下，推荐使用LLOneBot部署QQ机器人。<br>
-首先你需要下载并安装[NTQQ](https://developer.kookapp.cn/app/index) 。注意，不是普通的Window QQ，而是NTQQ。
+首先你需要下载并安装[NTQQ](https://im.qq.com/pcqq/index.shtml) 。注意，不是普通的Window QQ，而是NTQQ。
 安装后，打开QQ的菜单并点击关于，在其中看到“基于QQNT技术架构字样”证明你安装对了。
 
-接下来，跟随[llonebot的教程](https://llonebot.github.io/zh-CN/guide/getting-started))，安装LiteLoaderQQNT和LLOneBot。
+<img style="width: 400px" src="../../../assets/console/ntqq.png" alt="image">
+
+接下来，跟随[llonebot的教程](https://llonebot.github.io/zh-CN/guide/getting-started)，安装LiteLoaderQQNT和LLOneBot。
 
 全部安装完成后，打开QQ的设置菜单，可以看到LLOneBot就证明你安装成功了。
 
+<img style="width: 400px" src="../../../assets/console/llOneBot.png" alt="image">
+
 接下来，按照下图所示，填写LLOneBot配置项，和配置AmiayBot实例。
 
-<img style="width: 400px" src="../../../assets/console/online.png" alt="image">
+<img style="width: 400px" src="../../../assets/console/llOneBotConfig.png" alt="image">
 
 ::: 请注意<br>
-LLOneBot配置页面下方，有一个单独的保存按钮。必须按下该按钮才能保存设置。
-<img style="width: 400px" src="../../../assets/console/online.png" alt="image">
+LLOneBot配置页面下方，有一个单独的保存按钮，如下图所示。你必须按下该按钮才能保存设置。
 :::
+
+<img style="width: 400px" src="../../../assets/console/llOnebotSave.png" alt="image">
 
 ## ~~CQ-Http QQ群机器人~~（不推荐）
 
