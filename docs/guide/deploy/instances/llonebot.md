@@ -1,4 +1,4 @@
-# LLOneBot机器人
+# LLOneBot QQ群机器人
 
 当前环境下，推荐使用 LLOneBot 部署QQ机器人。<br>
 首先你需要下载并安装 [NTQQ](https://im.qq.com/pcqq/index.shtml)。注意，不是普通的 Window QQ，而是 **NTQQ**。

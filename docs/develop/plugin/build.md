@@ -28,7 +28,7 @@ myPlugin.zip
 
 ::: warning 注意<br>
 若无法通过上述手段将第三方包添加进插件包，你的插件将可能不支持
-[可执行文件部署](/guide/deploy/getStarted.html#通过可执行文件部署)
+[可执行文件部署](/guide/deploy/getStarted/index.html#通过可执行文件部署)
 。你可以在你的插件文档内注明，并让代码部署的用户使用 `pip install xxx` 安装第三方依赖。
 :::
 

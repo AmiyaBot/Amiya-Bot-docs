@@ -21,7 +21,7 @@
 ```
 
 通常情况下，这是 git 未正确安装导致的，可能是由于**你没有认真看文档**根本没有安装 git
-所导致。请根据文档[安装 git](/guide/deploy/getStarted.html#安装-git)
+所导致。请根据文档[安装 git](/guide/deploy/getStarted/index.html#安装-git)
 
 安装完成后，再次重复上述操作，此时应该会显示如下的文本，这就证明你配置好了 git，可以再次尝试打开可执行文件了。
 

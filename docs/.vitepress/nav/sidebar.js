@@ -211,9 +211,10 @@ export default {
             text: '实例部署',
             collapsible: true,
             items: [
-                { text: 'QQ群&频道机器人', link: '/guide/deploy/instances/qqbot.md' },
+                { text: '官方QQ群&频道机器人', link: '/guide/deploy/instances/qqbot.md' },
                 { text: 'KOOK机器人', link: '/guide/deploy/instances/kook.md' },
-                { text: 'LLOneBot机器人', link: '/guide/deploy/instances/llonebot.md' },
+                { text: 'LLOneBot QQ群机器人', link: '/guide/deploy/instances/llonebot.md' },
+                { text: 'NapCatQQ QQ群机器人', link: '/guide/deploy/instances/napcatqq.md' },
                 { text: 'CQ-Http QQ群机器人', link: '/guide/deploy/instances/cqhttp.md' },
                 { text: 'Mirai-api-http QQ群机器人', link: '/guide/deploy/instances/mirai.md' },
             ]
