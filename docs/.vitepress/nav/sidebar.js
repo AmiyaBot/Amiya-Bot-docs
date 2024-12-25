@@ -182,12 +182,20 @@ export default {
     ],
     '/guide/deploy/': [
         {
-            text: '准备',
+            text: '说明',
             collapsible: true,
             items: [
-                { text: '部署兔兔-v6', link: '/guide/deploy/index.md' },
-                // { text: '选择你的运营方', link: '/guide/deploy/yourChoose.md' },
-                { text: '开始部署', link: '/guide/deploy/getStarted.md' },
+                { text: '简要说明', link: '/guide/deploy/index.md' },
+            ]
+        },
+        {
+            text: '部署兔兔V6',
+            collapsible: true,
+            items: [
+                { text: '必看', link: '/guide/deploy/getStarted/index.md' },
+                { text: '可执行文件部署', link: '/guide/deploy/getStarted/exe.md' },
+                { text: 'Docker部署', link: '/guide/deploy/getStarted/docker.md' },
+                { text: '代码部署', link: '/guide/deploy/getStarted/code.md' },
             ]
         },
         {
@@ -197,6 +205,17 @@ export default {
                 { text: '连接控制台', link: '/guide/deploy/console/index.md' },
                 { text: '配置实例', link: '/guide/deploy/console/configure.md' },
                 { text: '安装插件', link: '/guide/deploy/console/plugin.md' },
+            ]
+        },
+        {
+            text: '实例部署',
+            collapsible: true,
+            items: [
+                { text: 'QQ群&频道机器人', link: '/guide/deploy/instances/qqbot.md' },
+                { text: 'KOOK机器人', link: '/guide/deploy/instances/kook.md' },
+                { text: 'LLOneBot机器人', link: '/guide/deploy/instances/llonebot.md' },
+                { text: 'CQ-Http QQ群机器人', link: '/guide/deploy/instances/cqhttp.md' },
+                { text: 'Mirai-api-http QQ群机器人', link: '/guide/deploy/instances/mirai.md' },
             ]
         },
         {

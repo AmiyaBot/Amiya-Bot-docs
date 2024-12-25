@@ -1,5 +1,6 @@
 <template>
-    <a @click="download">AmiyaBot-{{ latest }}-{{ version }}.zip</a>
+    <span v-if="showExeName">AmiyaBot-{{ latest }}-{{ version }}.exe</span>
+    <a v-else @click="download">AmiyaBot-{{ latest }}-{{ version }}.zip</a>
 </template>
 
 <script>
@@ -11,7 +12,7 @@ export default {
     name: 'download',
     props: {
         version: String,
-        text: String
+        showExeName: Boolean
     },
     data() {
         return {
