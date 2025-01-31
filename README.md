@@ -18,7 +18,9 @@ npm run docs:dev
 <br><br>
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 <br><br>
-多媒体内容，字体等其他内容不作授权。
+所有内容的署名应当以 [本 Github Repo](https://github.com/AmiyaBot/Amiya-Bot-docs) 的相关文件提交记录为准。所有对文件内容具有有效修改（Pull request 被项目组合并入本 Repo）的贡献者对于其贡献部分具有署名权。
+<br><br>
+多媒体内容，字体等其他内容除另有说明外不作授权。
 <br><br>
 仓库中可能有一些内容项目开发组并非权利人，这些内容的相关权利由其权利人保留。
 <br><br>
