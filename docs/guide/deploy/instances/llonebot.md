@@ -15,4 +15,4 @@
 接下来，按照下图所示（看不清楚可以右键图片在新标签中打开），填写 LLOneBot 配置项，和配置 AmiayBot 实例。<br>
 其中<span style="color: red">新消息上报格式</span>要选择<span style="color: red">消息段</span>。
 
-<img src="../../../assets/console/llOneBotConfig.png" alt="image">
+![AmiyaBot-LLOneBot](https://github.com/user-attachments/assets/5ead21c1-4e25-45ac-b51a-d60c37a37763)
