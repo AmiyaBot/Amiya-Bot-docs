@@ -11,7 +11,7 @@ export default {
         sidebar: sidebar,
         editLink: {
             pattern: 'https://github.com/AmiyaBot/Amiya-Bot-docs/edit/master/docs/:path',
-            text: '在 GitHub 上编辑此页'
+            text: '在 GitHub 上编辑此页/查看此页贡献者'
         },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/AmiyaBot' }
