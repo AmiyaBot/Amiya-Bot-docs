@@ -2,7 +2,7 @@
     <div class="mirror">
         <div class="thanks">
             💐 特别感谢
-            <a href="https://mirrorchyan.com/zh/get-start" target="_blank">
+            <a href="https://mirrorchyan.com" target="_blank">
                 <img src="https://groupprohead.gtimg.cn/600104514042962957/100?t=1742635129190" alt="Mirror酱">
                 Mirror酱
             </a>
@@ -13,7 +13,7 @@
         </div>
         <div class="text">用户付费使用，收益与开发者共享。此外，Mirror酱本身也是开源的。</div>
         <div class="text">
-            <a href="https://mirrorchyan.com/zh/get-start">https://mirrorchyan.com/zh/get-start</a>
+            <a href="https://mirrorchyan.com">https://mirrorchyan.com/zh/get-start</a>
         </div>
     </div>
 </template>
