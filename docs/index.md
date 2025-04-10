@@ -37,8 +37,10 @@ features:
 
 <script setup>
 import bots from './components/bots.vue';
+import mirrorChyan from './components/mirrorChyan.vue';
 </script>
 
 <div class="main-container">
+    <mirror-chyan />
     <bots style="padding-top: 10px"></bots>
 </div>

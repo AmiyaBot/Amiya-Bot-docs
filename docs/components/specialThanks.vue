@@ -3,22 +3,29 @@
         <div class="user">
             <img class="avatar" src="https://q1.qlogo.cn/g?b=qq&nk=1391939232&s=640" alt="">
             <div class="user-name">
-                <span class="name" style="color: #f44336; font-size: 18px">幕后大佬</span>
-                <span class="desc">顶级的存在！支撑兔兔的所有！</span>
+                <span class="name" style="color: #f44336; font-size: 18px">神秘幕后大佬</span>
+                <span class="desc"></span>
+            </div>
+        </div>
+        <div class="user">
+            <img class="avatar" src="https://q1.qlogo.cn/g?b=qq&nk=1020535998&s=640" alt="">
+            <div class="user-name">
+                <span class="name">MistEO</span>
+                <span class="desc">Mirror酱主创、MAA主创、兔兔项目赞助者</span>
             </div>
         </div>
         <div class="user">
             <img class="avatar" src="https://q1.qlogo.cn/g?b=qq&nk=3061243068&s=640" alt="">
             <div class="user-name">
                 <span class="name">Initial heart</span>
-                <span class="desc">社区风纪委员、Logo 贡献者</span>
+                <span class="desc">社区风纪委员、文档顾问、Logo贡献者</span>
             </div>
         </div>
         <div class="user">
             <img class="avatar" src="https://q1.qlogo.cn/g?b=qq&nk=457586001&s=640" alt="">
             <div class="user-name">
                 <span class="name">hsyhhssyy</span>
-                <span class="desc">插件作者、兔兔 AI 维护人</span>
+                <span class="desc">插件作者、兔兔 AI 维护者</span>
             </div>
         </div>
         <div class="user">

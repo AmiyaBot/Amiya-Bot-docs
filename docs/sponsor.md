@@ -5,9 +5,12 @@ aside: false
 <script setup>
 import specialThanks from './components/specialThanks.vue';
 import chargeThanks from './components/chargeThanks.vue';
+import mirrorChyan from './components/mirrorChyan.vue';
 </script>
 
-# 赞助
+<mirror-chyan />
+
+# 感谢有你
 
 AmiyaBot 一路走来离不开大家的默默支持，如果你喜欢并支持我们，可以为我们打赏一瓶快乐水。我相信快乐是可以互相传递的，你的快乐水带给我们快乐的同时，想必
 AmiyaBot 也给你带去了快乐吧。
@@ -30,4 +33,8 @@ AmiyaBot 也给你带去了快乐吧。
 
 打赏请前往[爱发电主页](https://afdian.com/a/amiyabot)。
 
-<img style="width: 400px" src="./assets/5a4a07cc67f556288d3df2e9029fc14.jpg" alt="image">
+<a href="https://afdian.com/a/amiyabot" target="_blank">
+    <img width="200"
+         src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png"
+         alt="">
+</a>
