@@ -67,9 +67,9 @@ res = await bot.instance.api.post('/interface', {...})
 
 ::: tip 为什么没有 headers 参数<br>
 方法内部实现了不同平台的鉴权规则，控制了 headers
-的内容，你不需要手动控制。如果你希望自己实现请求，请使用 👉 [进阶指南 - HTTP 请求](/develop/advanced/httpRequests)
+的内容，你不需要手动控制。如果你希望自己实现请求，请使用 👉 [进阶指南 - HTTP 请求](/develop/tools/httpRequests)
 :::
 
 ## api 的返回
 
-参考 [进阶指南 - HTTP 请求 - 返回值](/develop/advanced/httpRequests.html#返回值)
+参考 [进阶指南 - HTTP 请求 - 返回值](/develop/tools/httpRequests.html#返回值)

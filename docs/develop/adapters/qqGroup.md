@@ -66,12 +66,12 @@ def start():
 
 引入 `QQGroupChainBuilderOptions` 修改默认的资源服务配置。
 
-| 参数名                 | 类型   | 释义                                                        | 默认值        |
-|---------------------|------|-----------------------------------------------------------|------------|
-| host                | str  | 资源服务监听地址                                                  | 0.0.0.0    |
-| port                | int  | 资源服务监听端口                                                  | 8086       |
-| resource_path       | str  | 临时文件存放目录                                                  | ./resource |
-| http_server_options | dict | [HttpServer **kwargs](/develop/advanced/httpSupport.html) |            |
+| 参数名                 | 类型   | 释义                                                     | 默认值        |
+|---------------------|------|--------------------------------------------------------|------------|
+| host                | str  | 资源服务监听地址                                               | 0.0.0.0    |
+| port                | int  | 资源服务监听端口                                               | 8086       |
+| resource_path       | str  | 临时文件存放目录                                               | ./resource |
+| http_server_options | dict | [HttpServer **kwargs](/develop/tools/httpSupport.html) |            |
 
 ```python
 from amiyabot.adapters.tencent.qqGroup import qq_group
