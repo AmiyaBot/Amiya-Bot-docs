@@ -147,7 +147,7 @@ file: bytes = await download_async()
 
 ### 同步下载
 
-如某些场景需要使用同步下载，可使用同模块中的 download_async 方法。
+如某些场景需要使用同步下载，可使用同模块中的 download_sync 方法。
 
 ```python
 from amiyabot.network.download import download_sync
