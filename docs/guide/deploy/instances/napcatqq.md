@@ -15,7 +15,7 @@ NapCat 有着众多启动方式，每种方式各有优点：
 
 ## 安装
 
-略，详见 [NapCatQQ 官方文档](https://napneko.github.io/guide/install)
+略，详见 [NapCatQQ 官方文档](https://napneko.github.io/guide/install)。
 
 ## 配置
 
@@ -41,8 +41,8 @@ NapCat 有着众多启动方式，每种方式各有优点：
 访问 `http://ip:port/webui/`，然后进行以下操作：
 1. 进入 QQ 登录，点击 `QRCode` 进行二维码登录。
 2. 登录成功后，进入网络配置添加以下配置。
-   1. HTTP 配置如下图
-      ![AmiyaBot-NapCatQQ-HTTP](https://github.com/user-attachments/assets/aae0f255-8348-4ddb-a338-1d466f2b0ba5)
-   2. websocket 配置如下图
-      ![AmiyaBot-NapCatQQ-WS](https://github.com/user-attachments/assets/96369055-f87a-4079-90df-fb380d3356fb)
+   1. HTTP 配置如下图（看不清楚可以右键图片在新标签中打开）
+      ![AmiyaBot-NapCatQQ-HTTP](../../../assets/console/AmiyaBot-NapCatQQ-HTTP.png)
+   2. websocket 配置如下图（看不清楚可以右键图片在新标签中打开）
+      ![AmiyaBot-NapCatQQ-WS](../../../assets/console/AmiyaBot-NapCatQQ-WS.png)
 3. 配置完成后，点击确认即可。
