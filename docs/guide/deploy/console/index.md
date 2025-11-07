@@ -52,4 +52,4 @@ host: 0.0.0.0
 :::
 
 我们的团队成员 Initial-heart
-为你提供了 [一篇通过 Nginx 反向代理加密连接的博客](https://www.initbili.top/2022/84452dac2fe6/)，你可以根据这篇博客对你的连接进行加密。
+为你提供了 [一篇通过 Nginx 反向代理加密连接的博客](https://blog.fengqiwu.xyz/%e5%bc%80%e5%8f%91/nginx-%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86%e5%8a%a0%e5%af%86%e8%bf%9e%e6%8e%a5%ef%bc%88https%ef%bc%89%e7%ae%80%e6%98%8e%e6%95%99%e7%a8%8b/)，你可以根据这篇博客对你的连接进行加密。
