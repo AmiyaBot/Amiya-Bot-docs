@@ -4,17 +4,17 @@
 如果以前装过 LLOneBot5.0 以下版本，请卸载 QQ 并删干净 QQ 安装目录！
 
 首先你需要下载并安装 [NTQQ](https://im.qq.com/pcqq/index.shtml)。注意，不是普通的 Windows QQ，而是 **NTQQ**。
-安装后，打开 QQ 的菜单并点击关于，在底部看到 `基于QQNT技术架构` 证明你安装对了。
+安装后，打开 QQ 的菜单并点击关于，在底部看到 `基于 QQNT 技术架构` 证明你安装对了。
 
 <img style="width: 250px" src="../../../assets/console/ntqq.png" alt="image">
 
-接下来，跟随 [llonebot的教程](https://llonebot.com/guide/getting-started)，安装 LLOneBot。
+接下来，跟随 [LLOneBot 的教程](https://www.llonebot.com/guide/choice_install)，安装 LLOneBot。
 
-全部安装完成后，通过浏览器访问 `http://localhost:3080` 或点击 LLTwoBot 串口左上角的 `配置` 。
+全部安装完成后，通过浏览器访问 `http://localhost:3080` 或点击 LLOneBot 窗口左上角的 `配置` 。
 
 <img style="width: 500px" src="../../../assets/console/lltwobot.png" alt="image" />
 
-可以正常访问 LLTwoBot WebUI 就证明你安装成功了（首次访问WebUI时会要求设置密码）。
+可以正常访问 LLOneBot WebUI 就证明你安装成功了（首次访问 WebUI 时会要求设置密码）。
 
 <img style="width: 500px" src="../../../assets/console/lltwobotwebui.png" alt="image" />
 
@@ -36,5 +36,5 @@
 
 ### 使用 LLOneBot 配置文件 配置
 
-可参考 [LLOneBot 配置文件](https://llonebot.com/guide/getting-started#llonebot-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
+可参考 [LLOneBot 配置文件](https://www.llonebot.com/guide/config)
 略。
