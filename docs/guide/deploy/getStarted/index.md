@@ -1,3 +1,7 @@
+<script setup>
+import miaoXiangCloudAd from '../../../components/miaoXiangCloudAd.vue'
+</script>
+
 # 开始部署
 
 ::: danger 操作系统支持<br>
@@ -13,6 +17,8 @@
 部分插件依赖本地的 Git 服务，必须安装 Git 以确保正常使用。请自行到 [GIT官网](http://gitforwindows.org/) 下载合适自己系统的版本。
 
 ## 部署
+
+<miao-xiang-cloud-ad />
 
 根据你的设备系统或习惯，你可以选择以下其中一种部署方式：
 
