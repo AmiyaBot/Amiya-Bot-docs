@@ -57,6 +57,7 @@ export default {
                 {text: '文字生成的图片', link: '/develop/basic/chainBuild/textImage.md'},
                 {text: 'HTML 生成的图片', link: '/develop/basic/chainBuild/html.md'},
                 {text: 'Markdown 生成的图片', link: '/develop/basic/chainBuild/markdown.md'},
+                {text: '自定义 Markdown 消息', link: '/develop/basic/chainBuild/mdContent.md'},
                 {text: 'Markdown 模版', link: '/develop/basic/chainBuild/mdTemplate.md'},
                 {text: 'Embed 消息', link: '/develop/basic/chainBuild/embed.md'},
                 {text: 'Ark 模版', link: '/develop/basic/chainBuild/ark.md'},
@@ -69,6 +70,7 @@ export default {
             collapsible: true,
             items: [
                 {text: '调用 API', link: '/develop/basic/api/qqbot.md'},
+                {text: '调用 API - QQ 群', link: '/develop/basic/api/qqGroup.md'},
             ]
         },
         {
@@ -91,7 +93,8 @@ export default {
             text: '适配器',
             collapsible: true,
             items: [
-                {text: 'QQ 频道', link: '/develop/basic/api/qqbot.md'}
+                {text: 'QQ 频道', link: '/develop/basic/api/qqbot.md'},
+                {text: 'QQ 群', link: '/develop/basic/api/qqGroup.md'}
             ]
         }
     ],

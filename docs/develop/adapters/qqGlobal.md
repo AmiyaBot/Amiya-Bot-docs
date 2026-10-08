@@ -6,6 +6,8 @@
 
 全域适配器的参数和用法和[QQ 群机器人](/develop/adapters/qqGroup.html)一致，请参考文档。
 
+包括群聊相关的 `subscribe_group_member_event`（订阅群成员事件）参数，对全域机器人同样生效。
+
 创建后机器人能够同时接收到来自群聊、消息记录和频道的消息。
 
 ```python

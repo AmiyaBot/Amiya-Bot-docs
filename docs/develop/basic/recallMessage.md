@@ -60,6 +60,11 @@ await bot.instance.recall_message(message_id='......', target_id='......')
 | Message.wait_channel() | ❌ 无法撤回 |
 | return Chain()         | ❌ 无法撤回 |
 
+::: warning QQ 群 / 单聊的撤回时效 <br>
+QQ 群与单聊消息**发送超过 2 分钟不可撤回**，超时会返回错误码 `40064004`。
+此外，机器人若为**群管理员**，还可以撤回群内普通成员的消息。
+:::
+
 ```python
 @bot.on_message(keywords='hello')
 async def _(data: Message):

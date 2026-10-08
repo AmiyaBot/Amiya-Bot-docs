@@ -74,6 +74,30 @@ async def _(event: Event, instance: BotAdapterProtocol):
 
 频道的事件名和内容可以查看官方文档 [事件订阅](https://bot.q.qq.com/wiki/develop/api/gateway/intents.html)
 
+## QQ 群 / 全域事件
+
+群聊与全域适配器下，**消息类事件**产出 `Message` 对象，其余事件产出 `Event` 对象。
+
+| 事件名 | intent | 说明 |
+|---|---|---|
+| `C2C_MESSAGE_CREATE` | `GROUP_AND_C2C_EVENT (1<<25)` | 用户单聊发消息给机器人 → `Message` |
+| `GROUP_AT_MESSAGE_CREATE` | `GROUP_AND_C2C_EVENT (1<<25)` | 用户在群里 @ 机器人 → `Message` |
+| `GROUP_MESSAGE_CREATE` | `GROUP_AND_C2C_EVENT (1<<25)` | 群内所有消息（需开启「接收所有消息」）→ `Message` |
+| `GROUP_ADD_ROBOT` | `GROUP_AND_C2C_EVENT (1<<25)` | 机器人被添加到群聊 → `Event` |
+| `GROUP_DEL_ROBOT` | `GROUP_AND_C2C_EVENT (1<<25)` | 机器人被移出群聊 → `Event` |
+| `GROUP_MSG_REJECT` / `GROUP_MSG_RECEIVE` | `GROUP_AND_C2C_EVENT (1<<25)` | 群管理员关闭/开启通知 → `Event` |
+| `INTERACTION_CREATE` | `INTERACTION (1<<26)` | 互动事件（按钮回调等）→ `Event` |
+| `GROUP_JOIN_REQUEST` | `GROUP_MEMBER_EVENT (1<<24)` | 用户申请加群 → `Event`，需 `subscribe_group_member_event=True` |
+
+```python
+@bot.on_event('INTERACTION_CREATE')
+async def _(event: Event, instance: BotAdapterProtocol):
+    # 按钮回调需回应，否则客户端会保持 loading
+    await instance.api.put_interaction_response(event.data['id'], code=0)
+```
+
+群聊事件名可查看官方文档 [事件订阅 Intents](https://bot.q.qq.com/wiki/develop/api-v2/dev-prepare/event-emit/payload.html#事件订阅-intents)
+
 ## mirai-api-http 事件
 
 - [mirai-api-http 事件类型一览](https://docs.mirai.mamoe.net/mirai-api-http/api/EventType.html)
