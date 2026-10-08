@@ -25,10 +25,71 @@ bot = AmiyaBot(appid='******', token='******', adapter=qq_group(client_secret))
 | default_chain_builder_options |     | 默认消息构建器参数   | QQGroupChainBuilderOptions() |
 | shard_index                   | int | 分片下标，从 0 开始 | 0                            |
 | shards                        | int | 分片总数        | 1                            |
+| subscribe_group_member_event  | bool | 订阅群成员事件（入群申请等，需平台审批权限） | False                        |
 
 - 在机器人启动时，资源服务也会一同启动。
 - 默认的资源服务是端口单例的，实例化多个 QQ 群聊适配器 AmiyaBot 或使用 [多账号](/develop/basic/multipleAccounts.html)
   时，同一个端口的资源服务会相互共享。
+
+## 接收全量群消息
+
+在 [QQ 开放平台](https://q.qq.com/) 管理端为机器人开启「接收所有消息」后，群内**每条**消息（不限于 @
+机器人）都会推送，事件名为 `GROUP_MESSAGE_CREATE`。
+
+适配器默认支持该事件，无需额外配置：
+
+```python
+from amiyabot.adapters.tencent.qqGroup import qq_group
+
+bot = AmiyaBot(appid='******', token='******', adapter=qq_group(client_secret='******'))
+```
+
+未 @ 机器人的消息，其 `Message.is_at` 为 `False`；已 @ 机器人的消息为 `True`。
+
+```python
+@bot.on_message(keywords='天气')
+async def _(data: Message):
+    if not data.is_at:
+        return  # 忽略未 @ 机器人的消息
+```
+
+::: tip 前缀触发词 <br>
+被 @ 的消息会跳过[前缀触发词](/develop/basic/#使用前缀触发词唤醒机器人)检查；未 @ 的消息需正常匹配前缀触发词。
+若希望未 @ 的消息直接命中关键字，可设置 `check_prefix=False`。
+:::
+
+全量消息的事件体与 `GROUP_AT_MESSAGE_CREATE` 一致，可用的 `Message` 字段：
+
+| 事件字段 | `Message` |
+|---|---|
+| `content` | `text` 等文本字段（`<emoji:N>` → `face`） |
+| `attachments` | `image/*` → `image`，`voice` → `voice`，`video/*` → `video`，其余 → `files` |
+| `author.username` | `nickname` |
+| `author.member_role` | 为 `admin` / `owner` 时 `is_admin=True` |
+| `mentions` | `at_target` |
+| `message_scene.ext` 的 `ref_msg_idx` | `reference_message_id` |
+
+## 订阅群成员事件
+
+传入 `subscribe_group_member_event=True` 可接收入群申请等群成员事件。
+
+::: danger 需要平台审批权限 <br>
+若机器人无该 intent 权限却订阅，WebSocket 会返回 `4014` 并断开连接。请确认已有权限后再开启。
+:::
+
+```python
+bot = AmiyaBot(
+    appid='******',
+    token='******',
+    adapter=qq_group(client_secret='******', subscribe_group_member_event=True),
+)
+```
+
+```python
+@bot.on_event('GROUP_JOIN_REQUEST')
+async def _(event: Event, instance: BotAdapterProtocol):
+    ...
+```
 
 ## 事件分片
 

@@ -45,7 +45,7 @@ async def _(data: Message):
 | text_words    | List[str]                                             | 消息文本分词                     |
 | text_prefix   | str                                                   | 消息触发词                      |
 | at_target     | List[str]                                             | 消息内 @ 的对象列表                |
-| is_at         | bool                                                  | 是否 @ 机器人                   |
+| is_at         | bool                                                  | 是否 @ 机器人（全量群消息下未 @ 机器人的消息为 False） |
 | is_admin      | bool                                                  | 是否为子频道管理员                  |
 | is_direct     | bool                                                  | 是否是私信消息                    |
 | user_id       | str                                                   | 用户 ID                      |
@@ -55,6 +55,7 @@ async def _(data: Message):
 | nickname      | str                                                   | 用户昵称                       |
 | avatar        | str                                                   | 用户头像的 URL                  |
 | joined_at     | ISO8601 timestamp                                     | 用户加入频道的时间                  |
+| reference_message_id | str                                             | 被引用消息的索引（群/单聊引用消息时有效），可用于发送引用回复 |
 | verify        | [Verify 对象](/develop/basic/messageHandler.html#自定义检查) | 自定义检查的结果                   |
 | time          | int                                                   | 消息时间                       |
 

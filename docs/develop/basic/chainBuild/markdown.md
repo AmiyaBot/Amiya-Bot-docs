@@ -4,9 +4,10 @@
 模式渲染。建议先阅读 [发送 html 生成的图片](/develop/basic/chainBuild/html.md) 了解如何启动 Chromium。
 
 ::: danger 注意<br>
-这并非 QQ
-机器人官方提供的 [发送 markdown 消息](https://bot.q.qq.com/wiki/develop/api/openapi/message/post_markdown_messages.html)
-，要发送官方的 Markdown 模版消息请查看 [Markdown 模版](/develop/basic/chainBuild/mdTemplate.md)。
+这并非 QQ 机器人官方提供的 Markdown 消息（客户端原生渲染）。
+
+- 要发送官方的**自定义 Markdown**（无需模版），请查看 [自定义 Markdown 消息](/develop/basic/chainBuild/mdContent.html)。
+- 要发送官方的 **Markdown 模版**消息，请查看 [Markdown 模版](/develop/basic/chainBuild/mdTemplate.html)。
 :::
 
 ## Chain().markdown()
