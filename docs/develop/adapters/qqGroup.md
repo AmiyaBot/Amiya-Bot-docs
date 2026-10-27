@@ -134,14 +134,18 @@ def start():
 
 ### 修改资源服务配置
 
-引入 `QQGroupChainBuilderOptions` 修改默认的资源服务配置。
+引入 `QQGroupChainBuilderOptions` 修改默认的资源服务与媒体下载配置。
 
-| 参数名                 | 类型   | 释义                                                     | 默认值        |
-|---------------------|------|--------------------------------------------------------|------------|
-| host                | str  | 资源服务监听地址                                               | 0.0.0.0    |
-| port                | int  | 资源服务监听端口                                               | 8086       |
-| resource_path       | str  | 临时文件存放目录                                               | ./resource |
-| server_config       | ServerConfig | 服务配置，可传入 `fastapi_options` / `uvicorn_options` 等字典 | ServerConfig() |
+| 参数名                    | 类型   | 释义                                                     | 默认值        |
+|------------------------|------|--------------------------------------------------------|------------|
+| host                   | str  | 资源服务监听地址                                               | 0.0.0.0    |
+| port                   | int  | 资源服务监听端口                                               | 8086       |
+| resource_path          | str  | 临时文件存放目录                                               | ./resource |
+| server_config          | ServerConfig | 服务配置，可传入 `fastapi_options` / `uvicorn_options` 等字典 | ServerConfig() |
+| download_media         | bool | 是否由框架下载图片后再上传（见[发送内网图片](#发送内网图片)）          | False      |
+| media_download_timeout | float | 下载超时（秒）                                             | 10.0       |
+| media_max_bytes        | int  | 框架下载的单个文件上限（字节），超出直接跳过                         | 20971520（20MB） |
+| media_trust_env        | bool | 下载时是否读取 `HTTP_PROXY` / `NO_PROXY` 环境变量               | False      |
 
 ```python
 from amiyabot.adapters.tencent.qqGroup import qq_group
@@ -160,6 +164,47 @@ bot = AmiyaBot(
     ),
 )
 ```
+
+## 发送内网图片
+
+默认情况下 `Chain().image(url=...)` 只是把地址交给 **QQ 平台**去下载转存，
+只有公网可达的图片才能发出去；内网地址（私有 IP、只有内网 DNS 能解析）会返回
+`850026 下载原始文件失败`，用户端什么都收不到。
+
+开启 `download_media=True` 后改由**框架自己下载**图片字节再上传，内网图床、MCP 服务返回的图片都能发送：
+
+```python
+from amiyabot.adapters.tencent.qqGroup import qq_group
+from amiyabot.adapters.tencent.qqGroup.builder import QQGroupChainBuilderOptions
+
+bot = AmiyaBot(
+    appid='******',
+    token='******',
+    adapter=qq_group(
+        client_secret='******',
+        default_chain_builder_options=QQGroupChainBuilderOptions(download_media=True),
+    ),
+)
+```
+
+也可以只对某一条消息开启，或在全局开启后用 `download=False` 关闭：
+
+```python
+Chain(data).image(url='http://192.168.1.10/chart.png', download=True)
+```
+
+上传策略：
+
+- 图片字节 ≤ 5MB 时直接以二进制上传（`file_data`）；
+- 5MB ～ `media_max_bytes` 时自动走分片上传（`upload_prepare` → 分片 PUT → `upload_part_finish`）；
+- 下载到的内容不是图片（如 HTML 错误页）或超过 `media_max_bytes` 时跳过该图片并记录 warning；
+- 下载失败（超时 / 非 200 / 连接异常）会退回原来的平台侧下载再试一次，不影响同一条 Chain 里的文本消息；
+- 同一条 Chain 内重复的 URL 只上传一次。
+
+::: tip 下载不读取系统代理 <br>
+`media_trust_env` 默认为 `False`，即下载内网图片时**不读取** `HTTP_PROXY` / `NO_PROXY`。
+全局代理会把内网请求劫持成 502，需要走代理时再显式开启。
+:::
 
 ## 自定义资源服务
 
