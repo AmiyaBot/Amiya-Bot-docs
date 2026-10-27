@@ -52,6 +52,9 @@ bot = AmiyaBot(appid='******', token='******', adapter=qq_group(client_secret='*
 
 未 @ 机器人的消息，其 `Message.is_at` 为 `False`；已 @ 机器人的消息为 `True`。
 
+适配器会自动从 `text` 中剔除 @ 标记（`<@openid>`），@ 的其他成员进入 `at_target`；
+`@全体成员` 置 `is_at_all=True`（不影响 `is_at`）。
+
 ```python
 @bot.on_message(keywords='天气')
 async def _(data: Message):
