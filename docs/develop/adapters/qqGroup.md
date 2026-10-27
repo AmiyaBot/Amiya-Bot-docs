@@ -132,7 +132,7 @@ def start():
 | host                | str  | 资源服务监听地址                                               | 0.0.0.0    |
 | port                | int  | 资源服务监听端口                                               | 8086       |
 | resource_path       | str  | 临时文件存放目录                                               | ./resource |
-| http_server_options | dict | [HttpServer **kwargs](/develop/tools/httpSupport.html) |            |
+| server_config       | ServerConfig | 服务配置，可传入 `fastapi_options` / `uvicorn_options` 等字典 | ServerConfig() |
 
 ```python
 from amiyabot.adapters.tencent.qqGroup import qq_group
