@@ -13,8 +13,14 @@ from amiyabot.adapters.tencent.qqGroup import qq_group
 
 client_secret = '******' # 密钥
 
-bot = AmiyaBot(appid='******', token='******', adapter=qq_group(client_secret))
+bot = AmiyaBot(appid='******', token='', adapter=qq_group(client_secret))
 ```
+
+::: tip 无需旧 Token <br>
+QQ 群/全域适配器的 HTTP 接口与 **WebSocket 鉴权**均使用 `AppSecret` 换取的
+[AccessToken](https://bot.q.qq.com/wiki/develop/api-v2/dev-prepare/api-use.html)，
+`token` 参数可传空串。官方已废弃旧 Token 鉴权（`Bot appid.token` 格式，WebSocket 使用会返回 `4004`）。
+:::
 
 `qq_group` 参数
 
