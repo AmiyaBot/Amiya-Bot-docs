@@ -12,6 +12,11 @@ async def _(data: Message):
 
 <img style="width: 220px" src="../../assets/examples/hello3.png" alt="image">
 
+::: tip 事件（Event）如何回复 <br>
+`Event` 没有原消息 ID，被动消息需要以事件 `id` 作为锚点，请使用
+[`Event.reply()`](/develop/basic/handleEvents.html#以事件为锚点回复消息)（按钮回调等场景）。
+:::
+
 ## Chain 对象
 
 | 参数名           | 类型           | 释义           | 默认值            |

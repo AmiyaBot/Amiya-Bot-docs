@@ -36,6 +36,7 @@ async def _(data: Message):
 | message       | dict                                                  | 原始消息字典                     |
 | message_id    | str                                                   | 消息 ID                      |
 | message_type  | str                                                   | 消息类型（适用于群聊适配器）             |
+| event_id      | str                                                   | 被动消息的事件锚点（由 `Event.reply()` 生成的消息上有效，普通消息为空） |
 | face          | List[str]                                             | 消息内表情 ID 列表                |
 | image         | List[str]                                             | 消息内图片 URL 列表               |
 | text          | str                                                   | 消息文本（不包含触发词、中间件处理）         |
