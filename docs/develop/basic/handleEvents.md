@@ -35,6 +35,7 @@ async def _(event: Event, instance: BotAdapterProtocol):
 | appid      | str  | 发生该事件的 Bot AppId |
 | event_name | str  | 事件名              |
 | data       | dict | 事件的内容字典          |
+| event_id   | str  | 事件信封 id（WebSocket payload 最外层 `id`），QQ 群/全域事件下可作为被动消息锚点 |
 
 ## 频道事件
 
@@ -128,7 +129,7 @@ async def _(event: Event, instance: BotAdapterProtocol):
 
 | 事件字段 | Message 字段 | 说明 |
 |---|---|---|
-| `id` | `event_id` | 被动消息锚点 |
+| 事件信封 `id`（`payload.id`） | `event_id` | 被动消息锚点；为空时回落到事件体内的 `id` |
 | `group_openid` | `channel_openid` | 群聊发送目标 |
 | `group_id` | `channel_id` | 缺失时回落到 `group_openid` |
 | `group_member_openid` | `user_openid` | 群聊中的操作者 |
@@ -137,7 +138,7 @@ async def _(event: Event, instance: BotAdapterProtocol):
 底层等价写法（自行构造 `Message` 时使用）：
 
 ```python
-await instance.send_event_message(Chain(at=False).markdown_content('...'), event_id=event.data['id'])
+await instance.send_event_message(Chain(at=False).markdown_content('...'), event_id=event.event_id)
 ```
 
 ::: warning 边界条件 <br>
