@@ -35,6 +35,7 @@ async def _(event: Event, instance: BotAdapterProtocol):
 | appid      | str  | 发生该事件的 Bot AppId |
 | event_name | str  | 事件名              |
 | data       | dict | 事件的内容字典          |
+| event_id   | str  | 事件信封 id（WebSocket payload 最外层 `id`），QQ 群/全域事件下可作为被动消息锚点 |
 
 ## 频道事件
 
@@ -93,8 +94,60 @@ async def _(event: Event, instance: BotAdapterProtocol):
 @bot.on_event('INTERACTION_CREATE')
 async def _(event: Event, instance: BotAdapterProtocol):
     # 按钮回调需回应，否则客户端会保持 loading
-    await instance.api.put_interaction_response(event.data['id'], code=0)
+    await event.ack_interaction()
 ```
+
+### 以事件为锚点回复消息
+
+被动消息有两个锚点，官方二选一：`msg_id`（来自 `GROUP_AT_MESSAGE_CREATE` 等消息事件）与
+`event_id`（事件最外层的 `id`）。按钮回调 `INTERACTION_CREATE` 等事件**没有原消息 ID**，只能用
+`event_id` 回复，此时请使用 `Event.reply()`，适配器会自动完成场景字段映射与 `msg_seq` 递增。
+
+```python
+from amiyabot.builtin.messageChain.keyboard import InlineKeyboard
+
+@bot.on_event('INTERACTION_CREATE')
+async def _(event: Event, instance: BotAdapterProtocol):
+    # 1) 先回应互动，否则用户端一直 loading
+    await event.ack_interaction()
+
+    # 2) 回一条事件锚定的消息（可以带 markdown / 键盘）
+    keyboard = InlineKeyboard()
+    keyboard.add_row().add_button(
+        button='btn_again',
+        render_label='再来一次',
+        action_type=1,
+        action_data='again',
+    )
+
+    await event.reply(
+        Chain(at=False).markdown_content('野地秘行是能天使的第一套皮肤。', keyboard=keyboard)
+    )
+```
+
+事件字段会自动映射到 `Message` 对象，供 Chain 构建使用：
+
+| 事件字段 | Message 字段 | 说明 |
+|---|---|---|
+| 事件信封 `id`（`payload.id`） | `event_id` | 被动消息锚点；为空时回落到事件体内的 `id` |
+| `group_openid` | `channel_openid` | 群聊发送目标 |
+| `group_id` | `channel_id` | 缺失时回落到 `group_openid` |
+| `group_member_openid` | `user_openid` | 群聊中的操作者 |
+| `user_openid` | `user_openid` + `is_direct=True` | 单聊场景 |
+
+底层等价写法（自行构造 `Message` 时使用）：
+
+```python
+await instance.send_event_message(Chain(at=False).markdown_content('...'), event_id=event.event_id)
+```
+
+::: warning 边界条件 <br>
+- 同一事件 **5 分钟内最多回复 5 条**，第 6 条会抛出 `QQGroupMessageError`。
+- 事件超过 5 分钟后再回复，平台返回 `40034026`，适配器同样抛出带 `code` 的 `QQGroupMessageError`。
+- 频道（guild）事件没有 `event_id` 语义，调用 `Event.reply()` 会抛出 `NotImplementedError`。
+- 普通消息仍使用 `msg_id` 锚点，`Message.send()` 行为不变。
+- 异常类可从 `amiyabot.adapters.tencent.qqGroup` 导入，`code` 为平台错误码。
+:::
 
 群聊事件名可查看官方文档 [事件订阅 Intents](https://bot.q.qq.com/wiki/develop/api-v2/dev-prepare/event-emit/payload.html#事件订阅-intents)
 
