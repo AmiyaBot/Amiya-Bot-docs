@@ -52,13 +52,23 @@ async def _(data: Message):
     return Chain(data).markdown_content('## 功能菜单\n\n点击下方按钮开始', keyboard=keyboard)
 ```
 
-按钮回调需调用 API 回应，否则客户端会保持 loading：
+按钮回调需回应，否则客户端会保持 loading。回调事件没有原消息 ID，回复时使用 `Event.reply()`
+（内部以事件 `id` 作为 `event_id` 锚点）：
 
 ```python
 @bot.on_event('INTERACTION_CREATE')
 async def _(event: Event, instance: BotAdapterProtocol):
-    await instance.api.put_interaction_response(event.data['id'], code=0)
+    # 结束用户端的 loading 状态
+    await event.ack_interaction()
+
+    # 回一条事件锚定的消息，可以继续带 markdown / 键盘
+    await event.reply(Chain(at=False).markdown_content('已收到你的点击'))
 ```
+
+::: tip 同一事件最多回复 5 条 <br>
+事件锚定的被动消息在 5 分钟内有效且上限 5 条，超出会抛出 `QQGroupMessageError`。
+详见[事件监听 - 以事件为锚点回复消息](/develop/basic/handleEvents.html#以事件为锚点回复消息)。
+:::
 
 ## 相关文档
 
