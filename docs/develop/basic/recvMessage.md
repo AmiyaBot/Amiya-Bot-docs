@@ -39,6 +39,10 @@ async def _(data: Message):
 | event_id      | str                                                   | 被动消息的事件锚点（由 `Event.reply()` 生成的消息上有效，普通消息为空） |
 | face          | List[str]                                             | 消息内表情 ID 列表                |
 | image         | List[str]                                             | 消息内图片 URL 列表               |
+| voice         | str                                                   | 语音消息的音频 URL（QQ 群/单聊）        |
+| voice_text    | str                                                   | 平台侧语音转写文本（QQ 群 `asr_refer_text`），未转写时为空字符串 |
+| video         | str                                                   | 视频消息的 URL                  |
+| files         | List[File]                                            | 文件消息列表（`File` 含 `url` / `filename`） |
 | text          | str                                                   | 消息文本（不包含触发词、中间件处理）         |
 | text_digits   | str                                                   | 消息文本（不包含触发词、中间件处理、中文转数字处理） |
 | text_unsigned | str                                                   | 消息文本（不包含触发词、去字符处理）         |
@@ -48,6 +52,7 @@ async def _(data: Message):
 | at_target     | List[str]                                             | 消息内 @ 的对象列表                |
 | is_at         | bool                                                  | 是否 @ 机器人（全量群消息下未 @ 机器人的消息为 False） |
 | is_admin      | bool                                                  | 是否为子频道管理员                  |
+| is_bot        | bool                                                  | 发送者是否为机器人（QQ 群 `author.bot`） |
 | is_direct     | bool                                                  | 是否是私信消息                    |
 | user_id       | str                                                   | 用户 ID                      |
 | guild_id      | str                                                   | 频道 ID                      |

@@ -72,11 +72,36 @@ async def _(data: Message):
 | 事件字段 | `Message` |
 |---|---|
 | `content` | `text` 等文本字段（`<emoji:N>` → `face`） |
-| `attachments` | `image/*` → `image`，`voice` → `voice`，`video/*` → `video`，其余 → `files` |
+| `attachments` | `image/*` → `image`，`voice` → `voice`（`voice_wav_url` 优先，缺省回落 `url`）与 `voice_text`（`asr_refer_text`），`video/*` → `video`，其余 → `files` |
 | `author.username` | `nickname` |
 | `author.member_role` | 为 `admin` / `owner` 时 `is_admin=True` |
+| `author.bot` | 为 `True` 时 `is_bot=True`（可用于拦截机器人互相 @ 的死循环） |
 | `mentions` | `at_target` |
 | `message_scene.ext` 的 `ref_msg_idx` | `reference_message_id` |
+
+### 语音转写与机器人消息
+
+平台会把多数语音消息转写成文本（`asr_refer_text`），直接取 `voice_text` 即可当用户输入使用，
+不需要自行接入 ASR，也不会多一次网络往返：
+
+```python
+@bot.on_message(keywords='天气')
+async def _(data: Message):
+    text = data.text or data.voice_text
+    if not text:
+        return  # 既无文本也无转写（如平台未转写），可自行下载 data.voice 处理
+    ...
+```
+
+`is_bot` 标识发送者是机器人。两个机器人互相 @ 时每轮都是真实 API 调用，建议直接丢弃：
+
+```python
+@bot.on_message(keywords='ping')
+async def _(data: Message):
+    if data.is_bot:
+        return
+    ...
+```
 
 ## 订阅群成员事件
 
