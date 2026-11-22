@@ -167,7 +167,8 @@ def start():
 | port                   | int  | 资源服务监听端口                                               | 8086       |
 | resource_path          | str  | 临时文件存放目录                                               | ./resource |
 | server_config          | ServerConfig | 服务配置，可传入 `fastapi_options` / `uvicorn_options` 等字典 | ServerConfig() |
-| download_media         | bool | 是否由框架下载图片后再上传（见[发送内网图片](#发送内网图片)）          | False      |
+| download_media         | bool | 是否由框架下载媒体后再上传（见[发送内网媒体](#发送内网媒体)）          | False      |
+| download_media_types   | Tuple[int, ...] | 允许走框架直传的 `file_type`（1 图片 / 2 视频 / 3 语音 / 4 文件） | (1,)       |
 | media_download_timeout | float | 下载超时（秒）                                             | 10.0       |
 | media_max_bytes        | int  | 框架下载的单个文件上限（字节），超出直接跳过                         | 20971520（20MB） |
 | media_trust_env        | bool | 下载时是否读取 `HTTP_PROXY` / `NO_PROXY` 环境变量               | False      |
@@ -190,7 +191,7 @@ bot = AmiyaBot(
 )
 ```
 
-## 发送内网图片
+## 发送内网媒体
 
 默认情况下 `Chain().image(url=...)` 只是把地址交给 **QQ 平台**去下载转存，
 只有公网可达的图片才能发出去；内网地址（私有 IP、只有内网 DNS 能解析）会返回
@@ -218,11 +219,30 @@ bot = AmiyaBot(
 Chain(data).image(url='http://192.168.1.10/chart.png', download=True)
 ```
 
+### 语音 / 视频也走直传
+
+`Chain().voice()` 与 `Chain().video()` 生成的本地文件由框架自己的资源服务提供，
+地址同样是 `http://{host}:{port}/resource/...`。容器 / 内网部署下平台回连不到这个地址，
+语音会稳定返回 `40093010 上传URL错误` —— 此时把对应类型加进 `download_media_types`：
+
+```python
+QQGroupChainBuilderOptions(
+    download_media=True,
+    download_media_types=(1, 3),  # 1 图片 / 2 视频 / 3 语音 / 4 文件
+)
+```
+
+`download_media_types` 默认 `(1,)`，只对图片生效，保持既有行为。只开 `download_media`
+而不动 `download_media_types` 时，语音仍交给平台下载，要求 `media.host` 公网可达。
+
+`file_type=4`（按文件发送）不在 MIME 白名单内，任何类型都放行；其余类型按 MIME 前缀校验，
+并且会回落到文件头嗅探 —— `.silk` 常被静态服务器当成 `text/plain`，只看 `Content-Type` 会误杀。
+
 上传策略：
 
-- 图片字节 ≤ 5MB 时直接以二进制上传（`file_data`）；
+- 媒体字节 ≤ 5MB 时直接以二进制上传（`file_data`）；
 - 5MB ～ `media_max_bytes` 时自动走分片上传（`upload_prepare` → 分片 PUT → `upload_part_finish`）；
-- 下载到的内容不是图片（如 HTML 错误页）或超过 `media_max_bytes` 时跳过该图片并记录 warning；
+- 下载到的内容与目标类型不符（如语音 URL 返回 HTML 错误页）或超过 `media_max_bytes` 时跳过该媒体并记录 warning；
 - 下载失败（超时 / 非 200 / 连接异常）会退回原来的平台侧下载再试一次，不影响同一条 Chain 里的文本消息；
 - 同一条 Chain 内重复的 URL 只上传一次。
 
